@@ -1,0 +1,124 @@
+{{#is type 'header'}}
+    <p class="block-title">
+        <span class="block-type">Default header</span>
+        <span>{{stripScripts text.title}}</span>
+    </p>
+{{else}}{{#is type 'header_video'}}
+    <p class="block-title">
+        <span class="block-type">Header with video/embed</span>
+        <span>{{stripScripts text.title}}</span>
+    </p>
+{{else}}{{#is type 'header_bg'}}
+    <p class="block-title">
+        <span class="block-type">Header with background image</span>
+        <span>{{stripScripts text.title}}</span>
+    </p>
+{{else}}{{#is type 'header_media'}}
+    <p class="block-title">
+        <span class="block-type">Header with a hero image/video/embed</span>
+        <span>{{stripScripts text.title}}</span>
+    </p>
+{{else}}{{#is type 'section'}}
+    <p class="block-title">
+        <span class="block-type">Default section</span>
+        <span>{{stripScripts text.title}}</span>
+    </p>
+{{else}}{{#is type 'section_basic'}}
+    <p class="block-title">
+        <span class="block-type">Text section</span>
+        <span>{{stripScripts text.title}}</span>
+    </p>
+{{else}}{{#is type 'section_media'}}
+    <p class="block-title">
+        <span class="block-type">Section with text, image or video</span>
+        <span>{{stripScripts text.title}}</span>
+    </p>
+{{else}}{{#is type 'section_list'}}
+    <p class="block-title">
+        <span class="block-type">Section with a list of items</span>
+        <span>{{pluralCount items.length 'item'}}</span>
+    </p>
+{{else}}{{#is type 'container'}}
+    <p class="block-title">
+        <span class="block-type">Container</span>
+        <span>{{#if row_count}} {{pluralCount row_count 'row'}} of tagged articles {{/if}}</span>
+    </p>
+{{else}}{{#is type 'body_text'}}
+    <p class="block-title">
+        <span class="block-type">Static card</span>
+        {{#if text.title}} <span>{{stripScripts text.title}}</span> {{/if}}
+    </p>
+{{else}}{{#is type 'body_html'}}
+    <p class="block-title">
+        <span class="block-type">Rich text</span>
+    </p>
+{{else}}{{#is type 'body_embed'}}
+    <p class="block-title">
+        <span class="block-type">Embed</span>
+        {{#if text.title}} <span>{{stripScripts text.title}}</span> {{/if}}
+    </p>
+{{else}}{{#is type 'body_carousel'}}
+    <p class="block-title">
+        <span class="block-type">Default carousel</span>
+        <span>
+            {{#if gallery.length}} {{pluralCount gallery.length 'image'}} {{/if}}
+        </span>
+    </p>
+{{else}}{{#is type 'body_carousel_text'}}
+    <p class="block-title">
+        <span class="block-type">Text carousel</span>
+        <span>
+            {{#if gallery.length}} {{pluralCount gallery.length 'image'}} {{/if}}
+        </span>
+    </p>
+{{else}}{{#is type 'people'}}
+    <p class="block-title">
+        <span class="block-type">People</span>
+        <span>
+            {{#if text.title}} {{stripScripts text.title}}: {{/if}}
+            {{#if people.length}} {{people.length}} people {{/if}}
+        </span>
+    </p>
+{{else}}{{#is type 'logos'}}
+    <p class="block-title">
+        <span class="block-type">Logos</span>
+        <span>
+            {{#if text.title}} {{stripScripts text.title}}: {{/if}}
+            {{#if people.length}} {{pluralCount people.length 'logo'}} {{/if}}
+        </span>
+    </p>
+{{else}}{{#is type 'breather'}}
+    <p class="block-title">
+        <span class="block-type">Breather</span>
+        <span>{{stripScripts text.title}}</span>
+    </p>
+{{else}}{{#is type 'calendar'}}
+    <p class="block-title">
+        <span class="block-type">Calendar</span>
+        <span>
+            {{#if text.title}} {{stripScripts text.title}}: {{/if}}
+            {{#if events.length}} {{pluralCount events.length 'event'}} {{/if}}
+        </span>
+    </p>
+{{else}}{{#is type 'feed'}}
+    <p class="block-title">
+        <span class="block-type">Feed</span>
+        {{#if text.title}} <span>{{stripScripts text.title}}</span> {{/if}}
+    </p>
+{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}
+<div class="sub-blocks"></div>
+<div class="block-actions">
+    <span class="move-up"></span>
+    <span class="move-down"></span>
+    <p class="add-below">Add below</p>
+    {{#is type 'container'}}
+        {{#is formula 'empty'}}
+            <p class="add-inside">Add inside</p>
+        {{/is}}
+        {{#is formula 'tags'}}
+            <p class="add-tags">Add tags</p>
+        {{/is}}
+    {{/is}}
+    <p class="edit-theme">Theme</p>
+    <p class="edit-block">Edit</p>
+</div>

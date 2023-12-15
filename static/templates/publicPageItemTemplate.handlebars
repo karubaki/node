@@ -1,0 +1,13 @@
+{{#is category 'institute'}}
+    <span class="page-title title-institute">The Institute</span>
+{{else}}{{#is category 'newsroom'}}
+    <span class="page-title title-newsroom">Newsroom</span>
+{{else}}{{#is category 'project'}}
+    <span class="page-title">{{title}}</span>
+{{else}}{{#is category 'event'}}
+    <span class="page-title">{{title}}</span>
+{{else}}{{#is category 'external'}}
+    <span class="page-title">{{title}}</span>
+{{else}}{{#is category 'other'}}
+    <span class="page-title">{{title}}</span>
+{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}

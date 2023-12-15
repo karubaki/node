@@ -1,0 +1,12 @@
+<span class="feed-label">{{feed}}</span>
+{{#and url url.embed}}
+    <div class="embed-block">{{{url.embed}}}</div>
+{{else}}
+    {{#and image image.m}}
+        <div class="text-image-cover"><div class="text-image" style="background-image:url({{image.m}})"></div></div>
+    {{/and}}
+{{/and}}
+<div class="title-wrapper">
+    <span class="text-title">{{{text.title}}}</span>
+</div>
+<p class="text-desc">{{{text.desc}}}</p>

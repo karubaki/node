@@ -1,0 +1,46 @@
+<div class="overlay-box overlay-large">
+    <a class="overlay-close js-close" href="#"></a>
+    <div class="contentForm new-person-panel">
+        <form method="post" action="https://mgiep-files.s3.amazonaws.com/" enctype="multipart/form-data" class="dp-upload">
+            <input type="hidden" name="key">
+            <input type="hidden" name="AWSAccessKeyId" value="AKIAIT3BY3EDOZPAPDEQ">
+            <input type="hidden" name="acl" value="public-read">
+            <input type="hidden" name="policy">
+            <input type="hidden" name="signature">
+            <input type="hidden" name="success-action-status" value="201">
+            <input type="hidden" name="Content-Type">
+            <input type="file" name="file" class="file-input">
+        </form>
+        <!-- Person Image -->
+        <div class="person-dp">
+            {{#if dp}}
+                <div class="person-image" style="background-image:url({{dp.s}})"></div>
+            {{else}}
+                <div class="person-image"></div>
+            {{/if}}
+            <a class='upload-btn' href="#">Upload</a>
+        </div>
+        <div class="person-select">
+            <p class="content-text">Select type:</p>
+            <p class="content-choose">
+                <span class="choose-team">Team member</span>
+                <span class="choose-partner">Partner</span>
+            </p>
+        </div>
+        <div class="person-details">
+            <p class="content-text">About:</p>
+            <div><input placeholder="Person/Partner name: Required" type="text" class="person-name" spellcheck="false" value="{{title}}"></div>
+            <div><input placeholder="About" type="text" class="person-about" spellcheck="false" value="{{about}}"></div>
+            <div><textarea placeholder="Describe this person/partner" class="person-desc"></textarea></div>
+        </div>
+        <div class="person-contact">
+            <p class="content-text">Contact details:</p>
+            <div><input placeholder="Email address" type="text" class="person-email" spellcheck="false" value="{{email}}"></div>
+            <div><input placeholder="Website address" type="text" class="person-url" spellcheck="false" value="{{url}}"></div>
+        </div>
+        <div class="person-save form-save">
+            <a class="js-save-person u-main-btn" href="#">Save</a>
+            <a class="js-delete-person u-delete-btn u-hide">Delete</a>
+        </div>
+    </div>
+</div>

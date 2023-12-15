@@ -1,0 +1,18 @@
+<div class="overlay-box">
+    <a class="overlay-close js-close" href="#"></a>
+    <p class="overlay-header">New Tag</p>
+    {{!-- About --}}
+    <div class="new-tag-about">
+        <input placeholder="Name" type="text" autocomplete="off" class="tag-name entity-title">
+        <textarea placeholder="Describe your tag (Optional)" class="tag-desc entity-text"></textarea>
+        <label class="privacy-label">
+            <input class="checkbox" type="checkbox" name="privacy-input"> <span><b>Make this tag private:</b> By default all tags are public.</span>
+        </label>
+        <div class="entity-btn save-tag js-save u-disabled">Save</div>
+    </div>
+    {{!-- Activate/Delete tag --}}
+    <div class="tag-edit-footer u-hide">
+        <a class="tag-edit-activate js-activate-tag" href="#">Activate</a>
+        <a class="tag-edit-delete js-delete-tag u-delete" href="#">Delete tag</a>
+    </div>
+</div>

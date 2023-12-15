@@ -1,0 +1,2205 @@
+/* Utility */
+.u-formError {
+    display: none;
+    font-size: 14px;
+    padding: 4px;
+}
+.u-delete {
+    font-weight: normal;
+    cursor: pointer;
+}
+/* Main nav */
+.mainNav {
+    position: relative;
+}
+.mainNav > div {
+    padding: 20px 35px;
+}
+.mainNav a {
+    display: inline-block;
+    font-size: 22px;
+    margin-right: 30px;
+    font-family: "Rubik", sans-serif;
+    font-weight: 600;
+    padding: 5px 0px;
+}
+.mainNav a:last-of-type {
+    margin-right: 0px;
+}
+/* About */
+.mainAbout {
+    position: relative;
+    display: table;
+    width: calc(100%-70px);
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+    max-height: 400px;
+    overflow: hidden;
+    padding: 20px 0px;
+    margin: 50px 35px 0px;
+}
+.mainAbout .tagLine {
+    position: relative;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 10px;
+}
+.mainAbout > div {
+    position: relative;
+    display: table-cell;
+    vertical-align: top;
+    padding: 0px 20px 50px;
+}
+.mainAbout > div .illustration {
+    position: relative;
+    margin: 0px auto 20px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.mainAbout .about-tags .illustration {
+    width: 244px;
+}
+.mainAbout .about-discussions .illustration {
+    width: 329px;
+}
+.mainAbout .about-people .illustration {
+    width: 288px;
+}
+.mainAbout > div p {
+    margin: 0 auto;
+}
+/* Nav bar */
+.navBar {
+    position: absolute;
+    right: 0px;
+    top: 25px;
+}
+.navBar a {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 600;
+    margin-left: 25px;
+}
+.navBar .link-signup,
+.navBar .link-add-discussion {
+    padding: 13px 30px;
+    border-radius: 10px;
+}
+.link-activity .activity-count {
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 15px;
+    text-align: center;
+}
+.nav-icon {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+}
+.link-activity .nav-icon {
+    background-position: 0px 0px;
+}
+.link-activity.selected .nav-icon {
+    background-position: -30px 0px;
+}
+.navProfile {
+    position: absolute;
+    right: 0px;
+    top: 5px;
+}
+.user-image,
+.profile-image {
+    display: inline-block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 0px;
+}
+.user-initials,
+.profile-initials {
+    display: inline-block;
+}
+.navProfile .profile-image,
+.navProfile .profile-initials {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.navProfile .profile-initials {
+    font-weight: 600;
+    line-height: 38px;
+    text-align: center;
+}
+.navMore {
+    display: none;
+    position: absolute;
+    right: -5px;
+    top: 55px;
+    width: 200px;
+    border-radius: 3px;
+    padding: 5px 0px;
+    z-index: 2;
+}
+.navMore .triangle,
+.popup .triangle {
+    right: 34px;
+    position: absolute;
+    top: -10px;
+}
+.navMore .triangle-outer,
+.popup .triangle-outer {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    display: inline-block;
+    position: absolute;
+}
+.navMore .triangle-inner,
+.popup .triangle-inner {
+    top: 1px;
+    left: 1px;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    display: inline-block;
+    position: absolute;
+}
+.navMore a {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    text-transform: capitalize;
+}
+.navMore .nav-add-badge,
+.navMore .nav-dashboard {
+    display: none;
+}
+.navMore .nav-add-badge.nav-admin,
+.navMore .nav-dashboard.nav-admin {
+    display: inline-block;
+}
+/* New tag view */
+.entity-title {
+    width: 100%;
+    padding: 14px;
+    border: 0px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.entity-text {
+    position: relative;
+    width: 100%;
+    font-size: 16px;
+    font-weight: normal;
+    height: 200px;
+    box-shadow: none;
+    line-height: 24px;
+    padding: 14px;
+    border-radius: 10px;
+    border: 0px;
+    outline: none;
+    -webkit-appearance: none;
+    resize: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.entity-btn,
+.link-add {
+    position: relative;
+    margin-top: 10px;
+    padding: 14px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.025em;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    -webkit-appearance: none;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.entity-btn.u-disabled,
+.link-add.u-disabled {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.new-tag-about label,
+.new-tag-members label {
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 10px 0px;
+}
+.new-tag-members label {
+    cursor: inherit;
+    margin-bottom: 20px;
+    margin-right: 25px;
+}
+.member-list,
+.tag-list {
+    position: relative;
+    height: 300px;
+    padding: 20px 0px 0px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.member-list .person {
+    position: relative;
+    margin-bottom: 10px;
+}
+.user-initials {
+    text-align: center;
+}
+.user-initials span {
+    font-weight: 600;
+}
+.member-list .user-initials,
+.member-list .user-image {
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.member-list .user-initials span {
+    line-height: 38px;
+}
+.member-list .name {
+    padding: 14px 5px 5px 70px;
+}
+.member-list .name span {
+    font-size: 14px;
+}
+.member-list .add-user {
+    position: absolute;
+    right: 70px;
+    top: 13px;
+    font-size: 14px;
+    padding: 5px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.member-list .remove-user {
+    position: absolute;
+    right: 0px;
+    top: 18px;
+    font-size: 14px;
+}
+.tag-edit-footer {
+    position: relative;
+    margin-top: 15px;
+    padding-top: 12px;
+}
+.tag-edit-footer .tag-edit-activate {
+    font-weight: 600;
+}
+.tag-edit-footer .tag-edit-deactivate {
+    font-weight: 600;
+}
+.tag-edit-footer .tag-edit-delete {
+    float: right;
+}
+/* Tag list */
+.mainHeader {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.mainHeader > div {
+    position: relative;
+    padding: 20px 35px;
+    margin-top: 50px;
+}
+.explore-tags {
+    position: relative;
+    display: inline-block;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.one-tag {
+    position: relative;
+    display: inline-block;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    border-left-width: 0px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.one-tag:hover {
+    border-left-width: 6px;
+    margin-right: 3px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.one-tag:hover span {
+    font-weight: 600;
+}
+/* New discussion overlay */
+.new-discussion {
+    position: relative;
+}
+.status-select-header {
+    margin-bottom: 20px;
+}
+.status-select > div {
+    margin-bottom: 10px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: 10px 15px 12px;
+    cursor: pointer;
+}
+.status-select > div h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+.status-select > div p {
+    font-size: 14px;
+}
+.discussion-type {
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.discussion-type > div {
+    display: inline-block;
+    width: 90px;
+    padding: 5px 0px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 600;
+}
+.entity-area > div {
+    display: none;
+    min-height: 400px;
+}
+.form-text.text-discussion > div {
+    margin-bottom: 0px;
+    padding: 14px;
+}
+/* Link preview */
+.link-preview {
+    display: none;
+    margin-top: 10px;
+}
+.preview-title {
+    font-weight: 600;
+}
+.preview-provider {
+    display: block;
+    margin-top: 3px;
+    margin-bottom: 5px;
+}
+.preview-provider a {
+    font-size: 14px;
+    font-weight: 600;
+}
+.preview-shots {
+    display: none;
+    position: relative;
+    padding: 15px 0px;
+    height: 120px;
+}
+.one-shot {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    cursor: pointer;
+    margin-right: 10px;
+    float: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.preview-desc {
+    font-size: 14px;
+}
+.preview-embed > iframe {
+    width: 310px;
+    height: 174px;
+}
+/* Text area */
+.form-field.form-text {
+    padding-top: 0px;
+    line-height: 30px;
+}
+.form-text > div {
+    min-height: 300px;
+}
+.form-text button {
+    display: none;
+}
+.form-text table {
+    border-collapse: collapse;
+}
+.form-text th,
+.form-text td {
+    padding: 10px;
+    white-space: normal;
+    word-break: break-all;
+    word-wrap: break-word;
+    width: auto;
+}
+.form-text div,
+.form-text p,
+.form-text figure,
+.form-text h1,
+.form-text h2,
+.form-text h3,
+.form-text h4,
+.form-text h5,
+.form-text h6 {
+    display: block;
+    margin-bottom: 20px;
+}
+.form-text h1 {
+    font-size: 22px;
+    font-weight: 600;
+}
+.form-text h2 {
+    font-size: 20px;
+}
+.form-text h3 {
+    font-size: 18px;
+}
+.form-text blockquote {
+    padding-left: 30px;
+    margin-bottom: 20px;
+}
+.form-text strong,
+.form-text b {
+    font-weight: 600;
+}
+.form-text em,
+.form-text i {
+    font-style: italic;
+}
+.form-text img {
+    display: block;
+    max-width: 100%;
+    margin: 20px 0px;
+}
+.form-text ul,
+.form-text ol {
+    margin: 10px 0px 10px 40px;
+}
+.form-text li {
+    margin-bottom: 7px;
+}
+.form-text pre {
+    padding: 20px;
+    margin-bottom: 20px;
+    white-space: normal;
+}
+.form-text hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    margin: 20px 0px;
+    padding: 0;
+}
+.form-text > iframe {
+    width: 100%;
+    max-height: 500px;
+}
+/* Add file */
+#drop {
+    position: relative;
+    text-align: center;
+    height: 212px;
+    padding-top: 95px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#drop input,
+.file-input {
+    display: none;
+}
+.service-ch p {
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px;
+    border-radius: 10px;
+    margin: 10px 0px;
+    cursor: pointer;
+}
+.service-ch span {
+    font-weight: 600;
+    letter-spacing: 0.025em;
+}
+.service-ch .ch-dropbox {
+    margin-top: 20px;
+}
+.service-ch .ch-drive {
+    margin-bottom: 0px;
+}
+.text-discussion .entity-title {
+    margin-bottom: 20px;
+}
+.text-discussion-html {
+    height: 300px;
+}
+/* Poll */
+.add-new-poll {
+    position: relative;
+    margin-top: 10px;
+}
+.add-new-poll > p {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.add-new-poll .poll-container {
+    position: relative;
+    margin-bottom: 50px;
+}
+.polls-list {
+    position: relative;
+    display: block;
+    margin-bottom: 10px;
+}
+.new-poll-row {
+    position: relative;
+}
+.polls-list .row {
+    position: relative;
+    width: 100%;
+    min-height: 40px;
+}
+.polls-list span.cell {
+    position: relative;
+    padding: 8px 8px 8px 25px;
+    display: block;
+    width: 100%;
+    word-wrap: break-word;
+}
+.polls-list span.cell b {
+    padding: 1px 20px;
+    font-weight: 600;
+    margin-left: 5px;
+    border-radius: 20px;
+}
+.polls-list.not-voted span.cell b,
+.polls-list.not-voted .row-percent {
+    display: none;
+}
+.polls-list.draft-polls span.cell {
+    padding: 8px 8px 8px 25px;
+}
+.polls-list span.radio-cell {
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    display: inline-block;
+    position: absolute;
+    top: 12px;
+    left: 0px;
+    z-index: 2;
+    cursor: pointer;
+}
+.polls-list.draft-polls span.radio-cell {
+    left: 0px;
+    cursor: inherit;
+}
+input.new-poll {
+    font-size: 16px;
+    font-weight: normal;
+    width: 100%;
+    height: 40px;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    resize: none;
+    overflow: hidden;
+    padding-left: 25px;
+}
+.polls-list .row-bar {
+    position: relative;
+    width: 90%;
+    height: 10px;
+    left: 25px;
+    border-radius: 10px;
+}
+.row-bar .row-percent {
+    position: absolute;
+    height: 10px;
+    border-radius: 10px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+/* Discussions */
+.mainContent {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+}
+.mainContent .section-label {
+    position: relative;
+    margin: 20px 15px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.mainContent > div > div:first-child .section-label {
+    display: none;
+}
+.one-card {
+    display: inline-block;
+    width: 300px;
+    margin: 15px;
+    padding: 15px;
+    border: 0px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.one-card:hover {
+    -webkit-transform: translateY(-5px);
+    -moz-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.card-info {
+    position: relative;
+}
+.one-card .user-label.user-initials,
+.one-card .user-label.user-image {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    margin-right: 15px;
+}
+.one-card .user-label.user-initials span {
+    font-size: 14px;
+    line-height: 28px;
+}
+.one-card .badge-label {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+}
+.one-card .card-title {
+    font-family: "Rubik", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    word-wrap: break-word;
+}
+.one-card .card-content {
+    position: relative;
+    display: -webkit-box;
+    margin-top: 10px;
+    font-size: 14px;
+    word-wrap: break-word;
+    word-break: break-word;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    max-height: 100px;
+    overflow: hidden;
+}
+.card-content.content-full {
+    -webkit-line-clamp: 15;
+    max-height: 270px;
+}
+.card-content.content-poll {
+    -webkit-line-clamp: initial;
+    max-height: none;
+}
+.card-content p {
+    margin-bottom: 5px;
+}
+.card-content p:last-of-type {
+    margin-bottom: 0px;
+}
+.card-image {
+    position: relative;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+}
+.video-overlay {
+    position: absolute;
+    background-color: transparent;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    max-height: 200px;
+}
+.video-overlay .play-video {
+    position: relative;
+    top: 50%;
+    width: 60px;
+    height: 40px;
+    margin: -20px auto 0px;
+    border-radius: 10px;
+    padding-top: 14px;
+}
+.video-overlay .play-video span {
+    position: relative;
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 0 6px 10px;
+    margin: 0px auto;
+}
+.card-provider {
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+.card-provider span {
+    font-size: 14px;
+    font-weight: 600;
+}
+.card-image.text-image {
+    margin-top: 10px;
+}
+.card-image.file-image {
+    max-height: 260px;
+}
+.file-type {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+}
+.file-type div {
+    margin: 0 auto;
+}
+.file-type label {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+/* Card tags */
+.card-tags,
+.discussion-tags {
+    position: relative;
+    margin-top: 5px;
+}
+.discussion-tags {
+    margin-bottom: 15px;
+}
+.card-tags a,
+.discussion-tags a {
+    position: relative;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+/* Card comment */
+.card-comment {
+    position: relative;
+    left: -15px;
+    top: 15px;
+    width: 300px;
+    padding: 15px;
+    font-size: 14px;
+    word-break: break-word;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.card-comment .comment-main {
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+    max-height: 191px;
+    overflow: hidden;
+}
+.comment-main .name {
+    font-weight: 600;
+}
+/* Tag header */
+.tagHeader {
+    position: relative;
+}
+.tagHeader .tag-name {
+    display: inline-block;
+    font-family: "Rubik", sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    margin-bottom: 10px;
+    padding: 5px 20px;
+}
+.tagHeader .tag-desc {
+    max-width: 900px;
+}
+.tagHeader .tag-actions {
+    margin: 20px 0px 10px;
+}
+.tag-actions span {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 10px;
+    min-width: 80px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.tag-actions span:hover {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 103;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.modal > div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.modal-box {
+    position: absolute;
+    display: block;
+    top: 15%;
+    left: 50%;
+    width: 700px;
+    margin-left: -350px;
+    margin-bottom: 50px;
+    padding: 20px;
+    opacity: 0;
+    -webkit-transform: translateY(5px);
+    -moz-transform: translateY(5px);
+    -ms-transform: translateY(5px);
+    transform: translateY(5px);
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.mainFeatured .modal-box {
+    position: relative;
+    width: auto;
+    top: auto;
+    left: auto;
+    margin: 20px 35px;
+    opacity: 1;
+    border-radius: 10px;
+}
+.modal-box.animate {
+    opacity: 1;
+    -webkit-transform: translateY(-5px);
+    -moz-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+.discussion-info {
+    position: relative;
+    margin-bottom: 20px;
+}
+.discussion-info .badge-label {
+    position: absolute;
+    right: 0px;
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+}
+.discussion-info .user-label.user-initials,
+.discussion-info .user-label.user-image {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+.discussion-info .user-label.user-initials span {
+    font-size: 14px;
+    line-height: 28px;
+}
+.discussion-info .user-name {
+    font-size: 14px;
+    vertical-align: middle;
+}
+.discussion-content {
+    position: relative;
+    padding-bottom: 20px;
+}
+.discussion-title {
+    position: relative;
+    padding-bottom: 15px;
+}
+.discussion-title input {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: "Rubik", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    box-shadow: none;
+    border: 0;
+    outline: none;
+    -webkit-appearance: none;
+}
+.discussion-provider {
+    margin-bottom: 20px;
+}
+.discussion-provider a {
+    position: relative;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 4px;
+    padding: 3px 10px;
+}
+.discussion-image {
+    position: relative;
+    display: block;
+    max-width: 100%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+.modal-box.one-discussion .discussion-image {
+    max-width: 660px;
+}
+.discussion-text {
+    position: relative;
+    padding-top: 0px;
+}
+.discussion-text > iframe {
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+.discussion-text .one-poll {
+    margin-bottom: 10px;
+}
+/* Discussion Actions */
+.discussion-toolbar {
+    position: relative;
+    display: inline-block;
+    height: 32px;
+    border-radius: 4px;
+}
+.discussion-toolbar span {
+    display: inline-block;
+    float: left;
+    width: 31px;
+    height: 30px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+}
+.discussion-toolbar span:last-of-type {
+    border-right: 0px;
+}
+.discussion-toolbar .edit-discussion {
+    background-position: 0px 0px;
+}
+.discussion-toolbar .tag-discussion {
+    background-position: -30px 0px;
+}
+.discussion-toolbar .edit-badge {
+    background-position: -60px 0px;
+}
+.discussion-toolbar .edit-moderators {
+    background-position: -90px 0px;
+}
+.discussion-toolbar .delete-discussion {
+    background-position: -120px 0px;
+    border-right: 0px;
+}
+.discussion-toolbar .feature-discussion {
+    width: 80px;
+    background-image: none;
+    font-size: 14px;
+    text-align: center;
+    line-height: 30px;
+    font-weight: 600;
+}
+.discussion-edit {
+    position: relative;
+    display: inline-block;
+    height: 32px;
+}
+.discussion-edit .update-edit {
+    display: inline-block;
+    text-align: center;
+    padding: 7px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.discussion-edit .cancel-edit {
+    display: inline-block;
+    text-align: center;
+    padding: 7px 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+/* Comments */
+.discussion-comments {
+    position: relative;
+    padding-top: 20px;
+}
+.one-comment {
+    position: relative;
+    padding: 15px 0px;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+}
+.modal-box .one-comment {
+    padding: 20px 0px;
+}
+.comment-creator {
+    position: relative;
+    height: 30px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.comment-creator .user-initials,
+.comment-creator .user-image {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+}
+.comment-creator .user-initials span {
+    font-size: 14px;
+    line-height: 28px;
+}
+.comment-creator .name {
+    position: relative;
+    display: inline-block;
+    margin-left: 40px;
+    line-height: 28px;
+}
+.comment-main {
+    position: relative;
+}
+.comment-main .comment-html {
+    padding: 7px 0px;
+}
+.comment-main .edit-comment {
+    width: 100%;
+    background-color: transparent;
+    box-shadow: none;
+    outline: none;
+    border: 0px;
+    padding: 0px;
+    margin-bottom: 2px;
+    line-height: 22px;
+    resize: none;
+    overflow: hidden;
+    -webkit-appearance: none;
+}
+.comment-actions {
+    position: relative;
+}
+.comment-actions span {
+    opacity: 0;
+}
+.comment-actions span.selected,
+.comment-main.active .comment-actions span,
+.comment-actions span.save-btn,
+.comment-actions span.cancel-btn {
+    opacity: 1;
+}
+.one-comment:hover .comment-actions span {
+    opacity: 1;
+}
+.comment-actions span.save-btn {
+    font-weight: 600;
+}
+.comment-actions span,
+.comment-actions b {
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: normal;
+}
+.comment-actions span.sep-btn {
+    margin: 0 5px;
+}
+.comment-main.active span.edit-btn {
+    font-weight: 600;
+}
+.comment-respond {
+    position: relative;
+    margin-top: 20px;
+}
+.comment-respond span {
+    display: inline-block;
+    cursor: pointer;
+    padding: 5px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+.form-text.new-comment > div {
+    margin-bottom: 0px;
+    padding: 14px;
+    min-height: 76px;
+    height: auto;
+    border-radius: 10px;
+}
+.comment-btn.entity-btn {
+    top: 0px;
+    margin-top: 10px;
+    float: right;
+    font-weight: 600;
+    padding: 7px 20px;
+    z-index: 2;
+}
+.go-anon {
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+.go-anon input {
+    vertical-align: middle;
+}
+.go-anon span {
+    position: relative;
+    top: 1px;
+}
+.all-replies {
+    padding: 10px 0px;
+}
+.one-reply {
+    position: relative;
+    margin-left: 20px;
+    padding: 10px 0px;
+}
+.one-comment .like-btn {
+    position: absolute;
+    right: 0px;
+    top: 20px;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    opacity: 0;
+}
+.one-comment .like-btn.selected {
+    background-position: -32px 0px;
+    opacity: 1;
+}
+.one-comment:hover .js-comment-like,
+.one-reply:hover .like-btn {
+    opacity: 1;
+}
+.one-reply .like-btn {
+    top: 10px;
+    right: 0px;
+}
+.modal-box.without-login .comment-respond,
+.modal-box.without-login .comment-text,
+.modal-box.without-login .go-anon,
+.modal-box.without-login .like-btn {
+    display: none;
+}
+.modal-box.without-login .comment-btn.entity-btn {
+    float: none;
+}
+/* Tag list */
+.tag-list .one-tag:hover span {
+    text-decoration: line-through;
+}
+/* Badges */
+.badge-list {
+    position: relative;
+}
+.new-badges .badge-list {
+    margin-top: 20px;
+}
+.discussion-badges .badge-list {
+    margin-bottom: 20px;
+}
+.one-badge {
+    position: relative;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+p.one-badge {
+    cursor: pointer;
+}
+.one-badge .badge-name {
+    position: relative;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+}
+.one-badge .badge-desc {
+    margin-left: 10px;
+}
+/* Profile */
+.profile-panel {
+    position: relative;
+    padding: 0px 20px;
+}
+.profile-panel .profile-dp {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    float: right;
+}
+.profile-panel .profile-image,
+.profile-panel .profile-initials {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+}
+.profile-panel .profile-initials p {
+    font-weight: 600;
+    font-size: 50px;
+    text-align: center;
+    line-height: 198px;
+}
+.profile-panel .profile-text {
+    display: inline-block;
+    vertical-align: top;
+}
+.profile-text > p {
+    position: relative;
+    margin-top: 10px;
+    padding-left: 40px;
+}
+.profile-text .name {
+    font-weight: 600;
+    font-size: 26px;
+    padding-left: 0px;
+}
+.profile-text .about {
+    display: -webkit-box;
+    width: 600px;
+    line-height: 22px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    max-height: 44px;
+    overflow: hidden;
+}
+.profile-text .icon {
+    position: absolute;
+    left: 0px;
+    top: 1px;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background-repeat: no-repeat;
+}
+.profile-text .job .icon {
+    background-position: 0px 0px;
+}
+.profile-text .about .icon {
+    background-position: -22px 0px;
+}
+.profile-text .location .icon {
+    background-position: -44px 0px;
+}
+.profile-text .joined .icon {
+    background-position: -66px 0px;
+}
+.profile-text .karma .icon {
+    background-position: -88px 0px;
+}
+.profile-people {
+    margin-top: 20px;
+}
+.profile-people a {
+    display: inline-block;
+    font-weight: 600;
+    margin-right: 10px;
+}
+.profile-btns {
+    font-size: 14px;
+    margin-top: 20px;
+}
+.profile-btns span {
+    margin-right: 10px;
+    padding: 7px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.profile-btns .profile-follow {
+    display: block;
+    width: 130px;
+    text-align: center;
+    padding: 7px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+/* User cards */
+.user-card {
+    display: inline-block;
+    width: 270px;
+    margin: 10px;
+    padding: 15px;
+    border: 0px;
+    border-radius: 10px;
+    min-height: 255px;
+    cursor: pointer;
+}
+.user-card:hover {
+    -webkit-transform: translateY(-5px);
+    -moz-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.user-box .profile-image,
+.user-box .profile-initials {
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    margin: 0px auto 10px;
+}
+.user-box .profile-initials p {
+    font-weight: 600;
+    font-size: 30px;
+    text-align: center;
+    line-height: 98px;
+}
+.user-text {
+    position: relative;
+    margin: 0px auto;
+    text-align: center;
+}
+.user-text .name {
+    font-weight: 600;
+    font-size: 18px;
+}
+.user-text .about {
+    position: relative;
+    display: -webkit-box;
+    word-wrap: break-word;
+    word-break: break-word;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    max-height: 22px;
+    overflow: hidden;
+}
+.user-card .profile-follow,
+.user-card .view-user {
+    position: absolute;
+    display: block;
+    top: 56px;
+    left: 50%;
+    width: 130px;
+    margin-left: -65px;
+    margin-top: 10px;
+    text-align: center;
+    padding: 7px 20px;
+    border: 0px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+/* Settings page */
+.settings-panel .profile-header,
+.explore-panel .explore-header {
+    padding: 10px 0px 15px;
+}
+.settings-panel .modal-box > div {
+    position: relative;
+}
+.settings-panel .update-btn,
+.settings-panel .upload-btn {
+    position: absolute;
+    right: 0px;
+    top: 42px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 0px;
+    border-radius: 10px;
+    padding: 7px 20px;
+}
+.settings-panel .profile-dp {
+    margin: 15px 0px;
+    height: 110px;
+}
+.settings-panel .profile-dp {
+    margin: 15px 0px;
+    height: 110px;
+}
+.settings-panel .profile-image,
+.settings-panel .profile-initials {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+}
+.settings-panel .profile-initials p {
+    font-weight: 600;
+    font-size: 30px;
+    text-align: center;
+    line-height: 98px;
+}
+.settings-text > p {
+    font-weight: 600;
+    font-size: 14px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.settings-text > p span {
+    font-size: 14px;
+}
+.profile-label {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+    width: 120px;
+    top: 10px;
+}
+.settings-text > div {
+    margin-bottom: 10px;
+}
+.settings-text input,
+.settings-text textarea {
+    font-size: 16px;
+    padding: 14px;
+    border-radius: 10px;
+    border: 0px;
+    margin: 0px;
+    width: 300px;
+    outline: none;
+    -webkit-appearance: none;
+    resize: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.settings-text textarea {
+    height: 100px;
+}
+.settings-text .chosen-container {
+    position: relative;
+    display: inline-block;
+    left: 0px;
+    bottom: 0px;
+}
+/* Activity */
+.popup {
+    display: none;
+    position: absolute;
+    top: 140px;
+    width: 330px;
+    border-radius: 3px;
+    z-index: 6;
+}
+.popup .triangle {
+    right: 136px;
+}
+/* Loading data */
+.loading-data {
+    display: none;
+    position: fixed;
+    bottom: 0px;
+    right: 20px;
+    padding: 10px 30px;
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 5;
+}
+.all-activity {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.one-activity {
+    position: relative;
+    display: block;
+    padding: 15px 20px;
+}
+.one-activity:last-of-type {
+    border-bottom: 0px;
+}
+.one-activity .activity-user {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 40px;
+    height: 40px;
+}
+.one-activity .activity-content {
+    position: relative;
+    margin-left: 50px;
+    font-size: 14px;
+}
+.one-activity .activity-context {
+    padding: 7px 15px;
+    margin: 10px 0px;
+    font-size: 14px;
+}
+.activity-context span {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    max-height: 64px;
+    overflow: hidden;
+}
+.one-activity .user-initials,
+.one-activity .user-image {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.one-activity .user-initials span {
+    line-height: 38px;
+}
+.one-activity .activity-date {
+    font-size: 14px;
+    margin-top: 5px;
+}
+/* Explore panel */
+.explore-tag-list {
+    position: relative;
+    margin-top: 20px;
+}
+.explore-one {
+    position: relative;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+.explore-one:last-of-type {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    border-bottom: 0px;
+}
+.explore-one .tag-content {
+    position: relative;
+    padding-right: 200px;
+}
+.explore-one .tag-name {
+    display: inline-block;
+    position: relative;
+    font-size: 18px;
+    padding: 4px 10px 6px;
+    margin-bottom: 10px;
+}
+.explore-one .tag-desc {
+    display: -webkit-box;
+    font-size: 14px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    max-height: 60px;
+    overflow: hidden;
+}
+.explore-one .tag-desc br {
+    display: none;
+}
+.explore-one .subscribe-tag {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 0px;
+    padding: 5px 20px;
+    cursor: pointer;
+}
+/* Empty states */
+.zero-message {
+    padding: 20px;
+}
+/* Overlay */
+.overlay-box {
+    width: 450px;
+    padding: 20px;
+    margin-left: -225px;
+    height: auto;
+}
+.overlay-box.overlay-double {
+    display: table;
+    width: 900px;
+    margin-left: -450px;
+    padding: 0px;
+}
+.overlay-box.overlay-double .overlay-form {
+    display: table-cell;
+    width: 550px;
+    min-width: 550px;
+    padding: 20px;
+}
+.overlay-box.overlay-double .overlay-location {
+    display: table-cell;
+    width: 350px;
+    min-width: 350px;
+    padding: 20px;
+}
+.overlay-close,
+.modal-close {
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+    top: -15px;
+    right: -15px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    background-repeat: no-repeat;
+    background-position: 0px;
+    background-size: 30px;
+}
+.mainFeatured .modal-close {
+    display: none;
+}
+.overlay-header {
+    position: relative;
+    font-family: "Rubik", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 5px 0px 15px;
+    margin-bottom: 20px;
+}
+.overlay-box h2.message {
+    font-family: "Rubik", sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    margin-bottom: 20px;
+    padding-right: 25px;
+}
+.overlay-box h2.message span {
+    font-family: "Rubik", sans-serif;
+    font-weight: 600;
+}
+.overlay-box p.message {
+    margin-bottom: 20px;
+}
+.form--modal {
+    margin: 0 auto;
+    width: 100%;
+}
+.form--modal > div {
+    position: relative;
+}
+/* Form */
+.input {
+    font-size: 16px;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    outline: none;
+}
+.collab-input:focus {
+    border-left-width: 1px;
+    padding-left: 14px;
+}
+.show-password {
+    position: absolute;
+    right: 10px;
+    bottom: 24px;
+    padding: 2px 10px 3px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.form-action {
+    margin-bottom: 10px;
+}
+.form-action:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.label {
+    cursor: pointer;
+}
+.btn-submit {
+    width: 100%;
+    padding: 20px;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.025em;
+    outline: none;
+    border: 0px;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+.social-connect {
+    position: relative;
+    left: -20px;
+    top: 20px;
+    width: 450px;
+    padding: 20px;
+}
+.social-btns {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+.social-btns a {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 125px;
+    padding: 7px 0px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.025em;
+    outline: none;
+    border: 0px;
+    border-radius: 4px;
+    margin-right: 13px;
+}
+.social-connect .btn-twitter {
+    margin-right: 0px;
+}
+.social-connect p,
+.overlay-box .reset-message {
+    position: relative;
+    margin-top: 15px;
+    font-size: 14px;
+}
+.social-connect img {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+/* Twitter Typeahead */
+.twitter-typeahead {
+    width: 100%;
+}
+.tt-dropdown-menu {
+    width: 100%;
+}
+.tt-dropdown-menu p {
+    text-align: left;
+}
+.tt-suggestion {
+    padding: 5px 10px;
+}
+.tt-dropdown-menu .no-find {
+    padding: 5px;
+}
+.tt-suggestions .name .tt-highlight {
+    font-weight: 600;
+}
+.tt-suggestions .name {
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+/* Editor */
+.ae-ui .ae-toolbar-add,
+.ae-ui .ae-toolbar-styles,
+.ae-ui .ae-toolbar {
+    z-index: 101 !important;
+}
+/* Streak */
+.streak-text {
+    position: relative;
+    display: inline-block;
+    font-family: "Rubik", sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    vertical-align: top;
+    margin: 0px 100px 0px 0px;
+    padding: 10px 0px;
+}
+/* Cal-HeatMap CSS */
+#cal-heatmap {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    float: right;
+    margin-bottom: 20px;
+}
+.cal-heatmap-container {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+}
+.cal-heatmap-container .graph-label {
+    font-size: 14px;
+}
+.cal-heatmap-container .graph,
+.cal-heatmap-container .graph-legend rect {
+    shape-rendering: crispedges;
+}
+.cal-heatmap-container .graph-subdomain-group rect:hover {
+    stroke-width: 1px;
+}
+.cal-heatmap-container .subdomain-text {
+    font-size: 10px;
+    pointer-events: none;
+}
+.cal-heatmap-container .hover_cursor:hover {
+    cursor: pointer;
+}
+.cal-heatmap-container rect.highlight {
+    stroke-width: 1;
+}
+.cal-heatmap-container text.now {
+    font-weight: 800;
+}
+.cal-heatmap-container .domain-background {
+    fill: none;
+    shape-rendering: crispedges;
+}
+.ch-tooltip {
+    padding: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    width: 140px;
+    position: absolute;
+    z-index: 99999;
+    text-align: center;
+    border-radius: 2px;
+    display: none;
+    box-sizing: border-box;
+}
+.ch-tooltip::after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    content: "";
+    padding: 0;
+    display: block;
+    bottom: -6px;
+    left: 50%;
+    margin-left: -6px;
+    border-width: 6px 6px 0;
+}
+/* Retina screen */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .one-comment .like-btn {
+        background-size: 64px 32px;
+    }
+    .discussion-toolbar span {
+        background-size: 180px 30px;
+    }
+    .profile-text .icon {
+        background-size: 110px 22px;
+    }
+    .nav-icon {
+        background-size: 120px 30px;
+    }
+}
+/* Responsive code */
+@media (min-width: 660px) and (max-width: 1418px) {
+    .navBar {
+        right: 30px;
+    }
+    .mainAbout {
+        margin: 150px 35px 0px;
+    }
+    .mainHeader {
+        margin-top: 100px;
+    }
+}
+@media (min-width: 300px) and (max-width: 659px) {
+    .topWrap {
+        display: none;
+    }
+    .mainNav a {
+        font-size: 14px;
+        margin-right: 10px;
+    }
+    .overlay {
+        z-index: 12;
+    }
+    .overlay-box,
+    .modal-box,
+    .overlay-box.overlay-double {
+        width: 100%;
+        height: auto;
+        min-height: 100%;
+        margin: 0%;
+        top: 0px;
+        left: 0px;
+        padding: 50px 20px 30px;
+        border-radius: 0px;
+        -webkit-transition: inherit;
+        -moz-transition: inherit;
+        transition: inherit;
+        -webkit-transform: translateY(0%);
+        -moz-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+        transform: translateY(0%);
+    }
+    .mainFeatured .modal-box {
+        padding: 20px;
+        margin: 20px;
+    }
+    .overlay-box.animate,
+    .modal-box.animate {
+        -webkit-transform: translateY(0%);
+        -moz-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+        transform: translateY(0%);
+    }
+    .overlay-close,
+    .modal-close {
+        top: 15px;
+        right: 15px;
+    }
+    .overlay-box.overlay-double {
+        display: block;
+    }
+    .overlay-box.overlay-double .overlay-form,
+    .overlay-box.overlay-double .overlay-location {
+        display: block;
+        width: 100%;
+        min-width: auto;
+        padding: 0px;
+    }
+    .overlay-box.overlay-double .overlay-location {
+        border-left: 0px;
+        padding-top: 20px;
+    }
+    .social-connect {
+        left: auto;
+        top: auto;
+        width: 100%;
+        padding: 20px 0px;
+        margin-top: 20px;
+        background-color: transparent !important;
+    }
+    .social-btns a {
+        width: 28%;
+    }
+    .mainAbout {
+        border-bottom: 0px;
+        margin: 20px 0px;
+        width: 100%;
+    }
+    .mainAbout > div {
+        display: none;
+    }
+    .mainAbout .tagLine {
+        margin: 0px 20px;
+        font-size: 16px;
+    }
+    .mainContent {
+        overflow-x: hidden;
+        padding: 20px 5px;
+    }
+    .mainContent .section-label {
+        margin-bottom: 0px;
+    }
+    .section-discussions {
+        position: relative;
+        padding: 20px;
+    }
+    .one-card {
+        display: block;
+        width: 100%;
+        margin: 20px 0px;
+    }
+    .card-image {
+        max-width: 270px;
+    }
+    .card-comment {
+        width: 100%;
+        left: 0px;
+        padding: 15px 0px;
+    }
+    .discussion-text > iframe {
+        max-height: 250px;
+    }
+    .modal-box.one-discussion .discussion-image {
+        max-width: 100%;
+    }
+    .headerWrap {
+        z-index: 11;
+        top: 58px;
+    }
+    .mainWrap {
+        padding-top: 160px;
+    }
+    .navBar {
+        position: fixed;
+        left: 0px;
+        width: 100%;
+        top: 0px;
+        right: 0px;
+        height: 50px;
+    }
+    .navBar .link-nav {
+        position: relative;
+        display: inline-block;
+        right: auto;
+        top: auto;
+        left: 10px;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 16px 5px;
+        margin-left: 0px;
+    }
+    .navBar .navProfile {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        margin-left: 0px;
+    }
+    .navProfile .profile-image,
+    .navProfile .profile-initials {
+        width: 30px;
+        height: 30px;
+    }
+    .navProfile .profile-initials {
+        font-size: 14px;
+        line-height: 28px;
+    }
+    .navBar .link-add-discussion,
+    .navBar .link-signup {
+        position: absolute;
+        left: auto;
+        right: 50px;
+        top: 10px;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 6px 16px;
+    }
+    .navBar .link-signup {
+        right: 10px;
+    }
+    .navBar .link-login {
+        position: absolute;
+        right: 105px;
+        left: auto;
+    }
+    .navBar a.link-activity {
+        position: absolute;
+        right: 190px;
+        left: auto;
+        top: 10px;
+        padding: 0px;
+    }
+    .popup {
+        top: 70px;
+        z-index: 12;
+    }
+    .discussion-type > div {
+        width: 70px;
+    }
+    .mainHeader > div,
+    .mainNav > div {
+        padding: 20px;
+    }
+    .tagHeader .tag-name {
+        font-size: 30px;
+    }
+    .tagHeader .tag-desc {
+        font-size: 14px;
+    }
+    .profile-label {
+        display: block;
+        top: auto;
+        margin-bottom: 10px;
+    }
+    .settings-text input,
+    .settings-text textarea {
+        width: 230px;
+    }
+    .settings-panel .update-btn {
+        top: 67px;
+    }
+    .settings-panel select {
+        display: block;
+        overflow: hidden;
+        padding: 14px;
+        border: 0px;
+        border-radius: 10px;
+        background-clip: padding-box;
+        text-decoration: none;
+        white-space: nowrap;
+        font-size: 16px;
+        position: relative;
+        width: 230px;
+    }
+    .profile-panel .profile-dp {
+        float: none;
+    }
+    /* Streak */
+    .streak-text {
+        font-size: 18px;
+        margin: 0px 0px 20px 0px;
+    }
+    /* Cal-HeatMap CSS */
+    #cal-heatmap {
+        display: block;
+        float: none;
+        margin-bottom: 0px;
+    }
+}

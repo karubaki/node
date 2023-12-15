@@ -1,0 +1,28 @@
+<div class="overlay-box overlay-large">
+    <a class="overlay-close js-close" href="#"></a>
+    <div class="contentForm mcq-options-form">
+        <div class="mcq-options-panel">
+            <p class="content-text">Add option:</p>
+            <form method="post" action="https://mgiep-files.s3.amazonaws.com/" enctype="multipart/form-data" class="option-image-upload">
+                <div id="option-image" class="drop-area">
+                    <span>Optional image</span>
+                    <input type="hidden" name="key">
+                    <input type="hidden" name="AWSAccessKeyId" value="AKIAIT3BY3EDOZPAPDEQ">
+                    <input type="hidden" name="acl" value="public-read">
+                    <input type="hidden" name="policy">
+                    <input type="hidden" name="signature">
+                    <input type="hidden" name="success-action-status" value="201">
+                    <input type="hidden" name="Content-Type">
+                    <input type="file" name="file" class="file-input">
+                </div>
+            </form>
+            <div><input placeholder="Option text" type="text" autocomplete="off" class="option-text entity-title"></div>
+            <p class="mcq-add content-btn">Save option</p>
+            <p class="content-text">Options:</p>
+            <div class="mcq-option-list"></div>
+            <div class="options-save form-save">
+                <a class="js-done u-main-btn" href="#">Done</a>
+            </div>
+        </div>
+    </div>
+</div>

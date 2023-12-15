@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MGIEP Social: Discuss Ideas</title>
+        <!-- SEO Meta -->
+        <meta name="description" content="UNESCO MGIEP's Social is a community of disruptive thinkers, just like you, helping each other solve world problems through discussions and collaborative actions.">
+        <link href="https://mgiep.unesco.org/social" rel="canonical">
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="" type="image/x-icon">
+        <link rel="icon" href="" type="image/x-icon">
+        <!-- Facebook open graph meta -->
+        <meta property="og:site_name" content="MGIEP Social">
+        <meta property="og:title" content="MGIEP Social: Discuss Ideas">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="UNESCO MGIEP's Social is a community of disruptive thinkers, just like you, helping each other solve world problems through discussions and collaborative actions.">
+        <meta property="og:locale" content="en_US">
+        <meta property="og:url" content="https://mgiep.unesco.org/social">
+        <!-- Twitter card meta -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@UNESCO_MGIEP">
+        <meta name="twitter:title" content="MGIEP Social: Discuss Ideas">
+        <meta name="twitter:description" content="UNESCO MGIEP's Social is a community of disruptive thinkers, just like you, helping each other solve world problems through discussions and collaborative actions.">
+        <meta name="twitter:image:src" content="">
+        <!-- Apple meta -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <link rel="apple-touch-icon-precomposed" href="/images/site/apple-touch-icon.png">
+        <!-- Responsive meta tags -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Theme -->
+        <meta name="theme-color" content="#0069B4" media="(prefers-color-scheme: light)">
+        <meta name="theme-color" content="#ffd370" media="(prefers-color-scheme: dark)">
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400;1,600&family=IBM+Plex+Serif:ital,wght@0,400;0,700;1,400;1,600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Work+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">
+        <!-- Style -->
+        <link rel="stylesheet" type="text/css" href="/css/page_style.css">
+        <link rel="stylesheet" type="text/css" href="/css/themes/{{theme}}_style.css">
+        <link rel="stylesheet" type="text/css" href="/css/themes/{{theme}}_social_style.css">
+        <link rel="stylesheet" type="text/css" href="/css/social_style.css">
+        <link rel="stylesheet" type="text/css" href="/css/lib/chosen.css">
+        <link rel="stylesheet" type="text/css" href="/css/lib/redactor.css">
+        <link rel="stylesheet" type="text/css" href="/css/lib/inlinestyle.css">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123165566-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-123165566-1');
+        </script>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-T7V9NFX');</script>
+    </head>
+    <body class="page-{{type}}" data-id="{{id}}" data-slug="{{slug}}">
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T7V9NFX"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <!-- Menu -->
+        <div class="menuWrap">
+            <div class="menu-area">
+                <div class="menu-level level-1"><a href="/">Home</a></div>
+                <div class="menu-level level-1"><a href="/newsroom">Newsroom</a></div>
+                <div class="menu-level level-1"><a href="/about">About</a></div>
+                {{{menu}}}
+            </div>
+        </div>
+        <!-- Top bar -->
+        {{#if notice_desc}}
+            <div class="topWrap with-notice">
+                <a href="{{notice_link}}" target="_blank">{{notice_desc}}</a>
+            </div>
+        {{else}}{{#if ticker}}
+            <div class="topWrap with-notice">
+                <div class="ticker">
+                    {{#each ticker}}
+                        <a href="{{url}}" target="_blank">{{title}}</a>
+                    {{/each}}
+                </div>
+            </div>
+        {{else}}
+            <div class="topWrap"></div>
+        {{/if}}{{/if}}
+        <!-- Header -->
+        {{#if notice_desc}}
+            <div class="headerWrap with-notice">
+        {{else}}{{#if ticker.length}}
+            <div class="headerWrap with-notice">
+        {{else}}
+            <div class="headerWrap">
+        {{/if}}{{/if}}
+            <a href="/social" class="logo-main"></a>
+            <div class="navBar">
+                {{#if userid}}
+                    <a class="link-nav" href="/">Institute</a>
+                    <a class="link-nav" href="/newsroom">Newsroom</a>
+                    <a class="link-nav link-activity js-activity" href="#">
+                        <span class="nav-icon nav-activity"></span>
+                        {{#if activityCount}}
+                            <span class="activity-count">{{activityCount}}</span>
+                        {{/if}}
+                    </a>
+                    <a class="link-nav link-add-discussion js-add-discussion" href="#">Add discussion</a>
+                    <a class="navProfile" href="#">
+                        {{#if dp}}
+                            <span class="profile-btn profile-image js-more" style="background-image:url({{dp}})"></span>
+                        {{else}}
+                            <span class="profile-btn profile-initials js-more">{{initials}}</span>
+                        {{/if}}
+                    </a>
+                    <!-- Settings -->
+                    <div class="navMore">
+                        <div class="triangle">
+                            <span class="triangle-outer"></span>
+                            <span class="triangle-inner"></span>
+                        </div>
+                        <a class="js-view-profile" href='/social/me'>View profile <br />(karma: {{karma}})</a>
+                        <a class="js-add-tag" href='#'>Add tag</a>
+                        <a class="js-add-badge nav-add-badge nav-{{usertype}}" href='#'>Add badge</a>
+                        <a class="js-settings" href='#'>Settings</a>
+                        <a class="js-dashboard nav-dashboard nav-{{usertype}}" href='/dashboard'>Dashboard</a>
+                        <a class="js-logout" href='/site/logout'>Logout</a>
+                    </div>
+                {{else}}
+                    <a class="link-nav" href="/">Institute</a>
+                    <a class="link-nav" href="/newsroom">Newsroom</a>
+                    <a class="link-nav link-login js-login" href="/social/login">Log In</a>
+                    <a class="link-nav link-signup js-signup" href="/social/signup">Sign Up</a>
+                {{/if}}
+            </div>
+        </div>
+        <!-- Menu -->
+        <div class="menuWrap"></div>
+        <!-- Main area -->
+        <div class="mainWrap" data-user="{{userid}}" data-name="{{name}}" data-email="{{email}}" data-username="{{username}}" data-type="{{usertype}}" data-anon="{{anon}}">
+            {{#unless userid}}
+                <div class="mainAbout">
+                    <p class="tagLine">Social is a safe place on internet to discuss problems and ideas relevant to society with a growing community who cares.</p>
+                    <div class="about-tags">
+                        <div class="illustration"></div>
+                        <p>At the core of Social are Tags. A tag is a community of people discussing connected ideas. Explore tags and subscribe to the interesting ones. You can also create your own tag and invite your friends to it.</p>
+                    </div>
+                    <div class="about-discussions">
+                        <div class="illustration"></div>
+                        <p>Within each tag, you can conduct polls or discuss ideas by sharing some relevant links, research papers, reports or stories. You can also add badges to these discussions for more clarity.</p>
+                    </div>
+                    <div class="about-people">
+                        <div class="illustration"></div>
+                        <p>Social is all about people. It's a network of people who care about education, mental health, violence and peace and about so many other things. Follow people you care about and be respectful to one another.</p>
+                    </div>
+                </div>
+            {{/unless}}
+            {{#if userid}}
+                <div class="mainHeader"></div>
+                <div class="mainNav">
+                    <div class="nav-front u-hide">
+                        <a href="/social" class="js-nav-today nav-today">Featured today</a>
+                        <a href="/social/recent" class="js-nav-recent nav-recent">All discussions</a>
+                        <a href="/social/top" class="js-nav-top nav-top">Top discussions</a>
+                    </div>
+                    <div class="nav-profile u-hide">
+                        <a href="/social/me" class="js-nav-my nav-my">My discussions</a>
+                        <a href="/social/queued" class="js-nav-queued nav-queued">Queued discussions</a>
+                    </div>
+                </div>
+            {{/if}}
+            <div class="mainFeatured"></div>
+            <div class="mainContent"></div>
+        </div>
+        <!-- Overlay window -->
+        <div class="overlay">
+            <div class="overlay-box">
+            </div>
+        </div>
+        <!-- Modal window -->
+        <div class="modal"></div>
+        <!-- Popup window -->
+        <div class="popup"></div>
+        <!-- Loading bar -->
+        <div class="loading-data">Loading more...</div>
+        <!-- Footer -->
+        <div class="footerWrap">
+            <div class="footer-cell">
+                <p class="footer-social">
+                    <span>Follow us at:</span>
+                    <a href="{{social.facebook}}"  target="_blank" class="social-fb"></a>
+                    <a href="{{social.twitter}}" target="_blank" class="social-twitter"></a>
+                    <a href="{{social.instagram}}" target="_blank" class="social-instagram"></a>
+                    <a href="{{social.youtube}}" target="_blank" class="social-youtube"></a>
+                    <a href="{{social.linkedin}}" target="_blank" class="social-linkedin"></a>
+                </p>
+                <p class="footer-contact">{{{contact}}}</p>
+            </div>
+        </div>
+        <!-- Scripts -->
+        <script type="text/javascript" src="/js/lib/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/lib/underscore/underscore.min.js"></script>
+        <script type="text/javascript" src="/js/lib/backbone/backbone.min.js"></script>
+        <script type="text/javascript" src="/js/lib/marionette/backbone.marionette.min.js"></script>
+        <script type="text/javascript" src="/js/lib/handlebars/handlebars.min.js"></script>
+        <script type="text/javascript" src="/js/lib/async/async.min.js"></script>
+        <script type="text/javascript" src="/js/lib/dateformat/jquery.dateFormat.min.js"></script>
+        <script type="text/javascript" src="/js/lib/jqueryui/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/js/lib/masonry/masonry.pkgd.min.js"></script>
+        <script type="text/javascript" src="/js/lib/typeahead/typeahead.bundle.min.js"></script>
+        <script type="text/javascript" src="/js/lib/chosen/chosen.min.js"></script>
+        <script type="text/javascript" src="/js/loadTemplate.js"></script>
+        <script type="text/javascript" src="/js/socialTemplate.js"></script>
+        <script type="text/javascript" src="/js/lib/swag/swag.min.js"></script>
+        <script type="text/javascript" src="/js/helpers.js"></script>
+        <script type="text/javascript" src="/js/lib/uuid/uuidv1.js"></script>
+        <script type="text/javascript" src="/js/lib/tipsy/jquery.tipsy.min.js"></script>
+        <script type="text/javascript" src="/js/lib/sweetalert/sweetalert.min.js"></script>
+        <script type="text/javascript" src="/js/lib/autosize/autosize.min.js"></script>
+        <script type="text/javascript" src="/js/lib/hotkeys/jquery.hotkeys.min.js"></script>
+        <script type="text/javascript" src="/js/lib/validator/validator.min.js"></script>
+        <script type="text/javascript" src="/js/lib/modernizr/modernizr.min.js"></script>
+        <script type="text/javascript" src="/js/lib/cookie/js.cookie.min.js"></script>
+        <script type="text/javascript" src="/js/lib/fileupload/jquery.fileupload.js"></script>
+        <script type="text/javascript" src="/js/lib/redactor/redactor.js"></script>
+        <script type="text/javascript" src="/js/lib/redactor-plugins/alignment/alignment.js"></script>
+        <script type="text/javascript" src="/js/lib/redactor-plugins/fontcolor/fontcolor.js"></script>
+        <script type="text/javascript" src="/js/lib/redactor-plugins/inlinestyle/inlinestyle.js"></script>
+        <script type="text/javascript" src="/js/lib/redactor-plugins/table/table.js"></script>
+        <script type="text/javascript" src="/js/lib/redactor-plugins/video/video.js"></script>
+        <script type="text/javascript" src="/js/lib/d3/d3.min.js"></script>
+        <script type="text/javascript" src="/js/lib/cal-heatmap/cal-heatmap.min.js"></script>
+        <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="4rg2izkkgf1i4s0"></script>
+        <script type="text/javascript" src="/js/lib/drive/filepicker.js"></script>
+        <script src="https://www.google.com/jsapi?key=AIzaSyAe7bRkxvcagYJbOqjbc0dRh4jNa46Eziw"></script>
+        <script src="https://apis.google.com/js/client.js"></script>
+        <script type="text/javascript" src="/js/global.js"></script>
+        <script type="text/javascript" src="/js/socialApp.js"></script>
+        <script type="text/javascript">
+            Swag.registerHelpers(window.Handlebars);
+            SocialManager.start();
+        </script>
+    </body>
+</html>

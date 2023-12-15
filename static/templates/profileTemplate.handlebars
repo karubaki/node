@@ -1,0 +1,57 @@
+<div class="profile-dp">
+    {{#if dp}}
+        <div class="profile-image" style="background-image:url({{dp.m}})"></div>
+    {{else}}
+        <div class="profile-initials">
+            <p>{{initials}}</p>
+        </div>
+    {{/if}}
+</div>
+<div class="profile-text">
+    <p class="name">{{name}}</p>
+    <p class="karma"><span class="icon"></span>Karma: {{karma}}</p>
+    {{#or job.title job.org}}
+        <p class="job">
+            {{#and job.title job.org}}
+                <span class="icon"></span>{{job.title}}, {{job.org}}
+            {{else}}
+                {{#if job.title}} <span class="icon"></span>{{job.title}} {{/if}}
+                {{#if job.org}} <span class="icon"></span>{{job.org}} {{/if}}
+            {{/and}}
+        </p>
+    {{/or}}
+    {{#if about}}
+        <p class="about"><span class="icon"></span>{{{about}}}</p>
+    {{/if}}
+    <p class="location">
+        {{#if city}}
+            <span class="icon"></span>{{city}}{{#if country}}, {{country}} {{/if}}
+        {{else}}
+            {{#if country}} <span class="icon"></span>{{country}} {{/if}}
+        {{/if}}
+    </p>
+    <p class="joined"><span class="icon"></span>Joined {{pageDate accountCreated}}</p>
+</div>
+{{#or followers following}}
+    <div class="profile-people">
+        {{#if followers}}
+            {{#is followers 1}}
+                <a class="tab-followers js-followers" target="_blank" href="#me/followers"><b>{{followers}}</b> follower</a>
+            {{else}}
+                <a class="tab-followers js-followers" target="_blank" href="#me/followers"><b>{{followers}}</b> followers</a>
+            {{/is}}
+        {{/if}}
+        {{#if following}}
+            <a class="tab-following js-following" target="_blank" href="#me/following"><b>{{following}}</b> following</a>
+        {{/if}}
+    </div>
+{{/or}}
+<div class="profile-btns">
+    {{#isNotCreator _id}}
+        {{#if is_follower}}
+            <p class="profile-follow selected">Following</p>
+        {{else}}
+            <p class="profile-follow">Follow</p>
+        {{/if}}
+    {{/isNotCreator}}
+</div>

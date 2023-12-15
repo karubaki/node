@@ -1,0 +1,159 @@
+<div class="overlay-box overlay-large">
+    <a class="overlay-close js-close" href="#"></a>
+    <div class="contentForm new-block-panel">
+        <!-- Text block -->
+        <div class="block-text u-hide">
+            <p class="content-text">Rich text:</p>
+            <div class="body-h-content form-text" data-placeholder="Write here..."></div>
+        </div>
+        <!-- Carousel block -->
+        <div class="block-gallery u-hide">
+            <p class="content-text">Carousel:</p>
+            <div><input placeholder="Image title" type="text" class="body-c-title" spellcheck="false" value=""></div>
+            <div><input placeholder="Image URL" type="text" class="body-c-image js-select-image" spellcheck="false" value=""></div>
+            <div><input placeholder="Link URL" type="text" class="body-c-link" spellcheck="false" value=""></div>
+            <p class="content-btn js-add-image">Add image</p>
+            <p class="content-text">Images:</p>
+            <div class="body-images-list"></div>
+        </div>
+        <!-- Audio, Video or File block -->
+        <div class="block-file block-image block-audio block-video u-hide">
+            <p class="content-text">Upload file:</p>
+            <div><input placeholder="File name" type="text" autocomplete="off" class="block-file-title entity-title"></div>
+            <form method="post" action="https://mgiep-files.s3.amazonaws.com/" enctype="multipart/form-data" class="direct-upload">
+                <div id="drop">
+                    <span>Choose files or drag and drop them here</span>
+                    <input type="hidden" name="key">
+                    <input type="hidden" name="AWSAccessKeyId" value="AKIAIT3BY3EDOZPAPDEQ">
+                    <input type="hidden" name="acl" value="public-read">
+                    <input type="hidden" name="policy">
+                    <input type="hidden" name="signature">
+                    <input type="hidden" name="success-action-status" value="201">
+                    <input type="hidden" name="Content-Type">
+                    <input type="file" name="file" class="file-input">
+                </div>
+            </form>
+        </div>
+        <!-- GIF block -->
+        <div class="block-gif u-hide">
+            <p class="content-text">GIF:</p>
+            <input placeholder="Search for gifs" type="text" autocomplete="off" class="search-gifs entity-title">
+            <div class="throbber-loader u-hide">Loading…</div>
+            <div class="gif-results"></div>
+        </div>
+        <!-- Bookmark block -->
+        <div class="block-link u-hide">
+            <p class="content-text">Bookmark:</p>
+            <div><input placeholder="Type or paste a URL for embedding" type="text" autocomplete="off" class="link-embed entity-title"></div>
+            <p class="link-add u-hide">Preview link</p>
+            <div class="throbber-loader u-hide">Loading…</div>
+            <div class="link-preview">
+                <p class="preview-title"></p>
+                <span class="preview-provider"><a href="" target="_blank"></a></span>
+                <div class="preview-desc"></div>
+                <div class="preview-shots"></div>
+                <div class="preview-embed"></div>
+            </div>
+        </div>
+        <!-- Embed block -->
+        <div class="block-embed u-hide">
+            <p class="content-text">Embed:</p>
+            <div><input placeholder="Title" type="text" autocomplete="off" class="block-embed-title entity-title"></div>
+            <div><textarea placeholder="Embed code: Required" class="block-embed-code entity-text"></textarea></div>
+        </div>
+        <!-- Toggle card -->
+        <div class="block-toggle u-hide">
+            <p class="content-text">Toggle card:</p>
+            <div><input placeholder="Toggle header: Required" type="text" autocomplete="off" class="block-toggle-title entity-title"></div>
+            <div><textarea placeholder="Collapsible content: Required" class="block-toggle-desc entity-text"></textarea></div>
+        </div>
+        <!-- Callout block -->
+        <div class="block-callout u-hide">
+            <p class="content-text">Callout:</p>
+            <div><input placeholder="Title" type="text" autocomplete="off" class="block-callout-title entity-title"></div>
+            <div><textarea placeholder="Description" class="block-callout-desc entity-text"></textarea></div>
+            <div class="block-callout-colors">
+                <span class="color-a selected"></span>
+                <span class="color-b"></span>
+                <span class="color-c"></span>
+                <span class="color-d"></span>
+                <span class="color-e"></span>
+                <span class="color-f"></span>
+                <span class="color-g"></span>
+                <span class="color-h"></span>
+            </div>
+        </div>
+        <!-- People block -->
+        <div class="block-people u-hide">
+            <p class="content-text">People block:</p>
+            <div><input placeholder="Title" type="text" class="people-title" spellcheck="false" value=""></div>
+            <div><textarea placeholder="Description" class="people-desc"></textarea></div>
+            <p class="content-text">Add people:</p>
+            <input type="text" class="person-input input" placeholder="Name or Email of person" autocomplete="off" spellcheck="false">
+            <div class="persons-list"></div>
+        </div>
+        <!-- Logos block -->
+        <div class="block-logos u-hide">
+            <p class="content-text">Logos block:</p>
+            <div><input placeholder="Title" type="text" class="logos-title" spellcheck="false" value=""></div>
+            <div><textarea placeholder="Description" class="logos-desc"></textarea></div>
+            <p class="content-text">Add partners:</p>
+            <input type="text" class="partner-input input" placeholder="Name or Email of partner" autocomplete="off" spellcheck="false">
+            <div class="partners-list"></div>
+        </div>
+        <!-- Breather block -->
+        <div class="block-breather u-hide">
+            <p class="content-text">Breather:</p>
+            <div><input placeholder="Title: Required" type="text" autocomplete="off" class="block-breather-title entity-title"></div>
+            <div><textarea placeholder="Description" class="block-breather-desc entity-text"></textarea></div>
+            <div><input placeholder="Image URL: Required" type="text" class="block-breather-image js-select-image" spellcheck="false" value=""></div>
+            <div><input placeholder="Link URL" type="text" class="block-breather-link" spellcheck="false" value=""></div>
+        </div>
+        <!-- Button block -->
+        <div class="block-button u-hide">
+            <p class="content-text">Button block:</p>
+            <div><input placeholder="Button title" type="text" autocomplete="off" class="block-button-title entity-title"></div>
+            <div><input placeholder="Button URL" type="text" autocomplete="off" class="block-button-url entity-title"></div>
+            <div class="block-button-colors">
+                <span class="color-a selected"></span>
+                <span class="color-b"></span>
+                <span class="color-c"></span>
+                <span class="color-d"></span>
+                <span class="color-e"></span>
+                <span class="color-f"></span>
+                <span class="color-g"></span>
+                <span class="color-h"></span>
+            </div>
+        </div>
+        <!-- Discussion block -->
+        <div class="block-discussion u-hide">
+            <p class="content-text">Discussion block:</p>
+            <div><input placeholder="Search for discussions" type="text" autocomplete="off" class="search-discussions entity-title"></div>
+        </div>
+        <!-- MCQ block -->
+        <div class="block-mcq u-hide">
+            <p class="content-text">MCQ block:</p>
+            <div><input placeholder="Question" type="text" autocomplete="off" class="block-mcq-title entity-title"></div>
+            <label class="is-multiple-label">
+                <input class="checkbox" type="checkbox" name="is-multiple-input"> <span>Has more than one correct answer?</span>
+            </label>
+        </div>
+        <!-- Journaling block -->
+        <div class="block-journal u-hide">
+            <p class="content-text">Journaling block:</p>
+            <div><input placeholder="Title" type="text" autocomplete="off" class="block-journaling-title entity-title"></div>
+            <div><textarea placeholder="Description" class="block-journaling-text entity-text"></textarea></div>
+            <p class="content-text">Allow journaling via:</p>
+            <div class="select-journal">
+                <span class="journal-text selected">Write</span>
+                <span class="journal-file">Upload file</span>
+                <span class="journal-audio">Audio record</span>
+                <span class="journal-video">Video record</span>
+            </div>
+        </div>
+        <div class="block-save form-save">
+            <a class="js-save-block u-main-btn" href="#">Save</a>
+            <a class="js-delete-block u-delete-btn u-hide">Delete</a>
+        </div>
+    </div>
+</div>

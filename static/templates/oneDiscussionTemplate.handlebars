@@ -1,0 +1,188 @@
+{{!-- Discussion creation form --}}
+<div class="modal-box one-discussion">
+    <a class="modal-close js-close" href="#"></a>
+    {{!-- Discussion info --}}
+    <div class="discussion-info">
+        {{!-- User --}}
+        {{#if creator.dp}}
+            <a class="user-image user-label" target="_blank" href="/social/user/{{creator.username}}" style="background-image:url({{creator.dp.s}})" data-username="{{creator.username}}"></a>
+        {{else}}
+            <a class="user-initials user-label" target="_blank" href="/social/user/{{creator.username}}" data-username="{{creator.username}}">
+                <span>{{creator.initials}}</span>
+            </a>
+        {{/if}}
+        <span class="user-name">Posted by <b>{{creator.name}}</b> {{prettyDate created_at}}</span>
+        {{!-- Badge --}}
+        {{#if badge}}
+            <span class="badge-label" title="{{badge.desc}}" style="background-color:{{badge.color}}">{{badge.name}}</span>
+        {{/if}}
+    </div>
+    {{!-- Discussion content --}}
+    <div class="discussion-content">
+        <div class="discussion-title">
+            <input type="text" placeholder="Title" autocomplete="off" spellcheck="false" value="{{title}}" readonly>
+        </div>
+        {{!-- Text --}}
+        {{#is type 'text'}}
+            <div class="discussion-text form-text">
+                {{{desc}}}
+            </div>
+        {{!-- Link --}}
+        {{else}}{{#is type 'link'}}
+            <p class="discussion-provider">
+                <a href='{{provider.url}}' target="_blank"><span>{{provider.name}}</span></a>
+            </p>
+            <div class="discussion-text">
+                {{#if embed}}
+                    {{{embed}}}
+                    {{#if summary}}
+                        <div class="discussion-summary">{{{summary}}}</div>
+                    {{/if}}
+                {{else}}
+                    {{#if image.m}}
+                        <img class='discussion-image' src="{{image.l}}">
+                    {{/if}}
+                    {{#if desc}}
+                        {{desc}}
+                    {{else}}
+                        {{summary}}
+                    {{/if}}
+                {{/if}}
+            </div>
+        {{!-- Video --}}
+        {{else}}{{#is type 'video'}}
+            <p class="discussion-provider">
+                <a href='{{provider.url}}' target="_blank"><span>{{provider.name}}</span></a>
+            </p>
+            <div class="discussion-text">
+                {{{embed}}}
+                {{#if summary}}
+                    <div class="discussion-summary">{{{summary}}}</div>
+                {{/if}}
+            </div>
+        {{!-- File --}}
+        {{else}}{{#is type 'file'}}
+            <div class="discussion-provider">
+                {{#is provider.name 'Dropbox'}}
+                    <a href="{{provider.url}}" target="_blank">View on Dropbox</a>
+                {{else}}{{#is provider.name 'Google Drive'}}
+                    <a href="{{provider.url}}" target="_blank">View on Google Drive</a>
+                {{else}}
+                    {{#if file.size}}
+                        <a href="{{provider.url}}" target="_blank">Download ({{getFileSize file.size}})</a>
+                    {{/if}}
+                {{/is}}{{/is}}
+            </div>
+            {{#if image.m}}
+                <img class='discussion-image' src="{{image.l}}">
+            {{else}}
+                 <div class="file-type">
+                     <div class="{{getFileIcon file.ext}}">
+                         <label>{{file.ext}}</label>
+                     </div>
+                </div>
+            {{/if}}
+        {{!-- Image --}}
+        {{else}}{{#is type 'image'}}
+            <div class="discussion-provider">
+                {{#is provider.name 'Dropbox'}}
+                    <a href="{{provider.url}}" target="_blank">View on Dropbox</a>
+                {{else}}{{#is provider.name 'Google Drive'}}
+                    <a href="{{provider.url}}" target="_blank">View on Google Drive</a>
+                {{else}}
+                    {{#if file.size}}
+                        <a href="{{provider.url}}" target="_blank">Download ({{getFileSize file.size}})</a>
+                    {{/if}}
+                {{/is}}{{/is}}
+            </div>
+            <img class='discussion-image' src="{{image.l}}">
+        {{!-- Poll --}}
+        {{else}}{{#is type 'poll'}}
+            <p class="discussion-provider">{{getTotalVotes polls}}</p>
+            <div class="discussion-text content-poll">
+                {{#hasUserVoted polls}}
+                    <div class="polls-list">
+                        {{#each polls}}
+                            <div class="one-poll">
+                                <p class="row">
+                                    {{#hasCurrentUser this.voters}}
+                                        <span class='radio-cell selected'></span>
+                                    {{else}}
+                                        <span class='radio-cell'></span>
+                                    {{/hasCurrentUser}}
+                                    <span class='cell' data-pollid='{{this._id}}'>{{this.text}} {{getCounts this.voters.length ''}}</span>
+                                </p>
+                                <div class="row-bar">
+                                    <p class="row-percent" style="width: {{getPercentageVotes ../polls this._id}}%;"></p>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </div>
+                {{else}}
+                    <div class="polls-list not-voted">
+                        {{#each polls}}
+                            <div class="one-poll">
+                                <p class="row">
+                                    <span class='radio-cell'></span>
+                                    <span class='cell' data-pollid='{{this._id}}'>{{this.text}} {{getCounts this.voters.length ''}}</span>
+                                </p>
+                                <div class="row-bar">
+                                    <p class="row-percent"></p>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </div>
+                {{/hasUserVoted}}
+            </div>
+        {{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}
+    </div>
+    {{!-- Discussion tags --}}
+    {{#and tags tags.length}}
+        <div class="discussion-tags">
+            {{#each tags}}
+                <a href="/social/tag/{{slug}}" target="_blank">#{{name}}</a>
+            {{/each}}
+        </div>
+    {{/and}}
+    {{!-- Discussion actions --}}
+    <div class="discussion-actions">
+        <p class="discussion-toolbar">
+            {{#isCreator creator._id}}
+                <span class="edit-discussion" title="Edit discussion"></span>
+            {{/isCreator}}
+            <span class="tag-discussion" title="Tag discussion"></span>
+            {{#isCreator creator._id}}
+                <span class="edit-badge" title="Edit badge"></span>
+            {{/isCreator}}
+            {{#isCreatorOrAdmin creator._id}}
+                <span class="edit-moderators" title="Edit moderators"></span>
+                {{#isnt status 'featured'}}
+                    <span class="delete-discussion" title="Delete discussion"></span>
+                {{/isnt}}
+            {{/isCreatorOrAdmin}}
+            {{#isAdmin}}
+                {{#is status 'queued'}}
+                    <span class="feature-discussion" title="Feature discussion">Feature</span>
+                {{/is}}
+            {{/isAdmin}}
+        </p>
+        <p class="discussion-edit u-hide">
+            <span class="update-edit">Save</span>
+            <span class="cancel-edit">Cancel</span>
+        </p>
+    </div>
+    {{!-- Discussion comments --}}
+    <div class="discussion-comments">
+        {{!-- All comments --}}
+        <div class="all-comments">
+        </div>
+        {{!-- New comment --}}
+        <div class="new-comment form-text">
+            <div class="comment-text entity-text" placeholder="Write a comment..." data-placeholder="Write a comment..."></div>
+            <input name="submit" value="Add comment" class="entity-btn comment-btn js-submit" type="submit">
+            <label class="go-anon">
+                <input class="checkbox" type="checkbox" name="go-anon"><span> Go anonymous</span>
+            </label>
+        </div>
+    </div>
+</div>

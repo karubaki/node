@@ -1,0 +1,24 @@
+<div class="user-box">
+    {{#if dp}}
+        <div class="profile-image" style="background-image:url({{dp.s}})"></div>
+    {{else}}
+        <div class="profile-initials">
+            <p>{{initials}}</p>
+        </div>
+    {{/if}}
+    <div class="user-text">
+        <p class="name">{{name}}</p>
+        {{#if about}}
+            <p class="about">{{{about}}}</p>
+        {{/if}}
+        {{#isCreator _id}}
+            <p class="view-user">View profile</p>
+        {{else}}
+            {{#if is_follower}}
+                <p class="profile-follow selected">Following</p>
+            {{else}}
+                <p class="profile-follow">Follow</p>
+            {{/if}}
+        {{/isCreator}}
+    </div>
+</div>

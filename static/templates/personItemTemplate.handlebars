@@ -1,0 +1,16 @@
+<div class="item-main">
+    <p class="item-title person-name">{{name}}</p>
+    <p class="item-about">{{about}}</p>
+    {{#if image.m}}
+        {{#is type 'partner'}}
+            <div class="item-image person-image partner-image" style="background-image: url('{{image.m}}');"></div>
+        {{else}}
+            <div class="item-image person-image" style="background-image: url('{{image.m}}');"></div>
+        {{/is}}
+    {{else}}
+         <div class="item-type">
+             <p>{{initials}}</p>
+        </div>
+    {{/if}}
+    <p class="item-desc">{{{desc}}}</p>
+</div>

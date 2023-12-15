@@ -1,0 +1,20 @@
+{{#is permit_val 'invited'}}
+    <p class="user-initials"><span>{{getFirstChar email}}</span></p>
+    <p class="name">{{email}}</p>
+    <span class="remove-user u-delete">Remove</span>
+{{else}}
+    {{#if user.dp}}
+        <p class="user-image" style="background-image:url({{user.dp.s}})"></p>
+    {{else}}
+        <p class="user-initials"><span>{{user.initials}}</span></p>
+    {{/if}}
+    <p class="name">{{user.name}}</p>
+    {{#isCreator user._id}}
+        <span class="remove-user u-delete">Leave</span>
+    {{else}}
+        {{#is permit_val 'inactive'}}
+            <span class="add-user">Add</span>
+        {{/is}}
+        <span class="remove-user u-delete">Remove</span>
+    {{/isCreator}}
+{{/is}}

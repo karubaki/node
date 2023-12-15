@@ -1,0 +1,750 @@
+{{#is type 'header'}}
+    <!-- Default header -->
+    {{#and image image.bg}}
+        <div class="header-block with-bg">
+            <div class="header-bg" style="background-image:url({{image.bg}})"></div>
+    {{else}}
+        <div class="header-block">
+    {{/and}}
+        <div class="header-content">
+            <p class="header-title">{{{text.title}}}</p>
+            {{#if text.desc}}
+                <p class="header-desc">{{{text.desc}}}</p>
+            {{/if}}
+            {{#if button.url}}
+                <a href="{{button.url}}" class="block-btn"><span>{{button.text}}</span></a>
+            {{else}}{{#if button.embed}}
+                <a href="#" class="block-btn button-embed"><span>{{button.text}}</span></a>
+            {{/if}}{{/if}}
+            {{#if buttonb}}
+                {{#if buttonb.url}}
+                    <a href="{{buttonb.url}}" class="block-btn block-btnb"><span>{{buttonb.text}}</span></a>
+                {{else}}{{#if buttonb.embed}}
+                    <a href="#" class="block-btn button-embed block-btnb"><span>{{buttonb.text}}</span></a>
+                {{/if}}{{/if}}
+            {{/if}}
+        </div>
+        {{#if story}}
+            {{#or story.title story.text}}
+                {{#if story.url}}
+                    <a href="{{story.url}}" class="header-story" target="_blank">
+                        {{#if story.title}}<p class="header-story-title">{{story.title}}</p>{{/if}}
+                        {{#if story.text}}<p class="header-story-text">{{story.text}}</p>{{/if}}
+                    </a>
+                {{else}}
+                    <div class="header-story">
+                        {{#if story.title}}<p class="header-story-title">{{story.title}}</p>{{/if}}
+                        {{#if story.text}}<p class="header-story-text">{{story.text}}</p>{{/if}}
+                    </div>
+                {{/if}}
+            {{/or}}
+        {{/if}}
+    </div>
+{{else}}{{#is type 'header_video'}}
+    <!-- Header with video -->
+    <div class="header-block header-video">
+        {{#if url.embed}}
+            <div class="embed-block">
+                {{{url.embed}}}
+            </div>
+        {{/if}}
+        <div class="header-content">
+            <p class="header-title">{{{text.title}}}</p>
+            {{#if text.desc}}
+                <p class="header-desc">{{{text.desc}}}</p>
+            {{/if}}
+            {{#if button.url}}
+                <a href="{{button.url}}" class="block-btn"><span>{{button.text}}</span></a>
+            {{else}}{{#if button.embed}}
+                <a href="#" class="block-btn button-embed"><span>{{button.text}}</span></a>
+            {{/if}}{{/if}}
+            {{#if buttonb}}
+                {{#if buttonb.url}}
+                    <a href="{{buttonb.url}}" class="block-btn block-btnb"><span>{{buttonb.text}}</span></a>
+                {{else}}{{#if buttonb.embed}}
+                    <a href="#" class="block-btn button-embed block-btnb"><span>{{buttonb.text}}</span></a>
+                {{/if}}{{/if}}
+            {{/if}}
+        </div>
+    </div>
+{{else}}{{#is type 'header_bg'}}
+    <!-- Header with background image -->
+    <div class="header-block with-bg with-overlay">
+        <div class="header-bg" style="background-image:url({{image.bg}})"></div>
+        <div class="header-overlay"></div>
+        <div class="header-content">
+            <p class="header-title">{{{text.title}}}</p>
+            {{#if text.desc}}
+                <p class="header-desc">{{{text.desc}}}</p>
+            {{/if}}
+            {{#if button.url}}
+                <a href="{{button.url}}" class="block-btn"><span>{{button.text}}</span></a>
+            {{else}}{{#if button.embed}}
+                <a href="#" class="block-btn button-embed"><span>{{button.text}}</span></a>
+            {{/if}}{{/if}}
+            {{#if buttonb}}
+                {{#if buttonb.url}}
+                    <a href="{{buttonb.url}}" class="block-btn block-btnb"><span>{{buttonb.text}}</span></a>
+                {{else}}{{#if buttonb.embed}}
+                    <a href="#" class="block-btn button-embed block-btnb"><span>{{buttonb.text}}</span></a>
+                {{/if}}{{/if}}
+            {{/if}}
+        </div>
+    </div>
+{{else}}{{#is type 'header_media'}}
+    <!-- Header with center-aligned media -->
+    <div class="header-block with-media">
+        <div class="header-content">
+            <p class="header-title">{{{text.title}}}</p>
+            {{#if text.desc}}
+                <p class="header-desc">{{{text.desc}}}</p>
+            {{/if}}
+            {{#if button.url}}
+                <a href="{{button.url}}" class="block-btn"><span>{{button.text}}</span></a>
+            {{else}}{{#if button.embed}}
+                <a href="#" class="block-btn button-embed"><span>{{button.text}}</span></a>
+            {{/if}}{{/if}}
+            {{#if buttonb}}
+                {{#if buttonb.url}}
+                    <a href="{{buttonb.url}}" class="block-btn block-btnb"><span>{{buttonb.text}}</span></a>
+                {{else}}{{#if buttonb.embed}}
+                    <a href="#" class="block-btn button-embed block-btnb"><span>{{buttonb.text}}</span></a>
+                {{/if}}{{/if}}
+            {{/if}}
+        </div>
+        <div class="header-media">
+            {{#if url.embed}}
+                <div class="header-embed">
+                    {{{url.embed}}}
+                </div>
+            {{else}}
+                {{#and image image.m}}
+                    <div class="header-image" style="background-image:url({{image.m}})"></div>
+                {{/and}}
+            {{/if}}
+        </div>
+    </div>
+{{else}}{{#is type 'section'}}
+    <!-- Default section -->
+    <div class="section-block">
+        <div class="section-left-align">
+            <p class="section-title u-no-margin">{{{text.title}}}</p>
+        </div>
+        <div class="section-divider"></div>
+        <div class="section-right-align">
+            <div class="section-content">
+                {{#if text.desc}}
+                    <p class="section-desc">{{{text.desc}}}</p>
+                {{/if}}
+                <div class="section-btns">
+                    {{#if button.url}}
+                        <a href="{{button.url}}" class="block-btn"><span>{{button.text}}</span></a>
+                    {{else}}{{#if button.embed}}
+                        <a href="#" class="block-btn button-embed"><span>{{button.text}}</span></a>
+                    {{/if}}{{/if}}
+                    {{#if buttonb}}
+                        {{#if buttonb.url}}
+                            <a href="{{buttonb.url}}" class="block-btn block-btnb"><span>{{buttonb.text}}</span></a>
+                        {{else}}{{#if buttonb.embed}}
+                            <a href="#" class="block-btn button-embed block-btnb"><span>{{buttonb.text}}</span></a>
+                        {{/if}}{{/if}}
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+ {{else}}{{#is type 'section_basic'}}
+     <!-- Basic section -->
+    <div class="section-block">
+        <div class="section-center-align">
+            <div class="section-content">
+                <p class="section-title">{{{text.title}}}</p>
+                <div class="a-wavy-line"></div>
+                {{#if text.desc}}
+                    <p class="section-desc">{{{text.desc}}}</p>
+                {{/if}}
+                <div class="section-btns">
+                    {{#if button.url}}
+                        <a href="{{button.url}}" class="block-btn"><span>{{button.text}}</span></a>
+                    {{else}}{{#if button.embed}}
+                        <a href="#" class="block-btn button-embed"><span>{{button.text}}</span></a>
+                    {{/if}}{{/if}}
+                    {{#if buttonb}}
+                        {{#if buttonb.url}}
+                            <a href="{{buttonb.url}}" class="block-btn block-btnb"><span>{{buttonb.text}}</span></a>
+                        {{else}}{{#if buttonb.embed}}
+                            <a href="#" class="block-btn button-embed block-btnb"><span>{{buttonb.text}}</span></a>
+                        {{/if}}{{/if}}
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+{{else}}{{#is type 'section_media'}}
+    <!-- Section with media -->
+    {{#is orientation 'left'}}
+        <!-- Media on the left -->
+        <div class="section-block u-orientation-flip">
+            <div class="section-left-align">
+                <div class="section-media">
+                    {{#if url.embed}}
+                        <div class="section-embed">
+                            {{{url.embed}}}
+                        </div>
+                    {{else}}
+                        {{#and image image.m}}
+                            <img class="section-image" src="{{image.m}}" alt="{{stripScripts text.title}}">
+                        {{/and}}
+                    {{/if}}
+                </div>
+            </div>
+            <div class="section-divider"></div>
+            <div class="section-right-align">
+                <div class="section-content">
+                    <p class="section-title">{{{text.title}}}</p>
+                    {{#if text.desc}}
+                        <p class="section-desc">{{{text.desc}}}</p>
+                    {{/if}}
+                    <div class="section-btns">
+                        {{#if button.url}}
+                            <a href="{{button.url}}" class="block-btn"><span>{{button.text}}</span></a>
+                        {{else}}{{#if button.embed}}
+                            <a href="#" class="block-btn button-embed"><span>{{button.text}}</span></a>
+                        {{/if}}{{/if}}
+                        {{#if buttonb}}
+                            {{#if buttonb.url}}
+                                <a href="{{buttonb.url}}" class="block-btn block-btnb"><span>{{buttonb.text}}</span></a>
+                            {{else}}{{#if buttonb.embed}}
+                                <a href="#" class="block-btn button-embed block-btnb"><span>{{buttonb.text}}</span></a>
+                            {{/if}}{{/if}}
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{else}}
+        <!-- Media on the right -->
+        <div class="section-block">
+            <div class="section-left-align">
+                <div class="section-content">
+                    <p class="section-title">{{{text.title}}}</p>
+                    {{#if text.desc}}
+                        <p class="section-desc">{{{text.desc}}}</p>
+                    {{/if}}
+                    <div class="section-btns">
+                        {{#if button.url}}
+                            <a href="{{button.url}}" class="block-btn"><span>{{button.text}}</span></a>
+                        {{else}}{{#if button.embed}}
+                            <a href="#" class="block-btn button-embed"><span>{{button.text}}</span></a>
+                        {{/if}}{{/if}}
+                        {{#if buttonb}}
+                            {{#if buttonb.url}}
+                                <a href="{{buttonb.url}}" class="block-btn block-btnb"><span>{{buttonb.text}}</span></a>
+                            {{else}}{{#if buttonb.embed}}
+                                <a href="#" class="block-btn button-embed block-btnb"><span>{{buttonb.text}}</span></a>
+                            {{/if}}{{/if}}
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+            <div class="section-divider"></div>
+            <div class="section-right-align">
+                <div class="section-media">
+                    {{#if url.embed}}
+                        <div class="section-embed">
+                            {{{url.embed}}}
+                        </div>
+                    {{else}}
+                        {{#and image image.m}}
+                            <img class="section-image" src="{{image.m}}" alt="{{stripScripts text.title}}">
+                        {{/and}}
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    {{/is}}
+{{else}}{{#is type 'section_list'}}
+    <!-- Section with a list of items -->
+    <div class="section-block section-list">
+        <div class="section-left-align">
+            {{#each items}}
+                <div class="section-left-item">
+                    <p class="section-title u-no-margin">{{{title}}}</p>
+                    <div class="section-content">
+                        {{#if desc}}
+                            <p class="section-desc">{{{desc}}}</p>
+                        {{/if}}
+                        <div class="section-btns">
+                            {{#if button.url}}
+                                <a href="{{button.url}}" class="block-btn"><span>{{button.text}}</span></a>
+                            {{else}}{{#if button.embed}}
+                                <a href="#" class="block-btn button-embed"><span>{{button.text}}</span></a>
+                            {{/if}}{{/if}}
+                            {{#if buttonb}}
+                                {{#if buttonb.url}}
+                                    <a href="{{buttonb.url}}" class="block-btn block-btnb"><span>{{buttonb.text}}</span></a>
+                                {{else}}{{#if buttonb.embed}}
+                                    <a href="#" class="block-btn button-embed block-btnb"><span>{{buttonb.text}}</span></a>
+                                {{/if}}{{/if}}
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+        <div class="section-divider"></div>
+        <div class="section-right-align">
+            {{#each items}}
+                <div class="section-right-item">
+                    <div class="section-media">
+                        {{#if embed}}
+                            <div class="section-embed">
+                                {{{embed}}}
+                            </div>
+                        {{else}}
+                            {{#and image image.m}}
+                                <img class="section-image" src="{{image.m}}" alt="{{stripScripts text.title}}">
+                            {{/and}}
+                        {{/if}}
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+{{else}}{{#is type 'container'}}
+    <div class="container-block">
+        {{!- Empty container --}}
+        {{#is formula 'empty'}}
+            {{#if container_view}}
+                <div class="container-row sub-blocks custom-view view-as-{{container_view}}"></div>
+            {{else}}
+                <div class="container-row sub-blocks"></div>
+            {{/if}}
+        {{!- Projects container --}}
+        {{else}}{{#is formula 'projects'}}
+            {{#getRowsOfBlocks pages}}
+                {{#each this}}
+                    <div class="container-row">
+                        {{#each this}}
+                            <a class="body-text-block card-block" href="/{{url}}">
+                                {{#and this.image this.image.l}}
+                                    <div class="text-image-cover"><div class="text-image" style="background-image:url({{this.image.l}})"></div></div>
+                                {{/and}}
+                                {{#and color color.b}}
+                                    <p class="text-title" style="color:{{color.b}};">{{{this.title}}}</p>
+                                {{else}}
+                                    <p class="text-title">{{{this.title}}}</p>
+                                {{/and}}
+                                <p class="text-desc">{{{this.desc}}}</p>
+                            </a>
+                        {{/each}}
+                    </div>
+                {{/each}}
+            {{/getRowsOfBlocks}}
+        {{!- Events container --}}
+        {{else}}{{#is formula 'events'}}
+            {{#getRowsOfBlocks pages}}
+                {{#each this}}
+                    <div class="container-row">
+                        {{#each this}}
+                            <a class="body-text-block card-block" href="/{{url}}">
+                                {{#and this.image this.image.l}}
+                                    <div class="text-image-cover"><div class="text-image" style="background-image:url({{this.image.l}})"></div></div>
+                                {{/and}}
+                                {{#and color color.b}}
+                                    <p class="text-title" style="color:{{color.b}};">{{{this.title}}}</p>
+                                {{else}}
+                                    <p class="text-title">{{{this.title}}}</p>
+                                {{/and}}
+                                <p class="text-desc">{{{this.desc}}}</p>
+                            </a>
+                        {{/each}}
+                    </div>
+                {{/each}}
+            {{/getRowsOfBlocks}}
+        {{!- News, Blog, Directors, Resources --}}
+        {{else}}
+            {{#if container_view}}
+                <div class="container-row custom-view view-as-{{container_view}}">
+                    {{!- Mixed container --}}
+                    {{#is container_view 'mixed'}}
+                        {{!- First block --}}
+                        {{#each blocks}}
+                            {{#lt @index 1}}
+                                <div class="mixed-first">
+                                    <a class="body-text-block card-block" href="/article/{{slug}}">
+                                        {{#and this.url this.url.embed}}
+                                            <div class="embed-block">{{{this.url.embed}}}</div>
+                                        {{else}}
+                                            {{#and this.image this.image.m}}
+                                                <div class="text-image-cover"><div class="text-image" style="background-image:url({{this.image.m}})"></div></div>
+                                            {{/and}}
+                                        {{/and}}
+                                        <div class="content-wrapper">
+                                            <div class="title-wrapper">
+                                                {{#and color color.b}}
+                                                    <span class="text-title" style="color:{{color.b}};">{{{this.text.title}}}</span>
+                                                {{else}}
+                                                    <span class="text-title">{{{this.text.title}}}</span>
+                                                {{/and}}
+                                            </div>
+                                            <p class="text-desc">{{{this.text.desc}}}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            {{/lt}}
+                        {{/each}}
+                        {{!- Other blocks --}}
+                        <div class="mixed-others">
+                            {{#each blocks}}
+                                {{#gte @index 1}}
+                                    <a class="body-text-block card-block" href="/article/{{slug}}">
+                                        {{#and this.url this.url.embed}}
+                                            <div class="embed-block">{{{this.url.embed}}}</div>
+                                        {{else}}
+                                            {{#and this.image this.image.m}}
+                                                <div class="text-image-cover"><div class="text-image" style="background-image:url({{this.image.m}})"></div></div>
+                                            {{/and}}
+                                        {{/and}}
+                                        <div class="content-wrapper">
+                                            <div class="title-wrapper">
+                                                {{#and color color.b}}
+                                                    <span class="text-title" style="color:{{color.b}};">{{{this.text.title}}}</span>
+                                                {{else}}
+                                                    <span class="text-title">{{{this.text.title}}}</span>
+                                                {{/and}}
+                                            </div>
+                                        </div>
+                                    </a>
+                                {{/gte}}
+                            {{/each}}
+                        </div>
+                    {{else}}
+                        {{#each blocks}}
+                            <a class="body-text-block card-block" href="/article/{{slug}}">
+                                {{#and this.url this.url.embed}}
+                                    <div class="embed-block">{{{this.url.embed}}}</div>
+                                {{else}}
+                                    {{#and this.image this.image.m}}
+                                        <div class="text-image-cover"><div class="text-image" style="background-image:url({{this.image.m}})"></div></div>
+                                    {{/and}}
+                                {{/and}}
+                                <div class="content-wrapper">
+                                    <div class="title-wrapper">
+                                        {{#and color color.b}}
+                                            <span class="text-title" style="color:{{color.b}};">{{{this.text.title}}}</span>
+                                        {{else}}
+                                            <span class="text-title">{{{this.text.title}}}</span>
+                                        {{/and}}
+                                    </div>
+                                    <p class="text-desc">{{{this.text.desc}}}</p>
+                                </div>
+                            </a>
+                        {{/each}}
+                    {{/is}}
+                </div>
+            {{else}}
+                {{#getRowsOfBlocks blocks}}
+                    {{#each this}}
+                        <div class="container-row">
+                            {{#each this}}
+                                <a class="body-text-block card-block" href="/article/{{slug}}">
+                                    {{#and this.url this.url.embed}}
+                                        <div class="embed-block">{{{this.url.embed}}}</div>
+                                    {{else}}
+                                        {{#and this.image this.image.m}}
+                                            <div class="text-image-cover"><div class="text-image" style="background-image:url({{this.image.m}})"></div></div>
+                                        {{/and}}
+                                    {{/and}}
+                                    <div class="title-wrapper">
+                                        {{#and color color.b}}
+                                            <span class="text-title" style="color:{{color.b}};">{{{this.text.title}}}</span>
+                                        {{else}}
+                                            <span class="text-title">{{{this.text.title}}}</span>
+                                        {{/and}}
+                                    </div>
+                                    <p class="text-desc">{{{this.text.desc}}}</p>
+                                </a>
+                            {{/each}}
+                        </div>
+                    {{/each}}
+                {{/getRowsOfBlocks}}
+            {{/if}}
+        {{/is}}{{/is}}{{/is}}
+    </div>
+{{else}}{{#is type 'body_text'}}
+    <!-- Static card -->
+    <div class="container-block">
+        <div class="container-row static-block">
+            {{#is shape 'background'}}
+                <div class="body-text-block with-overlay">
+            {{else}}
+                <div class="body-text-block">
+            {{/is}}
+                {{#if image}}
+                    {{#if image.m}}
+                        {{#is shape 'square'}}
+                            <div class="text-image-cover shape-square">
+                                <div class="text-image" style="background-image:url({{image.m}})"></div>
+                            </div>
+                        {{else}}{{#is shape 'circle'}}
+                            <div class="text-image-cover shape-circle">
+                                <div class="text-image" style="background-image:url({{image.m}})"></div>
+                            </div>
+                        {{else}}{{#is shape 'background'}}
+                            <div class="text-bg" style="background-image:url({{image.m}})"></div>
+                            <div class="text-overlay"></div>
+                        {{else}}
+                            <div class="text-image-cover shape-rectangle">
+                                <div class="text-image" style="background-image:url({{image.m}})"></div>
+                            </div>
+                        {{/is}}{{/is}}{{/is}}
+                    {{/if}}
+                {{/if}}
+                {{#if text.title}}
+                    {{#and color color.b}}
+                        <p class="text-title" style="color:{{color.b}};">{{{text.title}}}</p>
+                    {{else}}
+                        <p class="text-title">{{{text.title}}}</p>
+                    {{/and}}
+                {{/if}}
+                {{#if text.label}}
+                    <p class="text-label">{{text.label}}</p>
+                {{/if}}
+                {{#if text.desc}}
+                    <p class="text-desc">{{{text.desc}}}</p>
+                {{/if}}
+                {{#if button.url}}
+                    <a href="{{button.url}}" class="block-btn"><span>{{button.text}}</span></a>
+                {{else}}{{#if button.embed}}
+                    <a href="#" class="block-btn button-embed"><span>{{button.text}}</span></a>
+                {{/if}}{{/if}}
+            </div>
+        </div>
+    </div>
+{{else}}{{#is type 'body_html'}}
+    <!-- Rich text -->
+    <div class="container-block">
+        <div class="html-block">{{{text.html}}}</div>
+    </div>
+{{else}}{{#is type 'body_embed'}}
+    <!-- Embed -->
+    <div class="body-embed-block">
+        {{#if text.title}}
+            <p class="text-title">{{{text.title}}}</p>
+        {{/if}}
+        {{#if text.desc}}
+            <p class="text-desc">{{{text.desc}}}</p>
+        {{/if}}
+        {{#if button.url}}
+            <a href="{{button.url}}" class="block-btn"><span>{{button.text}}</span></a>
+        {{else}}{{#if button.embed}}
+            <a href="#" class="block-btn button-embed"><span>{{button.text}}</span></a>
+        {{/if}}{{/if}}
+        {{#if buttonb}}
+            {{#if buttonb.url}}
+                <a href="{{buttonb.url}}" class="block-btn block-btnb"><span>{{buttonb.text}}</span></a>
+            {{else}}{{#if buttonb.embed}}
+                <a href="#" class="block-btn button-embed block-btnb"><span>{{buttonb.text}}</span></a>
+            {{/if}}{{/if}}
+        {{/if}}
+        <div class="embed-block">
+            {{{url.embed}}}
+        </div>
+    </div>
+{{else}}{{#is type 'body_carousel'}}
+    <!-- Default carousel -->
+    <div class="gallery-block">
+        {{#each gallery}}
+            <div class="gallery-image" style="background-image:url({{file.l}}); width: {{bound}}px;">
+                {{#if title}}
+                    {{#if button.url}}
+                        <p class="gallery-title">
+                            <a href="{{button.url}}" target="_blank">{{title}}</a>
+                        </p>
+                    {{else}}
+                        <p class="gallery-title">{{title}}</p>
+                    {{/if}}
+                {{/if}}
+            </div>
+        {{/each}}
+    </div>
+{{else}}{{#is type 'body_carousel_text'}}
+    <!-- Text carousel -->
+    <div class="carousel-text-block">
+        <div class="carousel-tabs">
+            {{#each gallery}}
+                {{#if title}}
+                    <span class="tab-title">{{title}}</span>
+                {{/if}}
+            {{/each}}
+        </div>
+        <div class="carousel-blocks">
+            {{#each gallery}}
+                <div class="carousel-block">
+                    <div class="carousel-left-align">
+                        <p class="text-title">{{{title}}}</p>
+                        {{#if desc}}
+                            <p class="text-desc">{{{desc}}}</p>
+                        {{/if}}
+                        <div class="carousel-btns">
+                            {{#if button.url}}
+                                <a href="{{button.url}}" class="block-btn"><span>{{button.text}}</span></a>
+                            {{else}}{{#if button.embed}}
+                                <a href="#" class="block-btn button-embed"><span>{{button.text}}</span></a>
+                            {{/if}}{{/if}}
+                            {{#if buttonb}}
+                                {{#if buttonb.url}}
+                                    <a href="{{buttonb.url}}" class="block-btn block-btnb"><span>{{buttonb.text}}</span></a>
+                                {{else}}{{#if buttonb.embed}}
+                                    <a href="#" class="block-btn button-embed block-btnb"><span>{{buttonb.text}}</span></a>
+                                {{/if}}{{/if}}
+                            {{/if}}
+                        </div>
+                    </div>
+                    <div class="carousel-divider"></div>
+                    <div class="carousel-right-align">
+                        <div class="carousel-media">
+                            {{#if embed}}
+                                <div class="carousel-embed">
+                                    {{{embed}}}
+                                </div>
+                            {{else}}
+                                {{#and file file.l}}
+                                    <img class="carousel-image" src="{{file.l}}" alt="{{stripScripts title}}">
+                                {{/and}}
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+{{else}}{{#is type 'people'}}
+    <!-- People -->
+    <div class="people-block">
+        {{#if text.title}}
+            {{#and color color.b}}
+                <p class="text-title" style="color:{{color.b}};">{{{text.title}}}</p>
+            {{else}}
+                <p class="text-title">{{{text.title}}}</p>
+            {{/and}}
+        {{/if}}
+        <div class="all-people container-block">
+            {{#if container_view}}
+                <div class="container-row custom-view view-as-{{container_view}}">
+                    {{#each people}}
+                        {{#if this.url}}<div class="body-text-block card-block with-btn">{{else}}<div class="body-text-block card-block">{{/if}}
+                            {{#and this.image this.image.l}}
+                                <div class="text-image-cover"><div class="text-image" style="background-image:url({{this.image.l}})"></div></div>
+                            {{/and}}
+                            <p class="text-title">{{{this.name}}}</p>
+                            <p class="text-about">{{{this.about}}}</p>
+                            <p class="text-desc">{{{this.desc}}}</p>
+                            {{#isnt ../container_view 'carousel'}}
+                                {{#if this.url}}
+                                    <a class="block-btn" target="_blank" href="{{this.url}}">
+                                        <span>Find more about {{getFirstName this.name}}</span>
+                                    </a>
+                                {{/if}}
+                            {{/isnt}}
+                        </div>
+                    {{/each}}
+                </div>
+            {{else}}
+                {{#getRowsOfBlocks people}}
+                    {{#each this}}
+                        <div class="container-row">
+                            {{#each this}}
+                                {{#if this.url}}<div class="body-text-block card-block with-btn">{{else}}<div class="body-text-block card-block">{{/if}}
+                                    {{#and this.image this.image.l}}
+                                        <div class="text-image-cover"><div class="text-image" style="background-image:url({{this.image.l}})"></div></div>
+                                    {{/and}}
+                                    <p class="text-title">{{{this.name}}}</p>
+                                    <p class="text-about">{{{this.about}}}</p>
+                                    <p class="text-desc">{{{this.desc}}}</p>
+                                    {{#if this.url}}
+                                        <a class="block-btn" target="_blank" href="{{this.url}}">
+                                            <span>Find more about {{getFirstName this.name}}</span>
+                                        </a>
+                                    {{/if}}
+                                </div>
+                            {{/each}}
+                        </div>
+                    {{/each}}
+                {{/getRowsOfBlocks}}
+            {{/if}}
+        </div>
+    </div>
+{{else}}{{#is type 'logos'}}
+    <!-- Logos -->
+    <div class="logos-block">
+        {{#if text.title}}
+            <p class="text-title">{{{text.title}}}</p>
+        {{/if}}
+        <div class="all-logos">
+            {{#each people}}
+                <a class="one-logo" href="{{url}}" target="_blank" title="{{name}}" style="background-image:url({{image.l}})"></a>
+            {{/each}}
+        </div>
+    </div>
+{{else}}{{#is type 'breather'}}
+    <!-- Breather -->
+    <div class="breather-block">
+        <div class="breather-bg" style="background-image:url({{image.bg}})"></div>
+        <div class="breather-content">
+            <p class="text-title">{{{text.title}}}</p>
+            {{#if text.desc}}
+                <p class="text-desc">{{{text.desc}}}</p>
+            {{/if}}
+            {{#if button.url}}
+                <a href="{{button.url}}" class="block-btn"><span>{{button.text}}</span></a>
+            {{else}}{{#if button.embed}}
+                <a href="#" class="block-btn button-embed"><span>{{button.text}}</span></a>
+            {{/if}}{{/if}}
+            {{#if buttonb}}
+                {{#if buttonb.url}}
+                    <a href="{{buttonb.url}}" class="block-btn block-btnb"><span>{{buttonb.text}}</span></a>
+                {{else}}{{#if buttonb.embed}}
+                    <a href="#" class="block-btn button-embed block-btnb"><span>{{buttonb.text}}</span></a>
+                {{/if}}{{/if}}
+            {{/if}}
+        </div>
+    </div>
+{{else}}{{#is type 'calendar'}}
+    <!-- Calendar -->
+    <div class="calendar-block">
+        {{#if text.title}}
+            {{#and color color.b}}
+                <p class="text-title" style="color:{{color.b}};">{{{text.title}}}</p>
+            {{else}}
+                <p class="text-title">{{{text.title}}}</p>
+            {{/and}}
+        {{/if}}
+        <div class="all-events">
+            {{#each events}}
+                <div class="one-event">
+                    {{#and image image.m}}
+                        <div class="event-media">
+                            <div class="event-image" style="background-image:url({{image.m}})"></div>
+                        </div>
+                    {{/and}}
+                    <div class="event-content">
+                        <p class="event-date">{{fullDate date.start date.end}}</p><br>
+                        {{#if url}}
+                            <a class="event-title" href="{{url}}" target="_blank">{{title}}</a>
+                        {{else}}
+                            <p class="event-title">{{title}}</p>
+                        {{/if}}
+                        {{#if desc}}
+                            <p class="event-desc">{{{desc}}}</p>
+                        {{/if}}
+                        {{#if location}}
+                            <a class="event-location" href="{{location}}" target="_blank">Join here</a>
+                        {{/if}}
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}

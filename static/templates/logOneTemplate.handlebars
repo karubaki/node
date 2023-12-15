@@ -1,0 +1,70 @@
+<div class="activity-info">
+    <p class="activity-date">{{activityTime created_at}}</p>
+</div>
+<div class="activity-user">
+    {{#if creator.dp}}
+        <div class="user-image" style="background-image:url({{creator.dp.s}})"></div>
+    {{else}}
+        <div class="user-initials"><span>{{creator.initials}}</span></div>
+    {{/if}}
+</div>
+<div class="activity-content">
+    {{#isCreator creator._id}}
+        <span class="user-name">You</span>
+    {{else}}
+        <span class="user-name">{{getSignature creator.name}}</span>
+    {{/isCreator}}
+    {{#is type 'page'}}
+        {{!-- Page --}}
+        {{#is action 'add'}}
+            {{!-- Page created --}}
+            <span class="activity-title"> created the page:
+                <a href="/dashboard/page/{{entity.page._id}}" target="_blank">{{entity.page.title}}</a>
+            </span>
+        {{else}}{{#is action 'delete'}}
+            {{!-- Page deleted --}}
+            <span class="activity-title"> deleted the page:
+                <b>{{title}}</b>
+            </span>
+        {{/is}}{{/is}}
+    {{else}}{{#is type 'article'}}
+        {{!-- Article --}}
+        {{#is action 'add'}}
+            {{!-- Article created --}}
+            <span class="activity-title"> created the article:
+                <a href="/dashboard/article/{{entity.article._id}}" target="_blank">{{entity.article.text.title}}</a>
+            </span>
+        {{else}}{{#is action 'delete'}}
+            {{!-- Article deleted --}}
+            <span class="activity-title"> deleted the article:
+                <b>{{title}}</b>
+            </span>
+        {{/is}}{{/is}}
+    {{else}}{{#is type 'person'}}
+        {{!-- Person --}}
+        {{#is action 'add'}}
+            {{!-- Person created --}}
+            <span class="activity-title"> created the {{entity.person.type}}:
+                <b data-id="{{entity.person._id}}">{{entity.person.name}}</b>
+            </span>
+        {{else}}{{#is action 'delete'}}
+            {{!-- Person deleted --}}
+            <span class="activity-title"> deleted the person:
+                <b>{{title}}</b>
+            </span>
+        {{/is}}{{/is}}
+    {{else}}{{#is type 'file'}}
+        {{!-- File --}}
+        {{#is action 'add'}}
+            {{!-- File created --}}
+            <span class="activity-title"> created the file:
+                <a href="{{entity.file.url}}" target="_blank">{{entity.file.title}}</a>
+            </span>
+        {{else}}{{#is action 'delete'}}
+            {{!-- File deleted --}}
+            <span class="activity-title"> deleted the file:
+                <b>{{title}}</b>
+            </span>
+        {{/is}}{{/is}}
+    {{/is}}{{/is}}{{/is}}{{/is}}
+</div>

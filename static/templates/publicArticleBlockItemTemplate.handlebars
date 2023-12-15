@@ -1,0 +1,248 @@
+{{#is type 'text'}}
+    <div class="body-text-block">
+        <div class="text-desc">{{{text}}}</div>
+    </div>
+{{else}}{{#is type 'gallery'}}
+    <div class="gallery-block">
+        {{#each gallery}}
+            <div class="gallery-image" style="background-image:url({{file.l}}); width: {{bound}}px;">
+                {{#if title}}
+                    {{#if button.url}}
+                        <p class="gallery-title">
+                            <a href="{{button.url}}" target="_blank">{{title}}</a>
+                        </p>
+                    {{else}}
+                        <p class="gallery-title">{{title}}</p>
+                    {{/if}}
+                {{/if}}
+            </div>
+        {{/each}}
+    </div>
+{{else}}{{#is type 'image'}}
+    {{#if title}}<p class="block-title">{{title}}</p>{{/if}}
+    <div class="image-block"><img src="{{image.l}}" alt="{{title}}"></div>
+{{else}}{{#is type 'audio'}}
+    {{#if title}}<p class="block-title">{{title}}</p>{{/if}}
+    <div class="audio-block">
+        <audio src="{{provider.url}}" preload="auto" controls></audio>
+    </div>
+{{else}}{{#is type 'video'}}
+    {{#if title}}<p class="block-title">{{title}}</p>{{/if}}
+    <div class="video-block">
+        <video class="video-js view-video" width="860" height="483" preload="auto" controls>
+            <source src="{{provider.url}}" type="video/mp4">
+        </video>
+    </div>
+{{else}}{{#is type 'file'}}
+    <div class="file-block block-table">
+        <div class="block-type file-type">
+             <div class="{{getFileIcon file.ext}}">
+                 <label>{{file.ext}}</label>
+             </div>
+        </div>
+        <div class="block-details">
+            <p class="block-title">{{title}}</p>
+            <p class="block-provider">
+                <a href='{{provider.url}}' target="_blank">
+                    <span>{{provider.name}}</span>
+                    {{#if file.size}}
+                        <span>| {{getFileSize file.size}}</span>
+                    {{/if}}
+                </a>
+            </p>
+        </div>
+    </div>
+{{else}}{{#is type 'gif'}}
+    <div class="gif-block">
+        <video autoplay loop muted width="{{gif.width}}px;" height="{{gif.height}}px;" src="{{gif.embed}}">
+        </video>
+    </div>
+{{else}}{{#is type 'link'}}
+    <div class="link-block block-table">
+        {{#if embed}}
+            <div class="block-embed">{{{embed}}}</div>
+        {{else}}{{#if image.m}}
+            <div class="block-image" style="background-image: url('{{image.m}}'); height: {{bound}}px;"></div>
+        {{/if}}{{/if}}
+        {{#if embed}}<div class="block-details with-embed">{{else}}<div class="block-details">{{/if}}
+            <p class="block-title">{{title}}</p>
+            <p class="block-provider">
+                <a href='{{provider.url}}' target="_blank">
+                    <span>{{provider.name}}</span>
+                    {{#if file.size}}
+                        <span>| {{getFileSize file.size}}</span>
+                    {{/if}}
+                </a>
+            </p>
+            <p class="block-text">{{{text}}}</p>
+        </div>
+    </div>
+{{else}}{{#is type 'embed'}}
+    <div class="embed-block">
+        {{#if title}}<p class="block-title">{{title}}</p>{{/if}}
+        <div class="embed-block">
+            {{{embed}}}
+        </div>
+    </div>
+{{else}}{{#is type 'toggle'}}
+    <div class="toggle-block">
+        <p class="block-title">{{title}}</p>
+        <p class="block-desc u-hide">{{desc}}</p>
+    </div>
+{{else}}{{#is type 'callout'}}
+    <div class="callout-block" style="background-color: {{color.back}}; border-color: {{color.border}};">
+        {{#if title}}<p class="block-title">{{title}}</p>{{/if}}
+        {{#if desc}}<p class="block-desc">{{desc}}</p>{{/if}}
+    </div>
+{{else}}{{#is type 'people'}}
+    <div class="people-block">
+        {{#if title}}<p class="block-title">{{title}}</p>{{/if}}
+        {{#if desc}}<p class="block-desc">{{desc}}</p>{{/if}}
+        <div class="all-people container-block">
+            {{#getRowsOfBlocks people}}
+                {{#each this}}
+                    <div class="container-row">
+                        {{#each this}}
+                            {{#if this.url}}<div class="body-text-block card-block with-btn">{{else}}<div class="body-text-block card-block">{{/if}}
+                                {{#and this.image this.image.l}}
+                                    <div class="text-image-cover"><div class="text-image" style="background-image:url({{this.image.l}})"></div></div>
+                                {{/and}}
+                                <p class="text-title">{{{this.name}}}</p>
+                                <p class="text-about">{{{this.about}}}</p>
+                                <p class="text-desc">{{{this.desc}}}</p>
+                                {{#if this.url}}
+                                    <a class="block-btn" target="_blank" href="{{this.url}}">
+                                        <span>Find more about {{getFirstName this.name}}</span>
+                                    </a>
+                                {{/if}}
+                            </div>
+                        {{/each}}
+                    </div>
+                {{/each}}
+            {{/getRowsOfBlocks}}
+        </div>
+    </div>
+{{else}}{{#is type 'logos'}}
+    <div class="logos-block">
+        {{#if title}}<p class="block-title">{{title}}</p>{{/if}}
+        {{#if desc}}<p class="block-desc">{{desc}}</p>{{/if}}
+        <div class="all-logos">
+            {{#each people}}
+                <a class="one-logo" href="{{url}}" target="_blank" title="{{name}}" style="background-image:url({{image.l}})"></a>
+            {{/each}}
+        </div>
+    </div>
+{{else}}{{#is type 'breather'}}
+    <div class="breather-block">
+        <div class="breather-bg" style="background-image:url({{image.bg}})"></div>
+        <div class="breather-content">
+            {{#and button button.url}}
+                <p class="text-title"><a href="{{button.url}}" target="_blank">{{title}}</a></p>
+            {{else}}
+                <p class="text-title">{{title}}</p>
+            {{/and}}
+            {{#if desc}}
+                <p class="text-desc">{{{desc}}}</p>
+            {{/if}}
+        </div>
+    </div>
+{{else}}{{#is type 'button'}}
+    <div class="button-block">
+        {{#if button.back_color}}
+            <a href="{{button.url}}" target="_blank" style="background-color: {{button.back_color}}; color: #fff; font-weight:600;">{{button.text}}</a>
+        {{else}}
+            <a href="{{button.url}}" target="_blank">{{button.text}}</a>
+        {{/if}}
+    </div>
+{{else}}{{#is type 'mcq'}}
+    <div class="mcq-block">
+        <p class="block-title">{{title}}</p>
+        {{#and mcqs mcqs.length}}
+            <div class="block-options">
+            {{#each mcqs}}
+                <div class="block-option block-table">
+                    {{#if image.m}}
+                        <div class="block-image" style="background-image: url('{{image.m}}'); height: {{bound}}px;"></div>
+                    {{/if}}
+                    <div class="block-details">
+                        <p class="block-text">{{{text}}}</p>
+                    </div>
+                </div>
+            {{/each}}
+            </div>
+        {{/and}}
+    </div>
+{{else}}{{#is type 'journal'}}
+    <div class="journal-block">
+        <p class="block-title">{{title}}</p>
+        <p class="block-text">{{{text}}}</p>
+        {{#is journal_type 'text'}}
+            {{#and answers answers.length}}
+                <textarea placeholder="Write your thoughts/answer here..." class="text-journal-answer entity-text">{{{answers.0.text}}}</textarea>
+                <a class="js-submit-journal js-update-journal entity-btn" href="#">Update</a>
+                <span class="remove-journal u-delete">Remove</span>
+            {{else}}
+                <textarea placeholder="Write your thoughts/answer here..." class="text-journal-answer entity-text"></textarea>
+                <a class="js-submit-journal entity-btn" href="#">Submit</a>
+            {{/and}}
+        {{else}}{{#is journal_type 'audio'}}
+            {{#and answers answers.length}}
+                <audio class="video-js view-audio" width="480" height="360" preload="auto" controls>
+                    <source src="{{answers.0.provider.url}}" type="audio/webm">
+                </audio>
+                <span class="remove-journal u-delete">Remove</span>
+            {{else}}
+                <audio id="journal-{{_id}}" class="video-js journal-audio vjs-default-skin"></audio>
+                <p class="block-text">Click microphone above to record your audio</p>
+                <form method="post" action="https://mgiep-files.s3.amazonaws.com/" enctype="multipart/form-data" class="audio-journal-answer">
+                    <div class="audio-journal-drop">
+                        <input type="hidden" name="key">
+                        <input type="hidden" name="AWSAccessKeyId" value="AKIAIT3BY3EDOZPAPDEQ">
+                        <input type="hidden" name="acl" value="public-read">
+                        <input type="hidden" name="policy">
+                        <input type="hidden" name="signature">
+                        <input type="hidden" name="success-action-status" value="201">
+                        <input type="hidden" name="Content-Type">
+                        <input type="file" name="file" class="file-input">
+                    </div>
+                </form>
+            {{/and}}
+        {{else}}{{#is journal_type 'video'}}
+            {{#and answers answers.length}}
+                <video class="video-js view-video" width="480" height="360" preload="auto" controls>
+                    <source src="{{answers.0.provider.url}}" type="video/webm">
+                </video>
+                <span class="remove-journal u-delete">Remove</span>
+            {{else}}
+                <video id="journal-{{_id}}" class="video-js journal-video vjs-default-skin"></video>
+                <p class="block-text">Click microphone above to record your video</p>
+                <form method="post" action="https://mgiep-files.s3.amazonaws.com/" enctype="multipart/form-data" class="video-journal-answer">
+                    <div class="video-journal-drop">
+                        <input type="hidden" name="key">
+                        <input type="hidden" name="AWSAccessKeyId" value="AKIAIT3BY3EDOZPAPDEQ">
+                        <input type="hidden" name="acl" value="public-read">
+                        <input type="hidden" name="policy">
+                        <input type="hidden" name="signature">
+                        <input type="hidden" name="success-action-status" value="201">
+                        <input type="hidden" name="Content-Type">
+                        <input type="file" name="file" class="file-input">
+                    </div>
+                </form>
+            {{/and}}
+        {{else}}{{#is journal_type 'file'}}
+            <form method="post" action="https://mgiep-files.s3.amazonaws.com/" enctype="multipart/form-data" class="file-journal-answer">
+                <div class="file-journal-drop">
+                    <span>Choose files or drag and drop them here</span>
+                    <input type="hidden" name="key">
+                    <input type="hidden" name="AWSAccessKeyId" value="AKIAIT3BY3EDOZPAPDEQ">
+                    <input type="hidden" name="acl" value="public-read">
+                    <input type="hidden" name="policy">
+                    <input type="hidden" name="signature">
+                    <input type="hidden" name="success-action-status" value="201">
+                    <input type="hidden" name="Content-Type">
+                    <input type="file" name="file" class="file-input">
+                </div>
+            </form>
+        {{/is}}{{/is}}{{/is}}{{/is}}
+    </div>
+{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}

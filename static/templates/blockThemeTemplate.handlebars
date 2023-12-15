@@ -1,0 +1,176 @@
+<div class="overlay-box overlay-large">
+    <a class="overlay-close js-close" href="#"></a>
+    <div class="contentForm theme-panel">
+        <!-- View type -->
+        <div class="view-select u-hide">
+            <p class="content-text">View cards in container as:</p>
+            <p class="content-choose">
+                <span class="choose-card">Card</span>
+                <span class="choose-list u-hide">List</span>
+                <span class="choose-mixed u-hide">Mixed</span>
+                <span class="choose-carousel">Carousel</span>
+            </p>
+        </div>
+        <!-- Color or theme -->
+        <div class="expand-section expand-color">
+            <h3 class="content-header">Color or theme</h3>
+            <!-- Color -->
+            <div class="color-select u-hide">
+                <p class="content-text">Block color:</p>
+                <div class="u-one-half">
+                    <div><input placeholder="Background color" type="text" class="color-bg js-show-colorpicker" spellcheck="false" value=""></div>
+                    <div><input placeholder="Text color" type="text" class="color-text js-show-colorpicker" spellcheck="false" value=""></div>
+                </div>
+                <p class="content-text">Button color:</p>
+                <div class="u-one-half">
+                    <div><input placeholder="Background color" type="text" class="color-btn-bg js-show-colorpicker" spellcheck="false" value=""></div>
+                    <div><input placeholder="Text color" type="text" class="color-btn-text js-show-colorpicker" spellcheck="false" value=""></div>
+                </div>
+            </div>
+            <!-- Theme -->
+            <div class="theme-select u-hide">
+                <p class="content-text">or select a theme:</p>
+                <div class="block-themes">
+                    <div class="one-theme theme-a" data-theme="theme-a"></div>
+                    <div class="one-theme theme-b" data-theme="theme-b"></div>
+                    <div class="one-theme theme-c" data-theme="theme-c"></div>
+                    <div class="one-theme theme-d" data-theme="theme-d"></div>
+                    <div class="one-theme theme-e" data-theme="theme-e"></div>
+                    <div class="one-theme theme-f" data-theme="theme-f"></div>
+                    <div class="one-theme theme-g" data-theme="theme-g"></div>
+                    <div class="one-theme theme-h" data-theme="theme-h"></div>
+                </div>
+            </div>
+            <!-- Gradient -->
+            <div class="gradient-select u-hide">
+                <p class="content-text">or add a <a href="https://uigradients.com/" target="_blank">linear gradient</a> to block background:</p>
+                <div class="u-one-fourth">
+                    <div><input placeholder="Angle (0-360)" type="text" class="gradient-angle" spellcheck="false" value=""></div>
+                    <div><input placeholder="Starting color at 0%" type="text" class="gradient-start js-show-colorpicker" spellcheck="false" value=""></div>
+                    <div><input placeholder="Option color at 50%" type="text" class="gradient-middle js-show-colorpicker" spellcheck="false" value=""></div>
+                    <div><input placeholder="End color at 100%" type="text" class="gradient-end js-show-colorpicker" spellcheck="false" value=""></div>
+                </div>
+            </div>
+        </div>
+        <!-- Padding -->
+        <div class="expand-section expand-padding">
+            <h3 class="content-header">Padding or internal spacing</h3>
+            <div class="padding-select u-hide">
+                <p class="content-text">Block padding:</p>
+                <div class="u-one-fourth">
+                    <div><input placeholder="Top" type="text" class="padding-top" spellcheck="false" value=""></div>
+                    <div><input placeholder="Right" type="text" class="padding-right" spellcheck="false" value=""></div>
+                    <div><input placeholder="Bottom" type="text" class="padding-bottom" spellcheck="false" value=""></div>
+                    <div><input placeholder="Left" type="text" class="padding-left" spellcheck="false" value=""></div>
+                </div>
+                <p class="content-text">Button padding:</p>
+                <div class="u-one-fourth">
+                    <div><input placeholder="Top" type="text" class="padding-btn-top" spellcheck="false" value=""></div>
+                    <div><input placeholder="Right" type="text" class="padding-btn-right" spellcheck="false" value=""></div>
+                    <div><input placeholder="Bottom" type="text" class="padding-btn-bottom" spellcheck="false" value=""></div>
+                    <div><input placeholder="Left" type="text" class="padding-btn-left" spellcheck="false" value=""></div>
+                </div>
+            </div>
+        </div>
+        <!-- Margin -->
+        <div class="expand-section expand-margin">
+            <h3 class="content-header">Margin or external spacing</h3>
+            <div class="margin-select u-hide">
+                <p class="content-text">Block margin:</p>
+                <div class="u-one-fourth">
+                    <div><input placeholder="Top" type="text" class="margin-top" spellcheck="false" value=""></div>
+                    <div><input placeholder="Right" type="text" class="margin-right" spellcheck="false" value=""></div>
+                    <div><input placeholder="Bottom" type="text" class="margin-bottom" spellcheck="false" value=""></div>
+                    <div><input placeholder="Left" type="text" class="margin-left" spellcheck="false" value=""></div>
+                </div>
+                <p class="content-text">Button margin:</p>
+                <div class="u-one-fourth">
+                    <div><input placeholder="Top" type="text" class="margin-btn-top" spellcheck="false" value=""></div>
+                    <div><input placeholder="Right" type="text" class="margin-btn-right" spellcheck="false" value=""></div>
+                    <div><input placeholder="Bottom" type="text" class="margin-btn-bottom" spellcheck="false" value=""></div>
+                    <div><input placeholder="Left" type="text" class="margin-btn-left" spellcheck="false" value=""></div>
+                </div>
+            </div>
+        </div>
+        <!-- Border -->
+        <div class="expand-section expand-border">
+            <h3 class="content-header">Border</h3>
+            <div class="border-select u-hide">
+                <p class="content-text">Block border:</p>
+                <div class="u-one-fourth">
+                    <div><input placeholder="Top" type="text" class="border-top" spellcheck="false" value=""></div>
+                    <div><input placeholder="Right" type="text" class="border-right" spellcheck="false" value=""></div>
+                    <div><input placeholder="Bottom" type="text" class="border-bottom" spellcheck="false" value=""></div>
+                    <div><input placeholder="Left" type="text" class="border-left" spellcheck="false" value=""></div>
+                </div>
+                <div class="u-one-half">
+                    <div><input placeholder="Color" type="text" class="border-color js-show-colorpicker" spellcheck="false" value=""></div>
+                    <div><input placeholder="Radius" type="text" class="border-radius" spellcheck="false" value=""></div>
+                </div>
+                <p class="content-text">Button border:</p>
+                <div class="u-one-fourth">
+                    <div><input placeholder="Top" type="text" class="border-btn-top" spellcheck="false" value=""></div>
+                    <div><input placeholder="Right" type="text" class="border-btn-right" spellcheck="false" value=""></div>
+                    <div><input placeholder="Bottom" type="text" class="border-btn-bottom" spellcheck="false" value=""></div>
+                    <div><input placeholder="Left" type="text" class="border-btn-left" spellcheck="false" value=""></div>
+                </div>
+                <div class="u-one-half">
+                    <div><input placeholder="Color" type="text" class="border-btn-color js-show-colorpicker" spellcheck="false" value=""></div>
+                    <div><input placeholder="Radius" type="text" class="border-btn-radius" spellcheck="false" value=""></div>
+                </div>
+            </div>
+        </div>
+        <!-- Text style and alignment -->
+        <div class="expand-section expand-font u-hide">
+            <h3 class="content-header">Text style, alignment and size</h3>
+            <!-- Text style -->
+            <div class="style-select u-hide">
+                <p class="content-text">Select text style:</p>
+                <p class="content-choose">
+                    <span class="choose-regular">Regular</span>
+                    <span class="choose-italic">Italic</span>
+                    <span class="choose-bold">Bold</span>
+                    <span class="choose-bolditalic">Bold Italic</span>
+                </p>
+            </div>
+            <!-- Alignment -->
+            <div class="alignment-select u-hide">
+                <p class="content-text">Select text alignment:</p>
+                <p class="content-choose">
+                    <span class="choose-left">Left</span>
+                    <span class="choose-center">Center</span>
+                    <span class="choose-right">Right</span>
+                </p>
+            </div>
+            <!-- Size -->
+            <div class="size-select u-hide">
+                <p class="content-text">Title size: (Range: 10 - 100, 16 is base size)</p>
+                <div><input placeholder="Size" type="text" class="font-size" spellcheck="false" value=""></div>
+            </div>
+        </div>
+        <!-- Width -->
+        <div class="expand-section expand-width u-hide">
+            <h3 class="content-header">Width</h3>
+            <!-- Width -->
+            <div class="width-select u-hide">
+                <p class="content-text">Select width:</p>
+                <p class="content-choose">
+                    <span class="choose-full">Full</span>
+                    <span class="choose-two-third">Two third</span>
+                    <span class="choose-half">Half</span>
+                    <span class="choose-one-third">One third</span>
+                </p>
+            </div>
+            <!-- Width percentage -->
+            <div class="width-pct-select u-hide">
+                <p class="content-text">or manually add a width:</p>
+                <div><input placeholder="Block width in percentage" type="text" class="width-pct" spellcheck="false" value=""></div>
+            </div>
+        </div>
+        <div class="theme-save form-save">
+            <a class="js-save-theme u-main-btn" href="#">Save</a>
+            <a class="js-copy-theme copy-theme" href="#">Copy theme</a>
+            <a class="js-paste-theme paste-theme u-hide" href="#">Paste theme</a>
+        </div>
+    </div>
+</div>

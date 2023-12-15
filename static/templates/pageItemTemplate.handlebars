@@ -1,0 +1,13 @@
+{{#is category 'institute'}}
+    <span class="page-title title-highlight">Homepage</span>
+{{else}}{{#is category 'newsroom'}}
+    <span class="page-title title-highlight">Newsroom</span>
+{{else}}
+    <span class="page-title">{{title}}</span>
+{{/is}}{{/is}}
+<div class="page-actions">
+    <span class="move-up"></span>
+    <span class="move-down"></span>
+    <p class="edit-page">Edit meta</p>
+    <a class="preview-page" href="https://mgiep.unesco.org/{{url}}" target="_blank">Preview</a>
+</div>

@@ -1,0 +1,27 @@
+{{#if is_folder}}
+    <div class="item-main">
+        <p class="item-title">{{title}}</p>
+        <a href='/dashboard/files/folder/{{_id}}' class="item-view js-view-folder">View folder</a>
+    </div>
+{{else}}
+    <div class="item-main">
+        <p class="item-title">{{title}}</p>
+        {{#if image.m}}
+            <div class="item-image" style="background-image: url('{{image.m}}'); height: {{bound}}px;"></div>
+        {{else}}
+             <div class="item-type">
+                 <p>{{ext}}</p>
+            </div>
+        {{/if}}
+    </div>
+    <div class="item-url">
+        <input class="input-share-url" name="url" readonly="readonly" value="{{short_url}}">
+        {{#if image.m}}
+            <input class="input-image-m-url" name="url" readonly="readonly" value="{{image.m}}">
+        {{/if}}
+        {{#if image.l}}
+            <input class="input-image-l-url" name="url" readonly="readonly" value="{{image.l}}">
+        {{/if}}
+    </div>
+    <span class="select-item" title="Select item"></span>
+{{/if}}

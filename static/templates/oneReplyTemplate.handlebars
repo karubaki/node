@@ -1,0 +1,55 @@
+{{!-- Reply-creator --}}
+<div class="comment-creator js-reply-creator">
+    {{#isCreator creator._id}}
+        {{#if creator.dp}}
+            <div class="user-image" style="background-image:url({{creator.dp.s}})"></div>
+        {{else}}
+            <div class="user-initials"><span>{{creator.initials}}</span></div>
+        {{/if}}
+        <a href="/social/me" class="name" data-username="{{creator.username}}">You</a>
+    {{else}}
+        {{#if anon.name}}
+            <div class="user-initials anon-initials"><span>A</span></div>
+            <b class='name'>{{anon.name}}</b>
+        {{else}}
+            {{#if creator.dp}}
+                <div class="user-image" style="background-image:url({{creator.dp.s}})"></div>
+            {{else}}
+                <div class="user-initials"><span>{{creator.initials}}</span></div>
+            {{/if}}
+            <a href="/social/user/{{creator._id}}" class="name" data-username="{{creator.username}}">{{getFirstName creator.name}}</a>
+        {{/if}}
+    {{/isCreator}}
+</div>
+{{!-- Comment like --}}
+{{#hasCurrentUser likes}}
+    <span class="like-btn js-reply-like selected"></span>
+{{else}}
+    <span class="like-btn js-reply-like"></span>
+{{/hasCurrentUser}}
+{{!-- Reply-text --}}
+<div class="comment-main js-reply-main">
+    <div class="comment-html form-text js-reply-html">{{{comment}}}</div>
+    {{!-- Reply-actions --}}
+    <p class="comment-actions js-reply-actions">
+        <b class="date-btn">{{prettyDate created_at}}</b>
+        {{#isCreator creator._id}}
+            <span class="sep-btn">&#183;</span>
+            <span class="edit-btn">Edit</span>
+            <span class="sep-btn">&#183;</span>
+            <span class="delete-btn">Delete</span>
+        {{else}}
+            {{#isAnon anon.id}}
+                <span class="sep-btn">&#183;</span>
+                <span class="edit-btn">Edit</span>
+                <span class="sep-btn">&#183;</span>
+                <span class="delete-btn">Delete</span>
+            {{else}}
+                {{#isAdmin}}
+                    <span class="sep-btn">&#183;</span>
+                    <span class="delete-btn">Delete</span>
+                {{/isAdmin}}
+            {{/isAnon}}
+        {{/isCreator}}
+    </p>
+</div>

@@ -1,0 +1,37 @@
+<div class="overlay-box overlay-large">
+    <a class="overlay-close js-close" href="#"></a>
+    <div class="contentForm new-file-panel">
+        <div class="file-about">
+            <div><input placeholder="File name" type="text" class="file-title" spellcheck="false"></div>
+        </div>
+        <div class="file-save form-save">
+            <a class="js-save-file u-main-btn" href="#">Save</a>
+            <a class="js-delete-file u-delete-btn">Delete</a>
+        </div>
+        {{#if image.l}}
+            <div class="image-editor">
+                <p class="content-text">Image editor:</p>
+                <div class="image-container">
+                    <img id="main-image" src="{{getS3ImageUrl image.l}}" />
+                </div>
+                <div class="image-editor-btns u-hide">
+                    <div class="js-aspects">
+                        <p class="js-aspect-3">3:1</p>
+                        <p class="js-aspect-2 active">2:1</p>
+                        <p class="js-aspect-1">1:1</p>
+                    </div>
+                    <div>
+                        <p class="js-flip-h">Flip horizontal</p>
+                        <p class="js-flip-v">Flip vertical</p>
+                    </div>
+                    <div>
+                        <p class="js-reset-crop">Reset</p>
+                    </div>
+                </div>
+            </div>
+            <div class="image-save form-save u-hide">
+                <a class="js-save-image u-main-btn" href="#">Update image</a>
+            </div>
+        {{/if}}
+    </div>
+</div>

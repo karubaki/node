@@ -1,0 +1,119 @@
+{{#is type 'body_text'}}
+    <!-- Static card -->
+    {{#if image}}
+        {{#if image.m}}
+            {{#is shape 'square'}}
+                <div class="text-image-cover shape-square">
+                    <div class="text-image" style="background-image:url({{image.m}})"></div>
+                </div>
+            {{else}}{{#is shape 'circle'}}
+                <div class="text-image-cover shape-circle">
+                    <div class="text-image" style="background-image:url({{image.m}})"></div>
+                </div>
+            {{else}}{{#is shape 'background'}}
+                <div class="text-bg" style="background-image:url({{image.m}})"></div>
+                <div class="text-overlay"></div>
+            {{else}}
+                <div class="text-image-cover shape-rectangle">
+                    <div class="text-image" style="background-image:url({{image.m}})"></div>
+                </div>
+            {{/is}}{{/is}}{{/is}}
+        {{/if}}
+    {{/if}}
+    {{#if text.title}}
+        {{#and color color.b}}
+            <p class="text-title" style="color:{{color.b}};">{{{text.title}}}</p>
+        {{else}}
+            <p class="text-title">{{{text.title}}}</p>
+        {{/and}}
+    {{/if}}
+    {{#if text.label}}
+        <p class="text-label">{{text.label}}</p>
+    {{/if}}
+    {{#if text.desc}}
+        <p class="text-desc">{{{text.desc}}}</p>
+    {{/if}}
+    {{#if button.url}}
+        <a href="{{button.url}}" class="block-btn"><span>{{button.text}}</span></a>
+    {{else}}{{#if button.embed}}
+        <a href="#" class="block-btn button-embed"><span>{{button.text}}</span></a>
+    {{/if}}{{/if}}
+{{else}}{{#is type 'body_html'}}
+    <!-- Rich text -->
+    {{{text.html}}}
+{{else}}{{#is type 'body_embed'}}
+    <!-- Embed -->
+    {{#if text.title}}
+        {{#and color color.b}}
+            <p class="text-title" style="color:{{color.b}};">{{{text.title}}}</p>
+        {{else}}
+            <p class="text-title">{{{text.title}}}</p>
+        {{/and}}
+    {{/if}}
+    {{#if text.desc}}
+        <p class="text-desc">{{{text.desc}}}</p>
+    {{/if}}
+    {{#if button.url}}
+        <a href="{{button.url}}" class="block-btn"><span>{{button.text}}</span></a>
+    {{else}}{{#if button.embed}}
+        <a href="#" class="block-btn button-embed"><span>{{button.text}}</span></a>
+    {{/if}}{{/if}}
+    {{#if buttonb}}
+        {{#if buttonb.url}}
+            <a href="{{buttonb.url}}" class="block-btn block-btnb"><span>{{buttonb.text}}</span></a>
+        {{else}}{{#if buttonb.embed}}
+            <a href="#" class="block-btn button-embed block-btnb"><span>{{buttonb.text}}</span></a>
+        {{/if}}{{/if}}
+    {{/if}}
+    <div class="embed-block">
+        {{{url.embed}}}
+    </div>
+{{else}}{{#is type 'logos'}}
+    <!-- Logos -->
+    {{#if text.title}}
+        <p class="text-title">{{{text.title}}}</p>
+    {{/if}}
+    <div class="all-logos">
+        {{#each people}}
+            <a class="one-logo" href="{{url}}" target="_blank" title="{{name}}" style="background-image:url({{image.l}})"></a>
+        {{/each}}
+    </div>
+{{else}}{{#is type 'calendar'}}
+    <!-- Calendar -->
+    {{#if text.title}}
+        <p class="text-title">{{{text.title}}}</p>
+    {{/if}}
+    <div class="all-events">
+        {{#each events}}
+            {{#if url}}
+                <a href="{{url}}" target="_blank" class="one-event">
+                    <div class="event-image" style="background-image:url({{image.m}})"></div>
+                    <div class="event-content">
+                        <p class="event-date">{{fullDate date.start date.end}}</p>
+                        <p class="event-title">{{title}}</p>
+                    </div>
+                </a>
+            {{else}}
+                <div class="one-event">
+                    <div class="event-image" style="background-image:url({{image.m}})"></div>
+                    <div class="event-content">
+                        <p class="event-date">{{fullDate date.start date.end}}</p>
+                        <p class="event-title">{{title}}</p>
+                    </div>
+                </div>
+            {{/if}}
+        {{/each}}
+    </div>
+{{else}}{{#is type 'feed'}}
+    <!-- Feed -->
+    {{#if text.title}}
+        {{#and color color.b}}
+            <p class="text-title" style="color:{{color.b}};">{{{text.title}}}</p>
+        {{else}}
+            <p class="text-title">{{{text.title}}}</p>
+        {{/and}}
+    {{/if}}
+    <div class="embed-block">
+        {{{url.embed}}}
+    </div>
+{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}

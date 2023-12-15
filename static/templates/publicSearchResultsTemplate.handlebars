@@ -1,0 +1,25 @@
+{{!- Pages --}}
+{{#and pages pages.length}}
+    <div class="search-header">Pages</div>
+    {{#each pages}}
+        <a class="one-search-result" target="_blank" href="https://mgiep.unesco.org/{{url}}">
+            <span class="result-title">{{{title}}}</span>
+        </a>
+    {{/each}}
+{{/and}}
+{{!- Articles --}}
+{{#and articles articles.length}}
+    <div class="search-header">Articles</div>
+    {{#each articles}}
+        {{#and image image.m}}
+            <a class="one-search-result with-image" target="_blank" href="https://mgiep.unesco.org/article/{{slug}}">
+                <span class="result-image"><span style="background-image:url({{image.m}})"></span></span>
+                <span class="result-title">{{{text.title}}}</span>
+            </a>
+        {{else}}
+            <a class="one-search-result" target="_blank" href="https://mgiep.unesco.org/article/{{slug}}">
+                <span class="result-title">{{{text.title}}}</span>
+            </a>
+        {{/and}}
+    {{/each}}
+{{/and}}

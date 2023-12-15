@@ -1,0 +1,19 @@
+<div class="modal-box">
+    <a class="modal-close js-close" href="#"></a>
+    <div class="upload-file">
+        <form method="post" action="https://mgiep-files.s3.amazonaws.com/" enctype="multipart/form-data" class="direct-upload">
+            <div id="drop">
+                <span>Choose image or drag and drop multiple images here</span>
+                <input type="hidden" name="key">
+                <input type="hidden" name="AWSAccessKeyId" value="AKIAIT3BY3EDOZPAPDEQ">
+                <input type="hidden" name="acl" value="public-read">
+                <input type="hidden" name="policy">
+                <input type="hidden" name="signature">
+                <input type="hidden" name="success-action-status" value="201">
+                <input type="hidden" name="Content-Type">
+                <input type="file" name="file" class="file-input">
+            </div>
+        </form>
+    </div>
+    <div class="all-items"></div>
+</div>

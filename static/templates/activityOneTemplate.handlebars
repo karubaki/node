@@ -1,0 +1,55 @@
+<div class="activity-user">
+    {{#if creator}}
+        {{#if creator.dp}}
+            <div class="user-image" style="background-image:url({{creator.dp.s}})"></div>
+        {{else}}
+            <div class="user-initials"><span>{{creator.initials}}</span></div>
+        {{/if}}
+    {{else}}
+        <div class="user-initials"><span>A</span></div>
+    {{/if}}
+</div>
+<div class="activity-content">
+    {{#if creator}}
+        <a href="/social/user/{{creator.username}}" class="user-name">{{creator.name}}</a>
+    {{else}}
+        <b class="user-name">{{comment.anon}}</b>
+    {{/if}}
+    {{#is action 'follow_user'}}
+        <span class="activity-title"> started following you.
+        </span>
+    {{else}}{{#is action 'subscribed_to_tag'}}
+        <span class="activity-title"> started following your tag:
+            <a href="/social/tag/{{entity.tag.slug}}">{{entity.tag.name}}</a>
+        </span>
+    {{else}}{{#is action 'join'}}
+        <span class="activity-title"> requested to join your tag:
+            <a href="/social/tag/{{entity.tag.slug}}">{{entity.tag.name}}</a>
+        </span>
+    {{else}}{{#is action 'invited'}}
+        <span class="activity-title"> added you to the tag:
+            <a href="/social/tag/{{entity.tag.slug}}">{{entity.tag.name}}</a>
+        </span>
+    {{else}}{{#is action 'voted'}}
+        <span class="activity-title"> voted following on your poll:
+            <a href="/social/discussion/{{entity.discussion.slug}}">{{entity.discussion.title}}</a>
+        </span>
+        <p class="activity-context"><span>{{{comment.text}}}</span></p>
+    {{else}}{{#is action 'comment'}}
+        <span class="activity-title"> commented following on your discussion:
+            <a href="/social/discussion/{{entity.discussion.slug}}">{{entity.discussion.title}}</a>
+        </span>
+        <p class="activity-context"><span>{{{comment.text}}}</span></p>
+    {{else}}{{#is action 'reply'}}
+        <span class="activity-title"> replied to your comment on discussion:
+            <a href="/social/discussion/{{entity.discussion.slug}}">{{entity.discussion.title}}</a>
+        </span>
+        <p class="activity-context"><span>{{{comment.text}}}</span></p>
+    {{else}}{{#is action 'like_comment'}}
+        <span class="activity-title"> liked your comment on discussion:
+            <a href="/social/discussion/{{entity.discussion.slug}}">{{entity.discussion.title}}</a>
+        </span>
+        <p class="activity-context"><span>{{{comment.text}}}</span></p>
+    {{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}
+    <p class="activity-date">{{prettyDate created_at}}</p>
+</div>

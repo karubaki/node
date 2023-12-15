@@ -1,0 +1,264 @@
+<div class="overlay-box overlay-large">
+    <a class="overlay-close js-close" href="#"></a>
+    <div class="contentForm new-block-panel">
+        <!-- Header blocks -->
+        <div class="block-header u-hide">
+            <p class="content-text main-text">Header blocks:</p>
+            <div class="area-content">
+                <input placeholder="Header title: Required" type="text" class="header-title" spellcheck="false" value="">
+                <textarea placeholder="Header description" class="header-desc"></textarea>
+            </div>
+            <div class="area-btns">
+                <p class="content-text">Buttons:</p>
+                <div class="u-one-half">
+                    <div><input placeholder="Button 1 text" type="text" class="header-button-text" spellcheck="false" value=""></div>
+                    <div><input placeholder="Button 1 URL" type="text" class="header-button-url" spellcheck="false" value=""></div>
+                </div>
+                <div class="u-one-half">
+                    <div><input placeholder="Button 2 text" type="text" class="header-buttonb-text" spellcheck="false" value=""></div>
+                    <div><input placeholder="Button 2 URL" type="text" class="header-buttonb-url" spellcheck="false" value=""></div>
+                </div>
+            </div>
+            <div class="area-image u-hide">
+                <p class="content-text">Image (1500px X 500px):</p>
+                <input placeholder="Image URL" type="text" class="header-image js-select-image" spellcheck="false" value="">
+            </div>
+            <div class="area-embed u-hide">
+                <p class="content-text">Copy/paste embed code:</p>
+                <textarea placeholder="Embed code" class="header-embed"></textarea>
+            </div>
+            <div class="area-story u-hide">
+                <p class="content-text">Optional story:</p>
+                <input placeholder="Story title" type="text" class="header-story-title" spellcheck="false" value="">
+                <input placeholder="Story url" type="text" class="header-story-url" spellcheck="false" value="">
+                <textarea placeholder="Story text" class="header-story-text"></textarea>
+            </div>
+        </div>
+        <!-- Section blocks -->
+        <div class="block-section u-hide">
+            <p class="content-text main-text">Section blocks:</p>
+            <div class="area-content">
+                <input placeholder="Section title: Required" type="text" class="section-title" spellcheck="false" value="">
+                <textarea placeholder="Section description" class="section-desc"></textarea>
+            </div>
+            <div class="area-btns">
+                <p class="content-text">Buttons:</p>
+                <div class="u-one-half">
+                    <div><input placeholder="Button 1 text" type="text" class="section-button-text" spellcheck="false" value=""></div>
+                    <div><input placeholder="Button 1 URL" type="text" class="section-button-url" spellcheck="false" value=""></div>
+                </div>
+                <div class="u-one-half">
+                    <div><input placeholder="Button 2 text" type="text" class="section-buttonb-text" spellcheck="false" value=""></div>
+                    <div><input placeholder="Button 2 URL" type="text" class="section-buttonb-url" spellcheck="false" value=""></div>
+                </div>
+            </div>
+            <div class="area-image u-hide">
+                <p class="content-text">Image (800px X 400px):</p>
+                <input placeholder="Image URL" type="text" class="section-image js-select-image" spellcheck="false" value="">
+            </div>
+            <div class="area-embed u-hide">
+                <p class="content-text">Copy/paste embed code:</p>
+                <textarea placeholder="Embed code" class="section-embed"></textarea>
+            </div>
+            <div class="area-orientation u-hide">
+                <p class="content-text">Orientation:</p>
+                <div class="choose-orientation">
+                    <p class="content-choose">
+                        <span class="choose-media-left selected">Media on the left, text on the right</span>
+                        <span class="choose-media-right">Media on the right, text on the left</span>
+                    </p>
+                </div>
+            </div>
+            <div class="area-items u-hide">
+                <p class="content-btn js-add-item">Add section item</p>
+                <p class="content-text">Items:</p>
+                <div class="section-items-list"></div>
+            </div>
+        </div>
+        <!-- Container block -->
+        <div class="block-container u-hide">
+            <p class="content-text">Container:</p>
+            <div class="choose-formula">
+                <p class="content-choose">
+                    <span class="choose-empty selected">Empty</span>
+                    <span class="choose-tags">Tagged articles</span>
+                </p>
+            </div>
+            <div><input placeholder="Number of rows (Leave empty if all)" type="text" class="container-rows u-hide" spellcheck="false" value=""></div>
+        </div>
+        <!-- Body text block -->
+        <div class="block-body-t u-hide">
+            <p class="content-text">Static card:</p>
+            <div class="area-content">
+                <input placeholder="Card title" type="text" class="body-t-title" spellcheck="false" value="">
+                <textarea placeholder="Card description" class="body-t-desc"></textarea>
+            </div>
+            <div class="area-btns">
+                <p class="content-text">Button:</p>
+                <div class="u-one-half">
+                    <div><input placeholder="Button text" type="text" class="body-t-button-text" spellcheck="false" value=""></div>
+                    <div><input placeholder="Button URL" type="text" class="body-t-button-url" spellcheck="false" value=""></div>
+                </div>
+            </div>
+            <div class="area-image">
+                <p class="content-text">Image (Default size: 800px X 400px, Others: 800px X 800px):</p>
+                <input placeholder="Image URL" type="text" class="body-t-image js-select-image" spellcheck="false" value="">
+            </div>
+            <div class="area-shape">
+                <p class="content-text">Image shape:</p>
+                <div class="choose-shape">
+                    <p class="content-choose">
+                        <span class="choose-rectangle selected">Rectangle (Default)</span>
+                        <span class="choose-square">Square</span>
+                        <span class="choose-circle">Circle</span>
+                        <span class="choose-background">Background</span>
+                    </p>
+                </div>
+            </div>
+            <div class="area-label">
+                <p class="content-text">Optional label:</p>
+                <input placeholder="Label" type="text" class="body-t-label" spellcheck="false" value="">
+            </div>
+        </div>
+        <!-- Body HTML block -->
+        <div class="block-body-h u-hide">
+            <p class="content-text">Rich text:</p>
+            <div class="body-h-content form-text"></div>
+        </div>
+        <!-- Body embed block -->
+        <div class="block-body-e u-hide">
+            <p class="content-text">Embed:</p>
+            <div class="area-content">
+                <input placeholder="Embed title" type="text" class="body-e-title" spellcheck="false" value="">
+                <textarea placeholder="Describe this embed" class="body-e-desc"></textarea>
+            </div>
+            <div class="area-btns">
+                <p class="content-text">Buttons:</p>
+                <div class="u-one-half">
+                    <div><input placeholder="Button 1 text" type="text" class="body-e-button-text" spellcheck="false" value=""></div>
+                    <div><input placeholder="Button 1 URL" type="text" class="body-e-button-url" spellcheck="false" value=""></div>
+                </div>
+                <div class="u-one-half">
+                    <div><input placeholder="Button 2 text" type="text" class="body-e-buttonb-text" spellcheck="false" value=""></div>
+                    <div><input placeholder="Button 2 URL" type="text" class="body-e-buttonb-url" spellcheck="false" value=""></div>
+                </div>
+            </div>
+            <div class="area-embed">
+                <p class="content-text">Copy/paste embed code:</p>
+                <textarea placeholder="Embed code: Required" class="body-e-embed"></textarea>
+            </div>
+        </div>
+        <!-- Carousel blocks -->
+        <div class="block-body-c u-hide">
+            <p class="content-text main-text">Carousel blocks:</p>
+            <div class="area-content">
+                <input placeholder="Image title" type="text" class="body-c-title" spellcheck="false" value="">
+                <textarea placeholder="Image description" class="body-c-desc u-hide"></textarea>
+            </div>
+            <div class="area-link u-hide">
+                <p class="content-text">Link:</p>
+                <input placeholder="Link URL" type="text" class="body-c-link" spellcheck="false" value="">
+            </div>
+            <div class="area-btns u-hide">
+                <p class="content-text">Buttons:</p>
+                <div class="u-one-half">
+                    <div><input placeholder="Button 1 text" type="text" class="body-c-button-text" spellcheck="false" value=""></div>
+                    <div><input placeholder="Button 1 URL" type="text" class="body-c-button-url" spellcheck="false" value=""></div>
+                </div>
+                <div class="u-one-half">
+                    <div><input placeholder="Button 2 text" type="text" class="body-c-buttonb-text" spellcheck="false" value=""></div>
+                    <div><input placeholder="Button 2 URL" type="text" class="body-c-buttonb-url" spellcheck="false" value=""></div>
+                </div>
+            </div>
+            <div class="area-image">
+                <p class="content-text">Image:</p>
+                <input placeholder="Image URL" type="text" class="body-c-image js-select-image" spellcheck="false" value="">
+            </div>
+            <div class="area-embed u-hide">
+                <p class="content-text">Copy/paste embed code:</p>
+                <textarea placeholder="Embed code" class="body-c-embed"></textarea>
+            </div>
+            <p class="content-btn js-add-image">Add item</p>
+            <p class="content-text">Items:</p>
+            <div class="body-images-list"></div>
+        </div>
+        <!-- People block -->
+        <div class="block-people u-hide">
+            <p class="content-text main-text">People:</p>
+            <div class="area-content">
+                <input placeholder="Title" type="text" class="people-title" spellcheck="false" value="">
+                <textarea placeholder="Description" class="people-desc"></textarea>
+            </div>
+            <p class="content-text">Add people:</p>
+            <input type="text" class="person-input input" placeholder="Name or Email of person" autocomplete="off" spellcheck="false">
+            <div class="persons-list"></div>
+        </div>
+        <!-- Logos block -->
+        <div class="block-logos u-hide">
+            <p class="content-text">Logos:</p>
+            <div class="area-content">
+                <input placeholder="Title" type="text" class="logos-title" spellcheck="false" value="">
+                <textarea placeholder="Block description" class="logos-desc"></textarea>
+            </div>
+            <p class="content-text">Add partners:</p>
+            <input type="text" class="partner-input input" placeholder="Name or Email of partner" autocomplete="off" spellcheck="false">
+            <div class="partners-list"></div>
+        </div>
+        <!-- Breather -->
+        <div class="block-breather u-hide">
+            <p class="content-text main-text">Breather:</p>
+            <div class="area-content">
+                <input placeholder="Breather title: Required" type="text" class="breather-title" spellcheck="false" value="">
+                <textarea placeholder="Breather description" class="breather-desc"></textarea>
+            </div>
+            <div class="area-btns">
+                <p class="content-text">Buttons:</p>
+                <div class="u-one-half">
+                    <div><input placeholder="Button 1 text" type="text" class="breather-button-text" spellcheck="false" value=""></div>
+                    <div><input placeholder="Button 1 URL" type="text" class="breather-button-url" spellcheck="false" value=""></div>
+                </div>
+                <div class="u-one-half">
+                    <div><input placeholder="Button 2 text" type="text" class="breather-buttonb-text" spellcheck="false" value=""></div>
+                    <div><input placeholder="Button 2 URL" type="text" class="breather-buttonb-url" spellcheck="false" value=""></div>
+                </div>
+            </div>
+            <div class="area-image">
+                <p class="content-text">Image (1500px X 1000px):</p>
+                <input placeholder="Image URL: Required" type="text" class="breather-image js-select-image" spellcheck="false" value="">
+            </div>
+        </div>
+        <!-- Calendar block -->
+        <div class="block-calendar u-hide">
+            <p class="content-text">Calendar:</p>
+            <div><input placeholder="Calendar title" type="text" class="calendar-title" spellcheck="false" value=""></div>
+            <p class="content-text">Add events:</p>
+            <div class="area-content">
+                <input placeholder="Event title: Required" type="text" class="event-title" spellcheck="false" value="">
+                <textarea placeholder="Event description" class="event-desc"></textarea>
+                <input placeholder="URL (to read more)" type="text" class="event-url" spellcheck="false" value="">
+            </div>
+            <div class="area-dates">
+                <p class="content-text">Dates:</p>
+                <div class="u-one-half">
+                    <div><input placeholder="Start date" type="text" class="event-start" spellcheck="false" value=""></div>
+                    <div><input placeholder="End date" type="text" class="event-end" spellcheck="false" value=""></div>
+                </div>
+            </div>
+            <div class="area-image">
+                <p class="content-text">Image (800px X 400px):</p>
+                <input placeholder="Image URL" type="text" class="event-image js-select-image" spellcheck="false" value="">
+            </div>
+            <div class="area-location">
+                <p class="content-text">Location:</p>
+                <input placeholder="Location or Google Maps URL" type="text" class="event-location" spellcheck="false" value="">
+            </div>
+            <p class="content-btn js-add-event">Add event</p>
+            <p class="content-text">Events:</p>
+            <div class="events-list"></div>
+        </div>
+        <div class="block-save form-save">
+            <a class="js-save-block u-main-btn" href="#">Save</a>
+            <a class="js-delete-block u-delete-btn u-hide">Delete</a>
+        </div>
+    </div>
+</div>

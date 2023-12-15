@@ -1,0 +1,60 @@
+<div class="settings-about">
+    <p class="content-text">About:</p>
+    <div><input placeholder="Site title: Required" type="text" class="site-title" spellcheck="false" value="{{title}}"></div>
+    <div><input placeholder="Site description" type="text" class="site-desc" spellcheck="false" value="{{desc}}"></div>
+    <div><textarea placeholder="Contact details" class="site-contact"></textarea></div>
+</div>
+<div class="settings-menu">
+    <p class="content-text">Menu (Level, Title, URL, New):</p>
+    <div><textarea placeholder="Enter each menu item in a new line" class="site-menu"></textarea></div>
+</div>
+<div class="settings-social">
+    <p class="content-text">Social URLs:</p>
+    <div><input placeholder="Facebook page URL" type="text" class="site-facebook" spellcheck="false" value="{{social.facebook}}"></div>
+    <div><input placeholder="Twitter page URL" type="text" class="site-twitter" spellcheck="false" value="{{social.twitter}}"></div>
+    <div><input placeholder="Instagram page URL" type="text" class="site-instagram" spellcheck="false" value="{{social.instagram}}"></div>
+    <div><input placeholder="YouTube page URL" type="text" class="site-youtube" spellcheck="false" value="{{social.youtube}}"></div>
+    <div><input placeholder="LinkedIn page URL" type="text" class="site-linkedin" spellcheck="false" value="{{social.linkedin}}"></div>
+</div>
+<div class="settings-image">
+    <p class="content-text">Meta Image URL (1200px X 630px):</p>
+    <div><input placeholder="Meta image URL" type="text" class="site-image-meta" spellcheck="false" value="{{image.meta}}"></div>
+</div>
+<div class="settings-ticker">
+    <p class="content-text">Ticker:</p>
+    <div><input placeholder="Ticker in format: title, url; title, url" type="text" class="site-ticker" spellcheck="false" value=""></div>
+    <div><input placeholder="Header notice text" type="text" class="site-notice-desc" spellcheck="false" value="{{notice.desc}}"></div>
+    <div><input placeholder="Header notice URL" type="text" class="site-notice-link" spellcheck="false" value="{{notice.link}}"></div>
+</div>
+<div class="settings-theme">
+    <p class="content-text">Theme (auto, dark, light):</p>
+    <div><input placeholder="Theme name" type="text" class="site-theme" spellcheck="false" value="{{theme}}"></div>
+</div>
+<div class="settings-color">
+    <p class="content-text">Color:</p>
+    <div><input placeholder="Background color (#hexcode)" type="text" class="site-back-color" spellcheck="false" value="{{color.back}}"></div>
+    <div><input placeholder="Text color (#hexcode)" type="text" class="site-text-color" spellcheck="false" value="{{color.text}}"></div>
+</div>
+<div class="settings-kindness">
+    <p class="content-text">Base number of Kindness Stories:</p>
+    <div><input placeholder="Update number of kindness stories" type="text" class="site-kindness" spellcheck="false" value="{{base_stories}}"></div>
+</div>
+<div class="settings-save form-save">
+    <a class="js-update-settings u-main-btn" href="#">Update site settings</a>
+</div>
+<div class="settings-admins">
+    <p class="content-text">Site Administrators:</p>
+    <div><input placeholder="Type email id of user and press enter" type="text" class="site-admin" spellcheck="false" value=""></div>
+    <div class="admin-list">
+        {{#each admins}}
+            <div class="one-admin">
+                <p class="name">{{name}}<br><span>{{email}}</span></p>
+                <span class="remove-admin u-delete">Remove</span>
+            </div>
+        {{/each}}
+    </div>
+</div>
+<div class="settings-download">
+    <p class="content-text">Subscribed users:</p>
+   <div><a class="u-main-btn" href="/api/form">Download</a></div>
+</div>

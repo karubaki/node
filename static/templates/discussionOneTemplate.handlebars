@@ -1,0 +1,155 @@
+<div class="card-info">
+    {{!-- User --}}
+    {{#isNotCreator creator._id}}
+        {{#if creator.dp}}
+            <a class="user-image user-label" target="_blank" href="/social/user/{{creator.username}}" style="background-image:url({{creator.dp.s}})" title="{{creator.name}}" data-username="{{creator.username}}"></a>
+        {{else}}
+            <a class="user-initials user-label" target="_blank" href="/social/user/{{creator.username}}" title="{{creator.name}}" data-username="{{creator.username}}">
+                <span>{{creator.initials}}</span>
+            </a>
+        {{/if}}
+    {{/isNotCreator}}
+    {{!-- Badge --}}
+    {{#if badge}}
+        <span class="badge-label" title="{{badge.desc}}" style="background-color:{{badge.color}}">{{badge.name}}</span>
+    {{/if}}
+</div>
+{{!-- Card details --}}
+<div class="card-main">
+    <p class="card-title">{{title}}</p>
+    {{!-- Text --}}
+    {{#is type 'text'}}
+        {{#if image.m}}
+            <div class="card-image text-image" style="background-image: url('{{image.m}}'); height: {{bound}}px;"></div>
+            <div class="card-content">{{{summary}}}</div>
+        {{else}}
+            <div class="card-content content-full">{{{summary}}}</div>
+        {{/if}}
+    {{!-- Link --}}
+    {{else}}{{#is type 'link'}}
+        <p class="card-provider">
+            <a href='{{provider.url}}' target="_blank"><span>{{provider.name}}</span></a>
+        </p>
+        {{#if image.m}}
+            <div class="card-image" style="background-image: url('{{image.m}}'); height: {{bound}}px;"></div>
+            <div class="card-content">{{{summary}}}</div>
+        {{else}}
+            <div class="card-content content-full">{{{summary}}}</div>
+        {{/if}}
+    {{!-- Video --}}
+    {{else}}{{#is type 'video'}}
+        <p class="card-provider">
+            <a href='{{provider.url}}' target="_blank"><span>{{provider.name}}</span></a>
+        </p>
+        {{#if image.m}}
+            <div class="card-image" style="background-image: url('{{image.m}}'); height: {{bound}}px;">
+                <div class="video-overlay" style="height: {{bound}}px;">
+                    <div class="play-video"><span></span></div>
+                </div>
+            </div>
+        {{/if}}
+        <div class="card-content">{{{summary}}}</div>
+    {{!-- File --}}
+    {{else}}{{#is type 'file'}}
+        <p class="card-provider">
+            <a href='{{provider.url}}' target="_blank">
+                <span>{{provider.name}}</span>
+                {{#if file.size}}
+                    <span>| {{getFileSize file.size}}</span>
+                {{/if}}
+            </a>
+        </p>
+        {{#if image.m}}
+            <div class="card-image" style="background-image: url('{{image.m}}'); height: {{bound}}px;"></div>
+        {{else}}
+             <div class="file-type">
+                 <div class="{{getFileIcon file.ext}}">
+                     <label>{{file.ext}}</label>
+                 </div>
+            </div>
+        {{/if}}
+    {{!-- Image --}}
+    {{else}}{{#is type 'image'}}
+        <p class="card-provider">
+            <a href='{{provider.url}}' target="_blank">
+                <span>{{provider.name}}</span>
+                {{#if file.size}}
+                    <span>| {{getFileSize file.size}}</span>
+                {{/if}}
+            </a>
+        </p>
+        <div class="card-image" style="background-image: url('{{image.m}}'); height: {{bound}}px;"></div>
+    {{!-- Poll --}}
+    {{else}}{{#is type 'poll'}}
+        <p class="card-provider">{{getTotalVotes polls}}</p>
+        <div class="card-content content-poll">
+            {{#hasUserVoted polls}}
+                <div class="polls-list">
+                    {{#each polls}}
+                        <div class="one-poll">
+                            <p class="row">
+                                {{#hasCurrentUser this.voters}}
+                                    <span class='radio-cell selected'></span>
+                                {{else}}
+                                    <span class='radio-cell'></span>
+                                {{/hasCurrentUser}}
+                                <span class='cell' data-pollid='{{this._id}}'>{{this.text}} {{getCounts this.voters.length ''}}</span>
+                            </p>
+                            <div class="row-bar">
+                                <p class="row-percent" style="width: {{getPercentageVotes ../polls this._id}}%;"></p>
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+            {{else}}
+                <div class="polls-list not-voted">
+                    {{#each polls}}
+                        <div class="one-poll">
+                            <p class="row">
+                                <span class='radio-cell'></span>
+                                <span class='cell' data-pollid='{{this._id}}'>{{this.text}} {{getCounts this.voters.length ''}}</span>
+                            </p>
+                            <div class="row-bar">
+                                <p class="row-percent"></p>
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+            {{/hasUserVoted}}
+        </div>
+    {{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}
+</div>
+{{!-- Card tags --}}
+{{#and tags tags.length}}
+    <div class="card-tags">
+        {{#each tags}}
+            <a href="/social/tag/{{slug}}" target="_blank">#{{name}}</a>
+        {{/each}}
+    </div>
+{{/and}}
+{{!-- Recent comment --}}
+{{#if comments.length}}
+    <div class="card-comment">
+        {{#isCreator comments.0.creator._id}}
+            {{#if comments.0.summary}}
+                <p class="comment-main"><a href="/social/me" class="name" data-username="{{comments.0.creator.name}}">You</a>: <span class="comment-html">{{{comments.0.summary}}}</span></p>
+            {{else}}
+                <p class="comment-main"><a href="/social/me" class="name" data-username="{{comments.0.creator.name}}">You</a>: <span class="comment-html">{{{comments.0.comment}}}</span></p>
+            {{/if}}
+        {{else}}
+            {{#if comments.0.anon.name}}
+                {{#if comments.0.summary}}
+                    <p class="comment-main"><b class="name">{{comments.0.anon.name}}</b>: <span class="comment-html">{{{comments.0.summary}}}</span></p>
+                {{else}}
+                    <p class="comment-main"><b class="name">{{comments.0.anon.name}}</b>: <span class="comment-html">{{{comments.0.comment}}}</span></p>
+                {{/if}}
+            {{else}}
+                {{#if comments.0.summary}}
+                    <p class="comment-main"><a href="/social/user/{{comments.0.creator.username}}" class="name" data-username="{{comments.0.creator.username}}">{{getFirstName comments.0.creator.name}}</a>: <span class="comment-html">{{{comments.0.summary}}}</span></p>
+                {{else}}
+                    <p class="comment-main"><a href="/social/user/{{comments.0.creator.username}}" class="name" data-username="{{comments.0.creator.username}}">{{getFirstName comments.0.creator.name}}</a>: <span class="comment-html">{{{comments.0.comment}}}</span></p>
+                {{/if}}
+            {{/if}}
+        {{/isCreator}}
+    </div>
+{{/if}}

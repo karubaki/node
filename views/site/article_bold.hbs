@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{title}}</title>
+        <!-- SEO Meta -->
+        <meta name="description" content="{{desc}}">
+        <link href="https://mgiep.unesco.org/article/{{slug}}" rel="canonical">
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="/images/site/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/images/site/favicon.ico" type="image/x-icon">
+        <!-- Facebook open graph meta -->
+        <meta property="og:site_name" content="UNESCO MGIEP">
+        <meta property="og:title" content="{{title}}">
+        <meta property="og:type" content="article">
+        <meta property="og:image" content="{{meta}}">
+        <meta property="og:description" content="{{desc}}">
+        <meta property="og:locale" content="en_US">
+        <meta property="og:url" content="https://mgiep.unesco.org/article/{{slug}}">
+        <!-- Twitter card meta -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@UNESCO_MGIEP">
+        <meta name="twitter:title" content="{{title}}">
+        <meta name="twitter:description" content="{{desc}}">
+        <meta name="twitter:image:src" content="{{meta}}">
+        <!-- Apple meta -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <link rel="apple-touch-icon-precomposed" href="/images/site/apple-touch-icon.png">
+        <!-- Responsive meta tags -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Theme -->
+        <meta name="theme-color" content="#0069B4" media="(prefers-color-scheme: light)">
+        <meta name="theme-color" content="#ffd370" media="(prefers-color-scheme: dark)">
+        <!-- Carousel -->
+        <link rel="stylesheet" type="text/css" href="/js/lib/slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="/js/lib/slick/slick-theme.css"/>
+        <!-- Audio/Video -->
+        <link rel="stylesheet" type="text/css" href="/css/lib/audioplayer.css">
+        <link rel="stylesheet" type="text/css" href="/css/lib/video-js.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/lib/videojs.record.min.css">
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400;1,600&family=IBM+Plex+Serif:ital,wght@0,400;0,700;1,400;1,600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Work+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">
+        <!-- Style -->
+        <link rel="stylesheet" type="text/css" href="/css/page_style_bold.css">
+        <link rel="stylesheet" type="text/css" href="/css/themes/{{theme}}_style.css">
+        <!-- Sharethis -->
+        <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=60221285e83dc40011356b16&product=sticky-share-buttons' async='async'></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123165566-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-123165566-1');
+        </script>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-T7V9NFX');</script>
+        <!-- Userway -->
+        <script>(function(d){var s = d.createElement("script");s.setAttribute("data-account", "ktf1BxUtTP");s.setAttribute("src", "https://accessibilityserver.org/widget.js");(d.body || d.head).appendChild(s);})(document)</script><noscript>Please ensure Javascript is enabled for purposes of <a href="https://accessibilityserver.org">website accessibility</a></noscript>
+    </head>
+    <!-- Body -->
+    {{#if back_color}}
+        {{#if text_color}}
+            <body class="page-{{type}}" data-id="{{id}}" data-slug="{{slug}}" style="background-color: {{back_color}} !important; color: {{text_color}} !important;">
+        {{else}}
+            <body class="page-{{type}}" data-id="{{id}}" data-slug="{{slug}}" style="background-color: {{back_color}} !important;">
+        {{/if}}
+    {{else}}{{#if text_color}}
+        <body class="page-{{type}}" data-id="{{id}}" data-slug="{{slug}}" style="color: {{text_color}} !important;">
+    {{else}}
+        <body class="page-{{type}} article-bold" data-id="{{id}}" data-slug="{{slug}}">
+    {{/if}}{{/if}}
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T7V9NFX"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <!-- Menu -->
+        <div class="menuWrap">
+            <div class="menu-area">
+                <div class="menu-level level-1"><a href="/">Home</a></div>
+                <div class="menu-level level-1"><a href="/newsroom">Newsroom</a></div>
+                <div class="menu-level level-1"><a href="/about">About</a></div>
+                {{{menu}}}
+            </div>
+        </div>
+        <!-- Top bar -->
+        {{#if notice_desc}}
+            <div class="topWrap with-notice">
+                <a href="{{notice_link}}" target="_blank">{{notice_desc}}</a>
+            </div>
+        {{else}}{{#if ticker}}
+            <div class="topWrap with-notice ticker-wrap">
+                <div class="ticker">
+                    {{#each ticker}}
+                        <a href="{{url}}" target="_blank">{{title}}</a>
+                    {{/each}}
+                </div>
+            </div>
+        {{else}}
+            <div class="topWrap"></div>
+        {{/if}}{{/if}}
+        <!-- Header -->
+        {{#if notice_desc}}
+            <div class="headerWrap with-notice">
+        {{else}}{{#if ticker.length}}
+            <div class="headerWrap with-notice">
+        {{else}}
+            <div class="headerWrap">
+        {{/if}}{{/if}}
+            <a href='/' class="logo-main"></a>
+            <div class="lang-btns">
+                <a class="link-lang link-english active" href="https://mgiep.unesco.org" target="_blank">English</a>
+                <a class="link-lang link-hindi" href="https://hi.mgiep.unesco.org" target="_blank">हिंदी</a>
+                <a class="link-lang link-french" href="https://fr.mgiep.unesco.org" target="_blank">Français</a>
+            </div>
+            <a class="link-nav link-menu js-show-menu" href="#">Menu</a>
+            <a class="link-search js-search" href="#" title="Search pages and articles"></a>
+            <a class="link-m-newsroom" href="/newsroom" title="Newsroom"></a>
+            <!-- Search -->
+            <div class="searchWrap u-hide">
+                <span class="triangle"></span>
+                <input placeholder="Search pages and articles" type="text" autocomplete="off" class="search-text">
+                <p class="search-tip">Tip: Use @ to search articles by an author</p>
+                <div class="search-results"></div>
+            </div>
+        </div>
+        <!-- Main area -->
+        <div class="mainWrap">
+            <div class="articleWrap">
+                <div class="article-header">
+                    <div class="header-content">
+                        <p class="header-title">{{{title}}}</p>
+                        <p class="header-desc">{{{desc}}}</p>
+                    </div>
+                    {{#if embed}}
+                        <div class="embed-block">{{{embed}}}</div>
+                    {{else}}{{#if image}}
+                        <div class="embed-image" style="background-image:url({{image}})"></div>
+                    {{/if}}{{/if}}
+                </div>
+                <svg class="header-zigzag" role="img" viewBox="0 0 136 24" xmlns="http://www.w3.org/2000/svg"><path d="M1.525 1.525a3.5 3.5 0 014.95 0L20 15.05 33.525 1.525a3.5 3.5 0 014.95 0L52 15.05 65.525 1.525a3.5 3.5 0 014.95 0L84 15.05 97.525 1.525a3.5 3.5 0 014.95 0L116 15.05l13.525-13.525a3.5 3.5 0 014.95 4.95l-16 16a3.5 3.5 0 01-4.95 0L100 8.95 86.475 22.475a3.5 3.5 0 01-4.95 0L68 8.95 54.475 22.475a3.5 3.5 0 01-4.95 0L36 8.95 22.475 22.475a3.5 3.5 0 01-4.95 0l-16-16a3.5 3.5 0 010-4.95z"></path></svg>
+                {{#if html}}
+                    <div class="container-block">
+                        <div class="body-text-block">
+                            <div class="text-desc">{{{html}}}</div>
+                        </div>
+                    </div>
+                {{/if}}
+                <div class="contentWrap"></div>
+                <svg class="header-zigzag" role="img" viewBox="0 0 136 24" xmlns="http://www.w3.org/2000/svg"><path d="M1.525 1.525a3.5 3.5 0 014.95 0L20 15.05 33.525 1.525a3.5 3.5 0 014.95 0L52 15.05 65.525 1.525a3.5 3.5 0 014.95 0L84 15.05 97.525 1.525a3.5 3.5 0 014.95 0L116 15.05l13.525-13.525a3.5 3.5 0 014.95 4.95l-16 16a3.5 3.5 0 01-4.95 0L100 8.95 86.475 22.475a3.5 3.5 0 01-4.95 0L68 8.95 54.475 22.475a3.5 3.5 0 01-4.95 0L36 8.95 22.475 22.475a3.5 3.5 0 01-4.95 0l-16-16a3.5 3.5 0 010-4.95z"></path></svg>
+            </div>
+        </div>
+        <!-- Footer -->
+        <div class="footerWrap">
+            <div class="footer-cell">
+                <p class="footer-social">
+                    <span>Follow us at:</span>
+                    <a href="{{social.facebook}}"  target="_blank" class="social-fb"></a>
+                    <a href="{{social.twitter}}" target="_blank" class="social-twitter"></a>
+                    <a href="{{social.instagram}}" target="_blank" class="social-instagram"></a>
+                    <a href="{{social.youtube}}" target="_blank" class="social-youtube"></a>
+                    <a href="{{social.linkedin}}" target="_blank" class="social-linkedin"></a>
+                </p>
+                <p class="footer-contact">{{{contact}}}</p><br>
+                <p class="footer-contact">We use cookies on this site to enhance your user experience. <br>For more information on how we use cookies, read our <a href="https://mgiep.unesco.org/privacy" target="_blank">privacy policy</a>.</p>
+            </div>
+            <div class="footer-embed">
+                <p>Fill in your details to receive updates from us:</p>
+                <div class="footer-email-div">
+                    <input placeholder="Email address" type="text" autocomplete="off" class="footer-email">
+                    <span class="btn-next btn-footer">Next</span>
+                </div>
+                <div class="footer-name-div u-hide">
+                    <input placeholder="Full name" type="text" autocomplete="off" class="footer-name">
+                    <span class="btn-save-form btn-footer">Done</span>
+                </div>
+                <p class="footer-message"></p>
+            </div>
+        </div>
+        <!-- Overlay -->
+        <div class="overlay">
+            <div class="overlay-box">
+            </div>
+        </div>
+        <!-- Menu overlay -->
+        <div class="menu-overlay u-hide">
+            <!-- Top bar -->
+            {{#if notice_desc}}
+                <div class="topWrap with-notice"></div>
+            {{else}}{{#if ticker}}
+                <div class="topWrap with-notice"></div>
+            {{else}}
+                <div class="topWrap"></div>
+            {{/if}}{{/if}}
+            <!-- Header -->
+            {{#if notice_desc}}
+                <div class="headerWrap with-notice">
+            {{else}}{{#if ticker.length}}
+                <div class="headerWrap with-notice">
+            {{else}}
+                <div class="headerWrap">
+            {{/if}}{{/if}}
+                <a class="link-nav link-menu close-menu js-close-menu" href="#">Close</a>
+            </div>
+            <!-- Menu items -->
+            <div class="menu-items">{{{menu}}}</div>
+        </div>
+        <!-- Show feed btn -->
+        <p class="feed-btn js-feed" title="Show feed"></p>
+        <!-- Sidebar window -->
+        <div class="sidebarWrap"></div>
+        <!-- Scripts -->
+        <script type="text/javascript" src="/js/lib/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/lib/underscore/underscore.min.js"></script>
+        <script type="text/javascript" src="/js/lib/backbone/backbone.min.js"></script>
+        <script type="text/javascript" src="/js/lib/marionette/backbone.marionette.min.js"></script>
+        <script type="text/javascript" src="/js/lib/handlebars/handlebars.min.js"></script>
+        <script type="text/javascript" src="/js/lib/async/async.min.js"></script>
+        <script type="text/javascript" src="/js/lib/dateformat/jquery.dateFormat.min.js"></script>
+        <script type="text/javascript" src="/js/lib/masonry/masonry.pkgd.min.js"></script>
+        <script type="text/javascript" src="/js/loadTemplate.js"></script>
+        <script type="text/javascript" src="/js/pageTemplate.js"></script>
+        <script type="text/javascript" src="/js/lib/swag/swag.min.js"></script>
+        <script type="text/javascript" src="/js/helpers.js"></script>
+        <script type="text/javascript" src="/js/lib/uuid/uuidv1.js"></script>
+        <script type="text/javascript" src="/js/lib/tipsy/jquery.tipsy.min.js"></script>
+        <script type="text/javascript" src="/js/lib/sweetalert/sweetalert.min.js"></script>
+        <script type="text/javascript" src="/js/lib/autosize/autosize.min.js"></script>
+        <script type="text/javascript" src="/js/lib/hotkeys/jquery.hotkeys.min.js"></script>
+        <script type="text/javascript" src="/js/lib/validator/validator.min.js"></script>
+        <script type="text/javascript" src="/js/lib/modernizr/modernizr.min.js"></script>
+        <script type="text/javascript" src="/js/lib/slick/slick.min.js"></script>
+        <script type="text/javascript" src="/js/lib/audio/audioplayer.min.js"></script>
+        <script type="text/javascript" src="/js/lib/video/video.min.js"></script>
+        <script type="text/javascript" src="/js/lib/video/RecordRTC.min.js"></script>
+        <script type="text/javascript" src="/js/lib/video/adapter.js"></script>
+        <script type="text/javascript" src="/js/lib/video/wavesurfer.min.js"></script>
+        <script type="text/javascript" src="/js/lib/video/wavesurfer.microphone.min.js"></script>
+        <script type="text/javascript" src="/js/lib/video/videojs.wavesurfer.min.js"></script>
+        <script type="text/javascript" src="/js/lib/video/videojs.record.min.js"></script>
+        <script type="text/javascript" src="/js/global.js"></script>
+        <script type="text/javascript" src="/js/pageApp.js"></script>
+        <script type="text/javascript">
+            Swag.registerHelpers(window.Handlebars);
+            PageManager.start();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<div class="overlay-box">
+    <a class="overlay-close js-close" href="#"></a>
+    <h2 class="message">Welcome back!</h2>
+    <p class="message">New to MGIEP Social? <a href="/signup" class="js-signup">Sign up</a> </p>
+    <form method="post" action="/login" class="form form--modal js-form">
+        <div class="js-email">
+            <p class='u-formError'></p>
+            <input class="input" name="email" value="" placeholder="Email address" autocomplete="on" spellcheck="false">
+        </div>
+        <div class="js-password">
+            <p class='u-formError'></p>
+            <input class="input input--show" name="password" value="" placeholder="Password" type="password">
+        </div>
+        <div class='form-action'>
+            <div class='action-remember u-alignLeft'>
+                <label class="label">
+                    <input class="checkbox" type="checkbox" name="remember_me" value="1" checked="1">  Remember me
+                </label>
+            </div>
+            <a href="/forgot" class="link--grey u-alignRight js-forgot">Forgot password?</a>
+        </div>
+        <input name="submit" value="Log in" class="btn-submit js-submit" type="submit">
+    </form>
+    <div class="social-connect">
+        <div class="social-btns">
+            <a href="/auth/google" class="btn btn-google"><span class="icon-google"></span> Google</a>
+            <a href="/auth/facebook" class="btn btn-facebook"><span class="icon-facebook"></span> Facebook</a>
+            <a href="/auth/twitter" class="btn btn-twitter"><span class="icon-twitter"></span> Twitter</a>
+        </div>
+        <p class="about-never">We'll never post anything without your permission.</p>
+    </div>
+</div>

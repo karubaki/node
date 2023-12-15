@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>UNESCO MGIEP: Dashboard</title>
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="/images/site/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/images/site/favicon.ico" type="image/x-icon">
+        <!-- Apple meta -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <link rel="apple-touch-icon-precomposed" href="/images/site/apple-touch-icon.png">
+        <!-- Responsive meta tags -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400;1,600&family=IBM+Plex+Serif:ital,wght@0,400;0,700;1,400;1,600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Work+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+        <!-- Styles -->
+        <link rel="stylesheet" type="text/css" href="/css/dash_style.css">
+        <link rel="stylesheet" type="text/css" href="/css/themes/{{theme}}_dash_style.css">
+        <link rel="stylesheet" type="text/css" href="/css/lib/sweetalert.css">
+        <link rel="stylesheet" type="text/css" href="/css/lib/colorpicker.css">
+        <link rel="stylesheet" type="text/css" href="/css/lib/cropper.css">
+        <link rel="stylesheet" type="text/css" href="/css/lib/redactor.css">
+        <link rel="stylesheet" type="text/css" href="/css/lib/inlinestyle.css">
+    </head>
+    <body class="dash-body">
+        <!-- Page section -->
+        <div class="pageWrap" data-user="{{userid}}" data-username="{{username}}" data-type="{{type}}">
+            <!-- Header section -->
+            <div class="headerWrap">
+                <!-- Header -->
+                <div class="logoWrap">
+                    <a href='/' class="logo-main">
+                        <img src="/images/site/logo.png" srcset="/images/site/logo@2x.png 2x">
+                    </a>
+                </div>
+                <!-- Nav Wrap -->
+                <div class="navWrap">
+                    <div class="nav-links">
+                        <a class="nav-pages js-pages selected" href="#" title="Pages">
+                            <span class="nav-icon"></span>
+                            <span class="nav-text">Pages</span>
+                        </a>
+                        <a class="nav-articles js-articles" href="#articles" title="Articles">
+                            <span class="nav-icon"></span>
+                            <span class="nav-text">Articles</span>
+                        </a>
+                        <a class="nav-files js-files" href="#files" title="Files and Folders">
+                            <span class="nav-icon"></span>
+                            <span class="nav-text">Files</span>
+                        </a>
+                        <a class="nav-people js-people" href="#people" title="People">
+                            <span class="nav-icon"></span>
+                            <span class="nav-text">People</span>
+                        </a>
+                        <a class="nav-settings js-settings" href="#settings" title="Settings">
+                            <span class="nav-icon"></span>
+                            <span class="nav-text">Settings</span>
+                        </a>
+                        <a class="nav-activity js-activity" href="#activity" title="Activity">
+                            <span class="nav-icon"></span>
+                            <span class="nav-text">Activity</span>
+                        </a>
+                        <a class="nav-logout js-logout" href="/site/logout" title="Logout">
+                            <span class="nav-icon"></span>
+                            <span class="nav-text">Logout</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Search Wrap -->
+                <div class="searchWrap u-hide">
+                    <input placeholder="Search" type="text" autocomplete="off" class="search-text">
+                </div>
+            </div>
+            <!-- Main section -->
+            <div class="mainWrap">
+            </div>
+        </div>
+        <!-- Overlay window -->
+        <div class="overlay"></div>
+        <!-- Modal window -->
+        <div class="modal modal-dash"></div>
+        <!-- Popup window -->
+        <div class="popup"></div>
+        <!-- Search wrap -->
+        <div class="searchWrap u-hide"></div>
+        <!-- Loading bar -->
+        <div class="loading-data">Loading more...</div>
+        <!-- Scripts -->
+        <script type="text/javascript" src="/js/lib/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/lib/underscore/underscore.min.js"></script>
+        <script type="text/javascript" src="/js/lib/backbone/backbone.min.js"></script>
+        <script type="text/javascript" src="/js/lib/marionette/backbone.marionette.min.js"></script>
+        <script type="text/javascript" src="/js/lib/handlebars/handlebars.min.js"></script>
+        <script type="text/javascript" src="/js/lib/async/async.min.js"></script>
+        <script type="text/javascript" src="/js/lib/dateformat/jquery.dateFormat.min.js"></script>
+        <script type="text/javascript" src="/js/lib/jqueryui/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/js/lib/timepicker/timepicker.min.js"></script>
+        <script type="text/javascript" src="/js/lib/masonry/masonry.pkgd.min.js"></script>
+        <script type="text/javascript" src="/js/lib/typeahead/typeahead.bundle.min.js"></script>
+        <script type="text/javascript" src="/js/lib/chosen/chosen.min.js"></script>
+        <script type="text/javascript" src="/js/loadTemplate.js"></script>
+        <script type="text/javascript" src="/js/lib/swag/swag.min.js"></script>
+        <script type="text/javascript" src="/js/helpers.js"></script>
+        <script type="text/javascript" src="/js/lib/uuid/uuidv1.js"></script>
+        <script type="text/javascript" src="/js/lib/tipsy/jquery.tipsy.min.js"></script>
+        <script type="text/javascript" src="/js/lib/sweetalert/sweetalert.min.js"></script>
+        <script type="text/javascript" src="/js/lib/autosize/autosize.min.js"></script>
+        <script type="text/javascript" src="/js/lib/hotkeys/jquery.hotkeys.min.js"></script>
+        <script type="text/javascript" src="/js/lib/validator/validator.min.js"></script>
+        <script type="text/javascript" src="/js/lib/modernizr/modernizr.min.js"></script>
+        <script type="text/javascript" src="/js/lib/cookie/js.cookie.min.js"></script>
+        <script type="text/javascript" src="/js/lib/colorpicker/colorpicker.min.js"></script>
+        <script type="text/javascript" src="/js/lib/cropper/cropper.min.js"></script>
+        <script type="text/javascript" src="/js/lib/jquery-cropper/jquery-cropper.min.js"></script>
+        <script type="text/javascript" src="/js/lib/fileupload/jquery.fileupload.js"></script>
+        <script type="text/javascript" src="/js/lib/redactor/redactor.js"></script>
+        <script type="text/javascript" src="/js/lib/redactor-plugins/alignment/alignment.js"></script>
+        <script type="text/javascript" src="/js/lib/redactor-plugins/fontcolor/fontcolor.js"></script>
+        <script type="text/javascript" src="/js/lib/redactor-plugins/fontfamily/fontfamily.js"></script>
+        <script type="text/javascript" src="/js/lib/redactor-plugins/fontsize/fontsize.js"></script>
+        <script type="text/javascript" src="/js/lib/redactor-plugins/inlinestyle/inlinestyle.js"></script>
+        <script type="text/javascript" src="/js/lib/redactor-plugins/table/table.js"></script>
+        <script type="text/javascript" src="/js/lib/redactor-plugins/video/video.js"></script>
+        <script type="text/javascript" src="/js/global.js"></script>
+        <script type="text/javascript" src="/js/dashApp.js"></script>
+        <script type="text/javascript">
+            Swag.registerHelpers(window.Handlebars);
+            DashManager.start();
+        </script>
+    </body>
+</html>

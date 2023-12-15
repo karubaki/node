@@ -1,0 +1,34 @@
+<p class="tag-name" style="border-left-color:{{color}};">{{name}}</p>
+<p class="tag-desc">{{{desc}}}</p>
+<div class="tag-actions">
+    {{#if is_public}}
+        <!-- Subscribe / Unsubscribe -->
+        {{#hasCurrentUser subscribers}}
+            <span class="unsubscribe-tag">Unsubscribe</span>
+        {{else}}
+            {{#isNotCreatorOrMember creator members}}
+                <span class="subscribe-tag">Subscribe</span>
+            {{/isNotCreatorOrMember}}
+        {{/hasCurrentUser}}
+    {{else}}
+        <!-- Edit members -->
+        {{#hasTagEditAccess creator members}}
+            <span class="edit-members">Edit members</span>
+        {{else}}
+            <!-- Leave / Join -->
+            {{#hasCurrentUserInMembers members}}
+                {{#isCurrentMemberInactive members}}
+                    <span class="unjoin-tag">Remove request</span>
+                {{else}}
+                    <span class="leave-tag">Leave tag</span>
+                {{/isCurrentMemberInactive}}
+            {{else}}
+                <span class="join-tag">Request to join</span>
+            {{/hasCurrentUserInMembers}}
+        {{/hasTagEditAccess}}
+    {{/if}}
+    <!-- Edit tag -->
+    {{#hasTagEditAccess creator members}}
+        <span class="edit-tag">Edit</span>
+    {{/hasTagEditAccess}}
+</div>

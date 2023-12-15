@@ -1,0 +1,85 @@
+<div class="overlay-box overlay-double">
+    <a class="overlay-close js-close" href="#"></a>
+    <div class="new-discussion overlay-form">
+        {{!-- Select discussion type --}}
+        <div class="discussion-type">
+            <div class="type-text selected">Text</div>
+            <div class="type-link">Link</div>
+            <div class="type-file">File</div>
+            <div class="type-poll">Poll</div>
+        </div>
+        {{!-- Discussion creation area --}}
+        <div class="entity-area">
+            {{!-- Text discussion --}}
+            <div class="text-discussion form-text">
+                <input placeholder="Title" type="text" autocomplete="off" class="text-discussion-title entity-title">
+                <textarea placeholder="Write your thoughts here" class="text-discussion-html entity-text"></textarea>
+            </div>
+            {{!-- Link discussion --}}
+            <div class="link-discussion">
+                <input placeholder="Type or paste a URL for embedding" type="text" autocomplete="off" class="link-embed input">
+                <p class="link-add u-hide">Preview link</p>
+                <div class="throbber-loader u-hide">Loading…</div>
+                {{!-- Preview link --}}
+                <div class="link-preview">
+                    <p class="preview-title"></p>
+                    <span class="preview-provider"><a href="" target="_blank"></a></span>
+                    <div class="preview-desc"></div>
+                    <div class="preview-shots"></div>
+                    <div class="preview-embed"></div>
+                </div>
+            </div>
+            {{!-- File discussion --}}
+            <div class="file-discussion">
+                <form method="post" action="https://mgiep-files.s3.amazonaws.com/" enctype="multipart/form-data" class="direct-upload">
+                    <input placeholder="File name" type="text" autocomplete="off" class="file-discussion-title entity-title">
+                    <div id="drop">
+                        <span>Choose files or drag and drop them here</span>
+                        <input type="hidden" name="key">
+                        <input type="hidden" name="AWSAccessKeyId" value="AKIAIT3BY3EDOZPAPDEQ">
+                        <input type="hidden" name="acl" value="public-read">
+                        <input type="hidden" name="policy">
+                        <input type="hidden" name="signature">
+                        <input type="hidden" name="success-action-status" value="201">
+                        <input type="hidden" name="Content-Type">
+                        <input type="file" name="file" class="file-input">
+                    </div>
+                </form>
+                <div class="service-ch">
+                    <p class="ch-dropbox"><i class="icon-dropbox"></i><span>Dropbox</span></p>
+                    <p class="ch-drive"><i class="icon-drive"></i><span>Google Drive</span></p>
+                </div>
+            </div>
+            {{!-- Poll discussion --}}
+            <div class="poll-discussion">
+                <input placeholder="Title" type="text" autocomplete="off" class="poll-discussion-title entity-title">
+                <div class="add-new-poll">
+                    <p>Add new poll:</p>
+                    <div class="poll-container">
+                        <div class="draft-polls polls-list">
+                            <p class="new-poll-row">
+                                <span class="radio-cell"></span>
+                                <input placeholder="Add an option" type="text" autocomplete="off" class="new-poll" spellcheck="true">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay-location">
+        <p class="status-select-header">Select how you want to post this discussion:</p>
+        <div class="status-select">
+            <div class="status-queued">
+                <h3>Add to queue</h3>
+                <p>Adding to queue doesn't publish the discussion instantaneously. You will have to wait for a few days before this discussion is featured. However, the benefit is that once published this discussion will be featured everywhere on our site including our newsletter, giving it more viewership.</p>
+            </div>
+            <div class="status-other selected">
+                <h3>Add to all discussions</h3>
+                <p>This way your discussion will be published as soon as you hit the 'Save button'. However, there are bleak chances that it will get featured in our 'Today' section. Select this option for sharing breaking news and starting private discussions.</p>
+            </div>
+        </div>
+        {{!-- Save discussion --}}
+        <div class="entity-btn save-discussion js-save u-hide">Save</div>
+    </div>
+</div>

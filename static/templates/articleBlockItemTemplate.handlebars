@@ -1,0 +1,108 @@
+{{#is type 'text'}}
+    <p class="block-title">
+        <span class="block-type">Rich text</span>
+    </p>
+{{else}}{{#is type 'gallery'}}
+    <p class="block-title">
+        <span class="block-type">Gallery</span>
+        <span>
+            {{#if gallery.length}} {{pluralCount gallery.length 'image'}} {{/if}}
+        </span>
+    </p>
+{{else}}{{#is type 'image'}}
+    <p class="block-title">
+        <span class="block-type">Image</span>
+        {{#if title}} <span>{{stripScripts title}}</span> {{/if}}
+    </p>
+{{else}}{{#is type 'audio'}}
+    <p class="block-title">
+        <span class="block-type">Audio</span>
+        {{#if title}} <span>{{stripScripts title}}</span> {{/if}}
+    </p>
+{{else}}{{#is type 'video'}}
+    <p class="block-title">
+        <span class="block-type">Video</span>
+        {{#if title}} <span>{{stripScripts title}}</span> {{/if}}
+    </p>
+{{else}}{{#is type 'file'}}
+    <p class="block-title">
+        <span class="block-type">File</span>
+        {{#if title}} <span>{{stripScripts title}}</span> {{/if}}
+    </p>
+{{else}}{{#is type 'gif'}}
+    <p class="block-title">
+        <span class="block-type">GIF</span>
+    </p>
+{{else}}{{#is type 'link'}}
+    <p class="block-title">
+        <span class="block-type">Bookmark</span>
+        <span>{{provider.url}}</span>
+    </p>
+{{else}}{{#is type 'embed'}}
+    <p class="block-title">
+        <span class="block-type">Embed</span>
+        {{#if title}} <span>{{stripScripts title}}</span> {{/if}}
+    </p>
+{{else}}{{#is type 'toggle'}}
+    <p class="block-title">
+        <span class="block-type">Toggle card</span>
+        <span>{{stripScripts title}}</span>
+    </p>
+{{else}}{{#is type 'callout'}}
+    <p class="block-title">
+        <span class="block-type">Callout</span>
+        {{#if title}} <span>{{stripScripts title}}</span> {{/if}}
+    </p>
+{{else}}{{#is type 'people'}}
+    <p class="block-title">
+        <span class="block-type">People</span>
+        <span>
+            {{#if title}} {{stripScripts title}}: {{/if}}
+            {{#if people.length}} {{people.length}} people {{/if}}
+        </span>
+    </p>
+{{else}}{{#is type 'logos'}}
+    <p class="block-title">
+        <span class="block-type">Logos</span>
+        <span>
+            {{#if title}} {{stripScripts title}}: {{/if}}
+            {{#if people.length}} {{pluralCount people.length 'logo'}} {{/if}}
+        </span>
+    </p>
+{{else}}{{#is type 'breather'}}
+    <p class="block-title">
+        <span class="block-type">Breather</span>
+        <span>{{stripScripts title}}</span>
+    </p>
+{{else}}{{#is type 'button'}}
+    <p class="block-title">
+        <span class="block-type">Button</span>
+        <span>{{button.text}}</span>
+    </p>
+{{else}}{{#is type 'discussion'}}
+    <p class="block-title">
+        <span class="block-type">Discussion</span>
+    </p>
+{{else}}{{#is type 'mcq'}}
+    <p class="block-title">
+        <span class="block-type">MCQs</span>
+        <span>
+            {{#if title}} {{stripScripts title}}: {{/if}}
+            {{#if mcqs.length}} {{pluralCount mcqs.length 'option'}} {{/if}}
+        </span>
+    </p>
+{{else}}{{#is type 'journal'}}
+    <p class="block-title">
+        <span class="block-type">Journal - {{journal_type}}</span>
+        {{#if title}} <span>{{stripScripts title}}</span> {{/if}}
+    </p>
+{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}
+<div class="block-actions">
+    <span class="move-up"></span>
+    <span class="move-down"></span>
+    <p class="edit-block">Edit</p>
+    {{#is type 'mcq'}}
+        <p class="edit-options">Edit options</p>
+    {{/is}}
+    <p class="add-below">Add below</p>
+</div>

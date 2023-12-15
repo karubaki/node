@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>UNESCO MGIEP: Forgot Password</title>
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="/images/site/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/images/site/favicon.ico" type="image/x-icon">
+        <!-- Apple meta -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <link rel="apple-touch-icon-precomposed" href="/images/site/apple-touch-icon.png">
+        <!-- Responsive meta tags -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+        <!-- Style -->
+        <link rel="stylesheet" type="text/css" href="/css/login_style.css">
+    </head>
+    <body>
+        <!-- Header -->
+        <div class="headerWrap">
+            <div class="sectionBox">
+                <a href='/' class="logo-main">
+                    <img src="/images/site/logo.png" srcset="/images/site/logo@2x.png 2x">
+                </a>
+            </div>
+        </div>
+        <!-- Content -->
+        <div class="contentWrap">
+            <!-- Inline reset form -->
+            <div class="contentForm">
+                <div class="form-message">
+                    <h2>Forgot your password?</h2>
+                    <p>If an account exists, we will send you an email that will allow you to reset your password. You may need to check your spam folder or wait for few minutes.</p>
+                </div>
+                <form method="post" action="/forgot" class="form form--modal js-form">
+                    <div class="js-email">
+                        <p class='u-formError'></p>
+                        <input class="input" name="email" value="" placeholder="Email address" autocomplete="off" spellcheck="false">
+                    </div>
+                    <input name="submit" value="Reset password" class="btn-submit js-submit" type="submit">
+                </form>
+                <p class="message">You remembered your password? <a href="/login" class="js-login">Log in</a> </p>
+            </div>
+        </div>
+        <!-- Scripts -->
+        <script type="text/javascript" src="/js/lib/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/loginApp.js"></script>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<div class="upload-file">
+    <form method="post" action="https://mgiep-files.s3.amazonaws.com/" enctype="multipart/form-data" class="direct-upload">
+        <div id="drop">
+            <span>Choose file or drag and drop multiple files here</span>
+            <input type="hidden" name="key">
+            <input type="hidden" name="AWSAccessKeyId" value="AKIAIT3BY3EDOZPAPDEQ">
+            <input type="hidden" name="acl" value="public-read">
+            <input type="hidden" name="policy">
+            <input type="hidden" name="signature">
+            <input type="hidden" name="success-action-status" value="201">
+            <input type="hidden" name="Content-Type">
+            <input type="file" name="file" class="file-input">
+        </div>
+    </form>
+</div>
+<div class="all-items"></div>
+<!-- Toolbar -->
+<div class="toolbarWrap">
+    <p class="toolbar-text js-cancel-selection">
+        <span class="cancel-icon"></span>
+        <span class="selected-text"><b>1</b> file selected</span>
+    </p>
+    <p class="toolbar-actions">
+        <a class="js-addto-folder u-action-btn" href="#">Add to folder</a>
+    </p>
+</div>

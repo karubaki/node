@@ -1,0 +1,36 @@
+{{#if is_folder}}
+    <div class="item-main">
+        <p class="item-title article-title">{{text.title}}</p>
+        <a href='/dashboard/articles/folder/{{_id}}' class="item-view js-view-folder">View folder</a>
+    </div>
+{{else}}
+    <div class="item-main">
+        <p class="item-title article-title">{{text.title}}</p>
+        <p class="item-about">{{about}}</p>
+        {{#if url.embed}}
+             <div class="item-embed">{{{url.embed}}}</div>
+        {{else}}{{#if image.m}}
+            <div class="item-image" style="background-image: url('{{image.m}}'); height: 200px;"></div>
+        {{/if}}{{/if}}
+        {{#if text.desc}}
+            <p class="item-desc">{{text.desc}}</p>
+        {{else}}{{#if text.summary}}
+            <p class="item-desc">{{{text.summary}}}</p>
+        {{/if}}{{/if}}
+    </div>
+    <div class="item-action">
+        {{#or url.ref url.embed}}
+            <a class="item-btn preview-article js-preview" href="https://mgiep.unesco.org/article/{{slug}}" target="_blank">Preview</a>
+            <p class="item-btn js-edit-meta">Edit meta</p>
+            <p class="item-btn js-add-person">Add author</p>
+            <p class="item-btn js-add-tags">Add tags</p>
+        {{else}}
+            <a class="item-btn preview-article js-preview" href="https://mgiep.unesco.org/article/{{slug}}" target="_blank">Preview</a>
+            <p class="item-btn js-edit-meta">Edit meta</p>
+            <p class="item-btn js-add-person">Add author</p>
+            <p class="item-btn js-add-tags">Add tags</p>
+            <p class="item-btn js-edit-html">Edit content</p>
+        {{/or}}
+    </div>
+    <span class="select-item" title="Select item"></span>
+{{/if}}
